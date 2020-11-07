@@ -1,19 +1,19 @@
-#Instrukce
+# Instrukce
 
-##Struktura
+## Struktura
 
-###Api
+### Api
 Obsahuje Symfony appku, která bude sloužit jako API. Zatím se tím nezabýváme.
 
-###Web
+### Web
 Obsahuje klienta. Tohle je úkolem zmního semestru.
 
-##Co je potřeba
+## Co je potřeba
 * git - https://git-scm.com/
 * Symfony CLI - https://symfony.com/download
 * npm- https://www.npmjs.com/get-npm
 
-##Jak to pustím
+## Jak to pustím
 ```bash
 $ git clone git@github.com:SystematicCZ/ete89e.git
 $ cd web
