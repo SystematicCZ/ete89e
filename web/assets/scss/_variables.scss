@@ -1,0 +1,249 @@
+//
+// Custom variables
+//
+$sj-color-bg-page:           #fff;
+$add-offer-step-gutter-md:  7rem;
+
+// MQ Breakpoints
+
+$grid-breakpoints: (
+  xxs:                       0,
+  xs:                        425px,
+  sm:                        576px,
+  md:                        768px,
+  lg:                        992px,
+  xl:                        1200px
+) !default;
+
+
+$grid-gutter-width-base:     20px;
+
+// Colors
+$color-primary:              #2280de;
+$color-primary-light:        #5cb2fe;
+$color-secondary-light:      #EBF5FF;
+$color-primary-dark:         #2d659d;
+$color-primary-highlight:    #edf5fc;
+$primary:					$color-primary; // používá BT
+
+$color-success:              #19aa4c;
+$color-success-light:        #39d16e;
+$color-success-dark:         #037b2d;
+$color-success-highlight:    #ebf9f0;
+$success:					$color-success; // používá BT
+
+$color-danger:               #F84343;
+$color-danger-light:         #FF7E7E;
+$color-danger-dark:          #C90101;
+$danger:					$color-danger; // používá BT
+
+$color-info:                 #7a43f8;
+$color-info-light:           #986dfb;
+$info:						$color-info; // používá BT
+
+$color-approve:              #fea45b;
+
+$color-warning:              #ffc134;
+$warning:              #f08d3d;
+
+$color-text:                 #000;
+$color-text-dark:            #4a5568; // contrast ratio 7.06:1 with `#f5f8fa` aka `$color-bg` (and ofc higher with `#fff`), WCAG AAA
+$color-text-secondary:       #657086; // contrast ratio 4.67:1 with `#f5f8fa` aka `$color-bg` (and ofc higher with `#fff`), WCAG AA
+$color-border:               #c6d3de;
+$color-border-highligted:    #c5d5e0;
+$color-border-dark:          #373d41;
+$color-bg:                   #f5f8fa;
+$color-favorite:             #f94141;
+$color-hot:                  #f94141;
+$color-premium:              #DFAB23;
+
+$brand-primary:             $color-primary;
+$brand-success:             $color-success;
+$brand-danger:              $color-danger;
+
+$secondary: #a9b5cc;
+
+$color-inbox-unread: #edf6fc;
+
+$theme-colors: () !default;
+$theme-colors: map-merge((
+), $theme-colors);
+
+//Links
+$link-color:                 $color-primary;
+$link-decoration:            none;
+$link-hover-color:           $color-primary-dark;
+$link-hover-decoration:      none;
+
+
+//Animation
+$base-transition:            all .2s ease;
+
+//Typography
+$font-primary:               'Ubuntu', sans-serif;
+$base-size:                  16;
+$base-font-size:             $base-size * 1px;
+
+$line-height-base:           1.5 ;
+$headings-font-weight:       bold;
+
+$font-size-xs:               (12 / $base-size) * 1rem;
+$font-size-sm:               (14 / $base-size) * 1rem;
+$font-size-md:               (16 / $base-size) * 1rem;
+$font-size-lg:               (20 / $base-size) * 1rem;
+$font-size-xlg:              (22 / $base-size) * 1rem;
+$font-size-mega:             (26 / $base-size) * 1rem;
+
+$font-size-h1:                $font-size-xlg;
+$h2-font-size:                1.5rem;
+$font-size-h3:                $font-size-md;
+$h4-font-size:                1.4rem;
+$font-size-h5:                $font-size-md;
+$font-size-h6:                $font-size-md;
+
+$font-weight-bold: 500;
+
+//Border
+$base-border:                    1px solid $color-border;
+$border-radius:                  0;
+
+
+
+//Buttons
+$border-radius:                  0;
+$border-radius-lg:               0;
+$border-radius-sm:               0;
+$btn-border-radius:              0;
+$btn-border-radius-lg:           0;
+$btn-border-radius-sm:           0;
+$btn-focus-box-shadow:           0;
+$btn-active-box-shadow:          0;
+
+$btn-primary-bg:                $color-primary;
+$btn-primary-border:            $color-primary;
+
+$btn-success-bg:                $color-success;
+$btn-success-border:            $color-success;
+
+$btn-danger-bg:                 $color-danger;
+$btn-danger-border:              $color-danger;
+
+
+
+
+//Forms
+
+$input-padding-x:                14px;
+$input-padding-y:                14px;
+$input-line-height:              1.25;
+$input-border-color:             $color-border;
+$input-bg-disabled:              #FFF;
+
+$input-color:                    $color-text;
+$input-border-color:             $color-border;
+$input-box-shadow:               0;
+
+$input-border-radius:            0;
+$input-border-radius-lg:         0;
+$input-border-radius-sm:         0;
+
+$input-bg-focus:                 #FFF;
+$input-border-focus:             $color-primary;
+$input-box-shadow-focus:         0;
+$input-color-focus:              $color-text;
+
+$input-color-placeholder:        $color-text-secondary;
+$input-height:                   auto;
+$input-height-lg:                auto;
+$input-height-sm:                auto;
+
+
+
+$custom-select-padding-x:                     .875rem;
+$custom-select-padding-y:                     .875rem;
+$custom-select-indicator-padding:             1.5rem;
+$custom-select-color:                         $input-color;
+$custom-select-bg-size:                       10px;
+// v data-uri nemůže být `#`
+$custom-select-indicator:                     str-replace( url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'%3E%3Cpath fill='%238C96A9' d='M15.001,23.088l2.187-2.182L28.546,9.544c0.605-0.603,0.605-1.577,0-2.182c-0.604-0.602-1.575-0.602-2.179,0 L15.001,18.729L3.633,7.362c-0.605-0.602-1.577-0.602-2.183,0c-0.602,0.605-0.602,1.579,0,2.182l11.36,11.362L15.001,23.088z'/%3E%3C/svg%3E"), "#", "%23" );
+$custom-select-border-color:                  $color-border;
+$custom-select-border-radius:                 0;
+$custom-select-focus-border-color:            $color-primary-dark;
+
+
+$custom-control-indicator-bg:                 #FFF;
+$custom-control-indicator-bg-size:            75%;
+$custom-control-indicator-box-shadow:         0;
+$custom-control-gutter:                       2rem;
+
+
+$custom-control-checked-indicator-color:      $color-primary;
+$custom-control-checked-indicator-bg:         #FFF;
+$custom-control-focus-indicator-box-shadow:   0;
+
+$custom-control-active-indicator-color:       #FFF;
+$custom-control-active-indicator-bg:          #FFF;
+
+$custom-checkbox-radius:                      0;
+// v data-uri nemůže být `#`
+$custom-checkbox-indicator-icon-success: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#10652e' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23");
+
+
+
+
+// Dropdowns
+$dropdown-min-width:             10rem;
+$dropdown-padding-y:             .5rem;
+$dropdown-item-padding-x:        .9rem;
+$dropdown-margin-top:            0;
+$dropdown-border-width:          0;
+
+// Navs
+
+
+$nav-link-padding:              0.7em;
+
+
+// Pagination
+
+$pagination-color:                  $color-text-secondary;
+$pagination-border-width:           0;
+
+$pagination-hover-color:            $color-text-secondary;
+$pagination-hover-bg:               $color-bg;
+
+$pagination-active-color:           $color-primary;
+$pagination-active-bg:              $color-bg;
+
+
+// Badges
+
+$badge-danger-bg:             $color-danger;
+$badge-color:                    #339AE9;
+
+//$badge-color:                 $white;
+//$badge-link-hover-color:      $white;
+$badge-font-weight:           400;
+$badge-padding-x:             .325em;
+$badge-padding-y:             .125em;
+
+$badge-pill-padding-x:        .4em;
+// Use a higher than normal value to ensure completely rounded edges when
+// customizing padding or font-size on labels.
+$badge-pill-border-radius:    10rem;
+
+
+// Alerts
+//
+// Define alert colors, border radius, and padding.
+
+$alert-padding-y: 1rem;
+$alert-padding-x: 1.05rem; // zarovnání s odkazem na nápovědu v hlavním menu
+$alert-border-width: 0;
+
+
+// Close
+$close-font-size: 2rem;
+$close-color: #fff;
+
+$tooltip-max-width: 500px !default;

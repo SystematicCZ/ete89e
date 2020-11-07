@@ -18,7 +18,7 @@ Encore
   .addStyleEntry('style', './assets/scss/style.scss')
   .autoProvidejQuery()
 
-  .enableSingleRuntimeChunk()
+  .disableSingleRuntimeChunk()
 
   .enableSassLoader()
   .enableVueLoader();

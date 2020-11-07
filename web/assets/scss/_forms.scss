@@ -1,0 +1,442 @@
+.form-group--custom {
+	margin-bottom: 0;
+}
+
+.form-group label,
+.form-group legend {
+	padding-left: 1rem;
+	color: $color-text-secondary;
+	transition: $base-transition;
+	margin-bottom: .3rem;
+	font-size: 1rem;
+
+	@include media-breakpoint-up(sm) {
+		margin-bottom: .5rem;
+	}
+}
+
+.form-control {
+	@include media-breakpoint-down(sm) {
+		padding: .7rem;
+	}
+
+	&::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+		font-size: 1rem;
+	}
+}
+
+.form-control-feedback {
+	$icon-space: 1.5rem;
+
+	position: relative;
+	min-height: 1rem;
+	padding-left: (1rem + $icon-space); // odsazení stejné s `label`
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		display: block;
+		width: (1rem + $icon-space);
+		margin-top: auto;
+		margin-bottom: auto;
+		background-image: url(../svg/icons/flash_error.svg);
+		background-repeat: no-repeat;
+		background-position: 1rem center;
+		background-size: 1rem;
+	}
+}
+
+/* Bootstrap nepočítal s tím, že budeme mít `$input-height: auto` a informační ikony jsou deformované. */
+.form-control-success:not(.custom-select),
+.form-control-warning:not(.custom-select),
+.form-control-danger:not(.custom-select) {
+	background-position: center right ($input-padding-x / 2);
+	background-size: auto 75%;
+}
+
+.custom-select {
+	-webkit-appearance: none;
+	width:100%;
+
+	&:invalid {
+		color: $color-text-secondary;
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding: .7rem (.7rem + $custom-select-indicator-padding) .7rem .7rem;
+	}
+}
+
+.custom-control-label{
+	&::before, &::after {
+		border: $base-border;
+		left: -2rem;
+	}
+}
+
+.custom-control {
+	padding-left: 2rem;
+}
+
+.hide-required-mark label {
+	&:before {
+		display: none !important;
+	}
+}
+
+.form-group.is-required {
+	label,
+	legend {
+		position: relative;
+		padding-left: 1rem;
+
+		&:before {
+			content: "";
+			display: inline-block;
+			width: 6px;
+			height: 6px;
+			background-color: $color-danger;
+			border-radius: 100%;
+			left: 0;
+			position: absolute;
+			transform: translateY(-50%);
+			top: 50%;
+		}
+	}
+}
+
+.form-group.is-required label.hidden-label:before {
+	display: none;
+}
+
+.form-check.is-required {
+	position: relative;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		background-color: $color-danger;
+		border-radius: 100%;
+		left: 3px;
+		position: absolute;
+		transform: translateY(-50%);
+		top: 50%;
+	}
+}
+
+.required-mark {
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	background-color: $color-danger;
+	border-radius: 100%;
+	vertical-align: middle;
+	margin: 0 .1rem;
+}
+
+.has-danger {
+	.form-control {
+		border-width: 2px;
+		border-color: $color-danger;
+
+		&:hover {
+			border-color: $color-danger;
+		}
+	}
+}
+
+.input-button {
+
+	.input-text {
+		flex-grow: 10;
+	}
+}
+
+.form-text {
+	padding-left: 1rem; // zarovnání s `label`
+	color: $color-text-secondary;
+
+	&.custom-control-form-text {
+		padding-left: $custom-control-gutter;
+	}
+}
+
+// Buy credits form
+
+.credits-form {
+
+	&--row {
+		border-bottom: $base-border;
+
+		&:first-child  {
+			border-top: $base-border;
+		}
+
+		label {
+			display: block;
+			padding: 16px 8px;
+			margin-bottom:0;
+
+		}
+	}
+}
+
+.form-group-file {
+	position: relative;
+}
+
+.form-control-file.has-label-control-file {
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+}
+
+.label-control-file {
+	padding: 1rem;
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+	transition: $transition-base;
+
+	.form-control-file:focus + &,
+	.form-control-file:hover + &,
+	&:hover {
+		border-color: $color-primary;
+	}
+}
+
+.invalid-feedback {
+	display: block;
+}
+
+.ql-editor {
+	height: 230px;
+}
+
+.multiselect__tags {
+	display: block;
+	width: 100%;
+	padding: $input-padding-y $input-padding-x 0;
+	font-size: $font-size-base;
+	line-height: $input-line-height;
+	color: $input-color;
+	background-color: $input-bg;
+	background-clip: padding-box;
+	border: $input-border-width solid $input-border-color;
+	border-radius: 0;
+	min-height: 50px;
+}
+
+.multiselect__tag {
+	background: #eaf3ff;
+	color: $color-text;
+	border-radius: 0;
+	margin-bottom: 6px;
+}
+
+.multiselect__tag-icon:hover {
+	background: #d7e8f2;
+	color: $color-text;
+}
+
+.multiselect .is-valid {
+	border: $input-border-width solid $form-feedback-valid-color;
+}
+
+.multiselect .is-invalid {
+	border: $input-border-width solid $form-feedback-invalid-color;
+}
+
+.multiselect__single, .multiselect__input {
+	margin: 0;
+	padding: 0;
+}
+
+.multiselect__option--highlight {
+	background: #edf5fc;
+	color: #5cb2fe;
+	outline: none;
+}
+
+.multiselect__option--highlight:after {
+	content: attr(data-select);
+	background: #edf5fc;
+	color: #5cb2fe;
+}
+
+.multiselect__option--selected {
+	background: #ffffff;
+	color: #5cb2fe;
+	font-weight: bold;
+}
+
+.multiselect__option--selected:after {
+	content: attr(data-selected);
+	color: silver;
+}
+
+.multiselect__spinner {
+	z-index: 100;
+}
+
+.multiselect__option--selected.multiselect__option--highlight {
+	background: #ffffff;
+	color: #5cb2fe;
+}
+
+.multiselect__option--selected.multiselect__option--highlight:after {
+	background: #ffffff;
+	content: attr(data-deselect);
+	color: #5cb2fe;
+}
+
+.multiselect__placeholder {
+	margin-bottom: 14px;
+	padding-top: 0;
+}
+
+.multiselect__input {
+	margin-bottom: 14px;
+}
+
+.form-control-image {
+	display: inline-block;
+
+	canvas {
+		border: 1px solid $secondary;
+	}
+}
+
+.profile-picture-editor {
+	position: relative;
+	display: inline-flex;
+	flex-direction: column;
+
+	&.is-valid {
+		border: 1px solid $form-feedback-valid-color
+	}
+}
+
+.delete-profile-picture span {
+	color: #8b95a8 !important;
+}
+
+.edit-picture-top {
+	position: absolute;
+	top: 0;
+	transform: translateY(-100%);
+	width: 100%;
+	background: white;
+}
+
+.edit-picture-bottom {
+	position: absolute;
+	bottom: 0;
+	transform: translateY(100%);
+	width: 100%;
+	background: white;
+}
+
+.input-group {
+	display: inline-flex;
+}
+
+.custom-radio {
+	.custom-control-label {
+		&::after {
+			border: none;
+			padding: 1px;
+		}
+
+		&::before {
+			background-color: transparent !important;
+		}
+
+		&:hover:before {
+			border-color: $color-primary;
+		}
+	}
+
+	.custom-control-input:checked ~ .custom-control-label {
+		&::before {
+			border-color: $color-border;
+		}
+
+		&::after {
+			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%232280de'/%3e%3c/svg%3e");
+		}
+	}
+}
+
+.custom-switch {
+	label{
+		cursor: pointer;
+	}
+	&.red {
+		.custom-control-input:checked ~ .custom-control-label::before {
+			border-color: $color-danger;
+			background-color: $color-danger;
+		}
+	}
+
+	&.md {
+		.custom-control-label::before {
+			width: 2.5rem;
+			height: 1.5rem;
+			border-radius: 0.8rem;
+		}
+		.custom-control-label::after {
+			width: calc(1.5rem - 4px);
+			height: calc(1.5rem - 4px);
+			border-radius: 1.5rem;
+		}
+
+		.custom-control-input:checked ~ .custom-control-label::after {
+			transform: translateX(1rem)
+		}
+	}
+}
+
+.checkbox-group-note {
+	z-index: 1 !important;
+}
+
+.bg-insert-template {
+	background-color: $color-primary-highlight;
+	& a.icon {
+		font-size: .75rem;
+	}
+}
+
+.vdatetime-input {
+	display: block;
+	width: 100%;
+	height: auto;
+	padding: 14px 14px;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.25;
+	color: #000;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #c6d3de;
+	border-radius: 0;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.no-border-input {
+	font-weight: 500;
+	background-color: $color-secondary-light !important;
+	border: 0;
+	.reportrange-text {
+		// class used in date-range-picker
+		font-weight: 500;
+		background-color: $color-secondary-light !important;
+		border: 0;
+	}
+}

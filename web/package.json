@@ -17,7 +17,10 @@
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.17.3",
+    "flat": "^5.0.2",
     "jquery": "^3.5.1",
+    "lodash": "^4.17.20",
+    "prepend-http": "^3.0.1",
     "vue": "^2.6.12",
     "vue-router": "^3.4.9",
     "vue-toasted": "^1.1.28",
@@ -39,6 +42,8 @@
     "imports-loader": "0.8.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^9.0.3",
-    "typescript-eslint-parser": "^22.0.0"
+    "typescript-eslint-parser": "^22.0.0",
+    "vue-loader": "^15.9.5",
+    "vue-template-compiler": "^2.6.12"
   }
 }
