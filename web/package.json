@@ -1,0 +1,44 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Simple mini team web app",
+  "private": true,
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "prod": "encore production",
+    "watch": "encore dev --watch",
+    "build": "encore production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
+    "bootstrap-vue": "^2.17.3",
+    "jquery": "^3.5.1",
+    "vue": "^2.6.12",
+    "vue-router": "^3.4.9",
+    "vue-toasted": "^1.1.28",
+    "vuelidate": "^0.7.6"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/runtime": "^7.12.1",
+    "@symfony/webpack-encore": "^0.31.0",
+    "babel-eslint": "10.0.3",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "eslint-plugin-vue": "^4.7.1",
+    "imports-loader": "0.8.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3",
+    "typescript-eslint-parser": "^22.0.0"
+  }
+}
