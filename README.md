@@ -8,7 +8,7 @@
 Obsahuje Symfony appku, která bude sloužit jako API. Zatím se tím nezabýváme.
 
 ### Web
-Obsahuje klienta. Tohle je úkolem zmního semestru.
+Obsahuje klienta. Tohle je úkolem zimního semestru.
 
 ## Co je potřeba
 * git - https://git-scm.com/
