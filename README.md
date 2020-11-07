@@ -25,4 +25,3 @@ $ symfony server:start -d
 ```
 Klient poběží na http://localhost:8000. <br>
 `npm run dev` udělá build projektu. Při vývoji doporučuji pustit `npm run watch`. Pak bude npm sledovat změny v souborech a bude dělat build automaticky.
-
