@@ -1,4 +1,6 @@
 # Instrukce
+[Vue.js dokumentace](https://vuejs.org/v2/guide/) <br>
+[BoostrapVue dokumentace](https://bootstrap-vue.org/)
 
 ## Struktura
 
