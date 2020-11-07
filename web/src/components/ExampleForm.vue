@@ -6,9 +6,11 @@
     <input-wrapper
       :validations="validations.sampleText"
       label="Some text"
+      label-extra="This is a tip"
     >
       <input-text
         v-model="payload.sampleText"
+        :validations="validations.sampleText"
       />
     </input-wrapper>
 

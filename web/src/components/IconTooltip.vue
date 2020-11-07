@@ -1,10 +1,13 @@
 <template>
-  <button
+  <div
     v-b-tooltip.hover
     :title="text"
-    class="form-tooltip-toggle ml-1"
-    type="button"
-  />
+    class="icon-tooltip"
+  >
+    <b-icon
+      icon="question-circle"
+    />
+  </div>
 </template>
 
 <script>

@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import ButtonTooltip from '../ButtonTooltip.vue';
+import ButtonTooltip from '../IconTooltip.vue';
 
 export default {
   components: {

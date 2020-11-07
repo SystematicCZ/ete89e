@@ -16,6 +16,9 @@ export default {
   mounted() {
     this.trackUserInteraction();
     this.submitButton = this.$el.querySelector('button[type=submit]');
+    if (this.submitButton) {
+      this.submitButton.disabled = !this.isReadyToSubmit();
+    }
   },
 
   watch: {
@@ -23,7 +26,7 @@ export default {
       deep: true,
       handler() {
         if (this.submitButton) {
-          this.submitButton.disabled = this.isPending();
+          this.submitButton.disabled = !this.isReadyToSubmit();
         }
       },
     },
