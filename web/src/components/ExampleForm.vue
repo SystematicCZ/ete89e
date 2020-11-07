@@ -65,11 +65,6 @@ export default {
       submittedData: null,
     };
   },
-
-  mounted() {
-    console.log(this.submitButton);
-  },
-
   methods: {
     onSubmit() {
       this.submittedData = this.payloadAsJson;
