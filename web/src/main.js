@@ -8,9 +8,6 @@ import { upperFirst } from 'lodash';
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
-const $ = require('jquery');
-require('bootstrap');
-
 Vue.use(Toasted, { duration: 5000 });
 Vue.use(Vuelidate);
 

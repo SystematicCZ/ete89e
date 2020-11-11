@@ -18,7 +18,6 @@
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.17.3",
     "flat": "^5.0.2",
-    "jquery": "^3.5.1",
     "lodash": "^4.17.20",
     "prepend-http": "^3.0.1",
     "vue": "^2.6.12",
