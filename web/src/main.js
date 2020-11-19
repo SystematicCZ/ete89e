@@ -23,6 +23,7 @@ const app = new Vue({
   el: '#app',
   router,
   components: {
+    'SiteHeader': () => import('./components/SiteHeader.vue'),
     'Navigation': () => import('./components/Navigation.vue'),
   },
 });

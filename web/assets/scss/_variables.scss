@@ -1,69 +1,37 @@
-//
-// Custom variables
-//
-$sj-color-bg-page:           #fff;
-$add-offer-step-gutter-md:  7rem;
-
-// MQ Breakpoints
-
-$grid-breakpoints: (
-  xxs:                       0,
-  xs:                        425px,
-  sm:                        576px,
-  md:                        768px,
-  lg:                        992px,
-  xl:                        1200px
-) !default;
-
-
-$grid-gutter-width-base:     20px;
-
 // Colors
-$color-primary:              #2280de;
-$color-primary-light:        #5cb2fe;
-$color-secondary-light:      #EBF5FF;
-$color-primary-dark:         #2d659d;
-$color-primary-highlight:    #edf5fc;
-$primary:					$color-primary; // používá BT
+$color-primary:              #357770;
+$color-primary-dark:         #2A5259;
+$color-primary-highlight:    #5D928C;
+$primary:					 #42837f; // používá BT
 
-$color-success:              #19aa4c;
-$color-success-light:        #39d16e;
-$color-success-dark:         #037b2d;
-$color-success-highlight:    #ebf9f0;
-$success:					$color-success; // používá BT
+$color-success:              #49a25e;
+$success:					 $color-success; // používá BT
 
-$color-danger:               #F84343;
-$color-danger-light:         #FF7E7E;
-$color-danger-dark:          #C90101;
+$color-danger:               #f44336;
 $danger:					$color-danger; // používá BT
 
-$color-info:                 #7a43f8;
-$color-info-light:           #986dfb;
-$info:						$color-info; // používá BT
+$color-info:                 #291a29;
+$info:						 $color-info; // používá BT
 
-$color-approve:              #fea45b;
+$color-warning:              #c69226;
+$warning:                    #c69226;
 
-$color-warning:              #ffc134;
-$warning:              #f08d3d;
-
-$color-text:                 #000;
-$color-text-dark:            #4a5568; // contrast ratio 7.06:1 with `#f5f8fa` aka `$color-bg` (and ofc higher with `#fff`), WCAG AAA
-$color-text-secondary:       #657086; // contrast ratio 4.67:1 with `#f5f8fa` aka `$color-bg` (and ofc higher with `#fff`), WCAG AA
-$color-border:               #c6d3de;
-$color-border-highligted:    #c5d5e0;
-$color-border-dark:          #373d41;
-$color-bg:                   #f5f8fa;
-$color-favorite:             #f94141;
-$color-hot:                  #f94141;
-$color-premium:              #DFAB23;
+$color-text:                 #090709;
+$color-text-inverted:        #F2F1F1;
+$color-text-secondary:       #6B6A6F;
 
 $brand-primary:             $color-primary;
 $brand-success:             $color-success;
 $brand-danger:              $color-danger;
 
-$secondary: #a9b5cc;
+$color-accent-light: #EEA365;
+$color-accent-dark: #AC4258;
 
-$color-inbox-unread: #edf6fc;
+$color-border: #1A141C;
+
+$color-shades-light: #F2F1F1;
+$color-shades-dark:  #261D28;
+
 
 $theme-colors: () !default;
 $theme-colors: map-merge((
@@ -187,63 +155,5 @@ $custom-control-active-indicator-bg:          #FFF;
 $custom-checkbox-radius:                      0;
 // v data-uri nemůže být `#`
 $custom-checkbox-indicator-icon-success: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#10652e' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23");
-
-
-
-
-// Dropdowns
-$dropdown-min-width:             10rem;
-$dropdown-padding-y:             .5rem;
-$dropdown-item-padding-x:        .9rem;
-$dropdown-margin-top:            0;
-$dropdown-border-width:          0;
-
-// Navs
-
-
-$nav-link-padding:              0.7em;
-
-
-// Pagination
-
-$pagination-color:                  $color-text-secondary;
-$pagination-border-width:           0;
-
-$pagination-hover-color:            $color-text-secondary;
-$pagination-hover-bg:               $color-bg;
-
-$pagination-active-color:           $color-primary;
-$pagination-active-bg:              $color-bg;
-
-
-// Badges
-
-$badge-danger-bg:             $color-danger;
-$badge-color:                    #339AE9;
-
-//$badge-color:                 $white;
-//$badge-link-hover-color:      $white;
-$badge-font-weight:           400;
-$badge-padding-x:             .325em;
-$badge-padding-y:             .125em;
-
-$badge-pill-padding-x:        .4em;
-// Use a higher than normal value to ensure completely rounded edges when
-// customizing padding or font-size on labels.
-$badge-pill-border-radius:    10rem;
-
-
-// Alerts
-//
-// Define alert colors, border radius, and padding.
-
-$alert-padding-y: 1rem;
-$alert-padding-x: 1.05rem; // zarovnání s odkazem na nápovědu v hlavním menu
-$alert-border-width: 0;
-
-
-// Close
-$close-font-size: 2rem;
-$close-color: #fff;
 
 $tooltip-max-width: 500px !default;

@@ -17,17 +17,30 @@
 
 <div id="app">
   <!-- component matched by the route will render here -->
-  <header>
-    <navigation></navigation>
-  </header>
-  <main role="main">
-    <router-view></router-view>
-  </main>
+  <b-container
+    fluid
+    class="p-0"
+  >
+    <b-row
+      class="no-gutters"
+    >
+      <b-col
+        cols="2"
+      >
+        <navigation></navigation>
+      </b-col>
+      <b-col
+        cols="10"
+      >
+        <site-header></site-header>
+        <main role="main" class="mt--4">
+          <router-view></router-view>
+        </main>
+      </b-col>
+    </b-row>
+  </b-container>
 </div>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 <script async src="./build/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,26 @@
+@for $i from 1 through 5 {
+  .mt--#{$i}, .my--#{$i} {
+    margin-top: -($spacer * $i);
+  }
+
+  .mb--#{$i}, .my--#{$i} {
+    margin-bottom: -($spacer * $i);
+  }
+}
+
+.bg-accent-light {
+  background-color: $color-accent-light;
+}
+.bg-accent-dark {
+  background-color: $color-accent-dark;
+}
+.bg-shades-light {
+  background-color: $color-shades-light;
+}
+.bg-shades-dark {
+  background-color: $color-shades-dark;
+}
+
+.text-inverted {
+  color: $color-text-inverted;
+}
