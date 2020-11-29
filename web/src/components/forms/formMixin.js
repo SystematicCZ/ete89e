@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { cloneDeep } from 'lodash';
 import validationMixin from './validationMixin';
 
 export default {
@@ -6,10 +7,12 @@ export default {
 
   props: {
     submitUrl: { type: String, required: true },
+    form: { type: Object, required: true },
   },
 
   data() {
     return {
+      payload: cloneDeep(this.form.payload),
       submitButton: null,
     };
   },
