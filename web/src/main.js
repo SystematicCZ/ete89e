@@ -4,7 +4,9 @@ import Toasted from 'vue-toasted';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import router from './router';
 import { upperFirst } from 'lodash';
+import VueCompositionAPI from '@vue/composition-api'
 
+Vue.use(VueCompositionAPI)
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
@@ -25,5 +27,6 @@ const app = new Vue({
   components: {
     'SiteHeader': () => import('./components/SiteHeader.vue'),
     'Navigation': () => import('./components/Navigation.vue'),
+    'SiteFooter': () => import('./components/SiteFooter.vue'),
   },
 });

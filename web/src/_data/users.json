@@ -1,0 +1,92 @@
+[
+  {
+    "id": 0,
+    "firstName": "Alice",
+    "lastName": "Arapaima",
+    "fullName": "Alice Arapaima",
+    "profilePicture": "https:\/\/startupjobs.cz\/build\/images\/shark_placeholder_1.svg",
+    "university": "\u010cesk\u00e1 zem\u011bd\u011blsk\u00e1 univerzita v Praze",
+    "email": "Alice@ocean.com",
+    "aboutMe": "D\u00e1 uf protivn\u00fd. Psy, bubnoval dovezu. J\u00edzdu n\u011bm\u017e nez\u00e1le\u017e\u00ed: vzpomn\u011bl d\u00e1 v vym\u011b\u0159ena: ji m\u00e1vaje, n\u00ed ko\u0161e s tmav\u00e1 vpravo. Nicaragua ho bru"
+  },
+  {
+    "id": 1,
+    "firstName": "Julie",
+    "lastName": "Catfish",
+    "fullName": "Julie Catfish",
+    "profilePicture": "https:\/\/startupjobs.cz\/build\/images\/shark_placeholder_6.svg",
+    "university": "\u010cesk\u00e1 zem\u011bd\u011blsk\u00e1 univerzita v Praze",
+    "email": "Julie@ocean.com",
+    "aboutMe": "Za\u0161um\u011blo ot\u010de ho ptal pec pr\u00e1vnickou v\u016fl. \u017d\u00e1rlil m\u011b samo t\u00e9 vrak he skl\u00e1n\u00ed \u0161vagrov\u00e9! Strnule bu\u010fto jo gat\u00edch mysl\u00edte my vyb\u011bhl z\u00e1vo"
+  },
+  {
+    "id": 2,
+    "firstName": "Hannah",
+    "lastName": "Salmon",
+    "fullName": "Hannah Salmon",
+    "profilePicture": "https:\/\/startupjobs.cz\/build\/images\/shark_placeholder_6.svg",
+    "university": "\u010cesk\u00e1 zem\u011bd\u011blsk\u00e1 univerzita v Praze",
+    "email": "Hannah@ocean.com",
+    "aboutMe": "? troufal ob\u0161\u00edrn\u00fd. Nazval helence uklidili vzn\u00e1\u0161\u00ed a vylezli. Zad j\u00ed frajer, jich, od zn\u00e1 krej\u010d\u00edka pfefrminc sehnal \u2013 pln\u00edm he pro nemyt\u00fd"
+  },
+  {
+    "id": 3,
+    "firstName": "Natalie",
+    "lastName": "Whale",
+    "fullName": "Natalie Whale",
+    "profilePicture": "https:\/\/startupjobs.cz\/build\/images\/shark_placeholder_6.svg",
+    "university": "\u010cesk\u00e1 zem\u011bd\u011blsk\u00e1 univerzita v Praze",
+    "email": "Natalie@ocean.com",
+    "aboutMe": "Nule bu\u010fto jo gat\u00edch mysl\u00edte my vyb\u011bhl z\u00e1vodn\u00ed my \u017eeleza nejp\u0159\u00edsn\u011bj\u0161\u00ed boj\u00edm holka tu mejzl\u00edkovi pl\u00e1\u0161t\u011bm a korektn\u00ed dom\u016f city marn\u011b"
+  },
+  {
+    "id": 4,
+    "firstName": "Samantha",
+    "lastName": "Manta",
+    "fullName": "Samantha Manta",
+    "profilePicture": "https:\/\/startupjobs.cz\/build\/images\/shark_placeholder_1.svg",
+    "university": "\u010cesk\u00e1 zem\u011bd\u011blsk\u00e1 univerzita v Praze",
+    "email": "Samantha@ocean.com",
+    "aboutMe": "Krej\u010d\u00edka pfefrminc sehnal \u2013 pln\u00edm he pro nemyt\u00fd zatr\u00e1pen\u00e1 v\u00eddni. Zda jaroslav ve dny my brzd\u00ed a slunce: ne\u0161\u0165astn\u00ed sp\u00e1t m\u00e1rnic\u00ed, jen h"
+  },
+  {
+    "id": 5,
+    "firstName": "Jacob",
+    "lastName": "Dolphin",
+    "fullName": "Jacob Dolphin",
+    "profilePicture": "https:\/\/startupjobs.cz\/build\/images\/shark_placeholder_4.svg",
+    "university": "\u010cesk\u00e1 zem\u011bd\u011blsk\u00e1 univerzita v Praze",
+    "email": "Jacob@ocean.com",
+    "aboutMe": "Jaroslav ve dny my brzd\u00ed a slunce: ne\u0161\u0165astn\u00ed sp\u00e1t m\u00e1rnic\u00ed, jen h\u016f\u0159 \u0161em variace. Zavrt\u011bla r\u00e1z anonymn\u00ed u\u0161i d\u0159evo o jdi krut\u011b ono zpov?"
+  },
+  {
+    "id": 6,
+    "firstName": "George",
+    "lastName": "Ray",
+    "fullName": "George Ray",
+    "profilePicture": "https:\/\/startupjobs.cz\/build\/images\/shark_placeholder_6.svg",
+    "university": "\u010cesk\u00e1 zem\u011bd\u011blsk\u00e1 univerzita v Praze",
+    "email": "George@ocean.com",
+    "aboutMe": "Ib\u011bhl novin zkamen\u011bl\u00e1. Za i siam ohl\u00e1sili zlato au vozej\u010dek. Pil sousede bot kostele zn\u00e1m\u00fdmi z l\u00edd\u011b ty d\u011bda i rubato m\u00e1m leskla. Sirky \u010din"
+  },
+  {
+    "id": 7,
+    "firstName": "Mark",
+    "lastName": "Eel",
+    "fullName": "Mark Eel",
+    "profilePicture": "https:\/\/startupjobs.cz\/build\/images\/shark_placeholder_6.svg",
+    "university": "\u010cesk\u00e1 zem\u011bd\u011blsk\u00e1 univerzita v Praze",
+    "email": "Mark@ocean.com",
+    "aboutMe": "Ez\u00e1le\u017e\u00ed: vzpomn\u011bl d\u00e1 v vym\u011b\u0159ena: ji m\u00e1vaje, n\u00ed ko\u0161e s tmav\u00e1 vpravo. Nicaragua ho bru\u010d\u00ed b\u00e1t nechyb\u011bl m\u00e9 to\u010dit kapesn\u00edku sekret\u00e1\u0159i?"
+  },
+  {
+    "id": 8,
+    "firstName": "John",
+    "lastName": "Shrimp",
+    "fullName": "John Shrimp",
+    "profilePicture": "https:\/\/startupjobs.cz\/build\/images\/shark_placeholder_8.svg",
+    "university": "\u010cesk\u00e1 zem\u011bd\u011blsk\u00e1 univerzita v Praze",
+    "email": "John@ocean.com",
+    "aboutMe": "Ivn\u00fd. Psy, bubnoval dovezu. J\u00edzdu n\u011bm\u017e nez\u00e1le\u017e\u00ed: vzpomn\u011bl d\u00e1 v vym\u011b\u0159ena: ji m\u00e1vaje, n\u00ed ko\u0161e s tmav\u00e1 vpravo. Nicaragua ho bru\u010d\u00ed b\u00e1t n"
+  }
+]

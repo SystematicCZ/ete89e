@@ -1,0 +1,27 @@
+[
+  {
+    "id": 0,
+    "name": "Angela Mackerel",
+    "title": "Ing."
+  },
+  {
+    "id": 1,
+    "name": "Tom Tuna",
+    "title": "Prof."
+  },
+  {
+    "id": 2,
+    "name": "Veronica Croaker",
+    "title": "Ing."
+  },
+  {
+    "id": 3,
+    "name": "Franz Barracuda",
+    "title": "RNDr."
+  },
+  {
+    "id": 4,
+    "name": "Philip Marlin",
+    "title": "Bc."
+  }
+]

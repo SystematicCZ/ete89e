@@ -6,6 +6,7 @@
         :key="`course_${key}`"
         cols="12"
         md="4"
+        class="mb-3"
       >
         <course-card
           :course="item"
@@ -16,6 +17,7 @@
 </template>
 
 <script>
+import courses from '../_data/courses.json';
 import CourseCard from '../components/course/CourseCard.vue';
 
 export default {
@@ -26,24 +28,10 @@ export default {
     };
   },
   created() {
-    this.courses = this.generateData();
+    this.courses = courses;
+    this.$route.meta.heading = 'Courses';
   },
   methods: {
-    generateData() {
-      const courses = [];
-      for (let i = 0; i < 10; i += 1) {
-        courses.push({
-          name: 'fef',
-          description: 'feergergreg',
-        });
-      }
-
-      return courses;
-    },
-  },
-  beforeRouteEnter(to, from, next) {
-    to.meta.heading = 'Courses';
-    next();
   },
 };
 </script>
