@@ -70,26 +70,32 @@
         cols="12"
       >
         <b-button
-          variant="primary">
-          <b-icon icon="check" /> Uložit
+          variant="primary"
+          type="submit"
+          @click="update"
+        >
+          <b-icon icon="check"/>
+          Uložit
         </b-button>
         <b-button
           variant="warning"
           @click="cancel"
         >
-          <b-icon icon="x" /> Zrušit
+          <b-icon icon="x"/>
+          Zrušit
         </b-button>
       </b-col>
     </b-row>
   </div>
 </template>
 <script>
-import { required, email } from 'vuelidate/lib/validators';
+import { email, required } from 'vuelidate/lib/validators';
 import { cloneDeep } from 'lodash';
 import formMixin from '../forms/formMixin';
 import InputWrapper from '../forms/InputWrapper.vue';
 import InputText from '../forms/InputText.vue';
 import InputTextarea from '../forms/InputTextarea.vue';
+import user from '../../_data/charlie.json';
 
 export default {
   components: {
@@ -98,9 +104,42 @@ export default {
     InputTextarea,
   },
   mixins: [formMixin],
+  model: {
+    prop: 'user',
+    event: 'synchronize',
+  },
+  data() {
+    return {
+      payload: this.getPayload(),
+      originalPayload: this.getPayload(),
+    };
+  },
   methods: {
     cancel() {
-      this.payload = cloneDeep(this.form.payload);
+      this.payload = cloneDeep(this.originalPayload);
+    },
+    getPayload() {
+      return {
+        email: user.email,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        university: user.university,
+        aboutMe: user.aboutMe,
+      };
+    },
+    update() {
+      // fake
+      const updated = cloneDeep(user);
+      updated.email = this.payload.email;
+      updated.firstName = this.payload.firstName;
+      updated.lastName = this.payload.lastName;
+      updated.university = this.payload.university;
+      updated.fullName = `${this.payload.firstName} ${this.payload.lastName}`;
+
+      this.originalPayload = cloneDeep(this.payload);
+
+      this.$emit('synchronize', updated);
+      this.$toasted.success('Změny uloženy');
     },
   },
   validations: {

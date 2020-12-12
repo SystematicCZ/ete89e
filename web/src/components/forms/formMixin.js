@@ -4,15 +4,8 @@ import validationMixin from './validationMixin';
 
 export default {
   mixins: [validationMixin],
-
-  props: {
-    submitUrl: { type: String, required: true },
-    form: { type: Object, required: true },
-  },
-
   data() {
     return {
-      payload: cloneDeep(this.form.payload),
       submitButton: null,
     };
   },

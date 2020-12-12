@@ -11,6 +11,7 @@
 <script>
 import professors from '../_data/teachers.json';
 import ProfessorList from '../components/professor/ProfessorList.vue';
+import Snake from '../components/Snake.vue';
 
 export default {
   components: { ProfessorList },

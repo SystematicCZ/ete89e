@@ -33,8 +33,7 @@
       >
         <div class="rounded p-3 bg-white">
           <profile-form
-            :form="form"
-            submit-url=""
+            v-model="user"
           />
         </div>
       </b-col>
@@ -86,24 +85,11 @@ export default {
   data() {
     return {
       user,
-      form: {
-        payload: {
-          email: user.email,
-          firstName: user.firstName,
-          lastName: user.lastName,
-          university: user.university,
-          aboutMe: user.aboutMe,
-        },
-      },
     };
   },
   created() {
     this.$route.meta.heading = this.user.fullName;
   },
   methods: {},
-  beforeRouteEnter(to, from, next) {
-    //to.meta.heading = 'Courses';
-    next();
-  },
 };
 </script>

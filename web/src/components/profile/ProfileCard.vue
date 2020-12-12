@@ -12,7 +12,15 @@
       class="text-center"
     >
       <h5>{{ user.fullName }}</h5>
-      <p class="text-secondary mb-3">{{ user.university }}</p>
+      <p class="text-secondary mb-3">
+        {{ user.university }}
+        <br>
+        <b-icon
+          icon="envelope"
+          class="mr-1"
+        />
+        {{ user.email }}
+      </p>
       <p>{{ user.aboutMe }}</p>
     </b-card-text>
   </b-card>
