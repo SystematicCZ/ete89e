@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard.vue';
 import Profile from './pages/Profile.vue';
 import Course from './pages/Course.vue';
 import UserList from './pages/UserList.vue';
+import ProfessorList from './pages/ProfessorList.vue';
 
 Vue.use(Router);
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/users',
       name: 'users',
       component: UserList,
+    },
+    {
+      path: '/professors',
+      name: 'professors',
+      component: ProfessorList,
     },
   ],
 });

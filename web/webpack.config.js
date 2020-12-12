@@ -9,7 +9,7 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 }
 
 Encore
-  .setOutputPath('ild/')
+  .setOutputPath('public/build/')
   .setPublicPath('/build')
   .cleanupOutputBeforeBuild()
 
@@ -25,19 +25,10 @@ Encore
       { from: 'assets/svg', to: 'images/svg' },
     ],
   }))
-  .enableSassLoader()
-  .enableVueLoader()
-  .configureLoaderRule('scss', (loaderRule) => {
-    loaderRule.oneOf.forEach((rule) => {
-      rule.use.push({
-        loader: 'sass-resources-loader',
-        options: {
-          resources: [
-            path.resolve(__dirname, './assets/scss/_variables.scss'),
-          ],
-        },
-      });
-    });
-  });
+  .enableSassLoader((options) => {
+    options.additionalData = `@import "variables";`;
+    options.sassOptions.includePaths = [path.resolve(__dirname, './assets/scss/')];
+  })
+  .enableVueLoader();
 
 module.exports = Encore.getWebpackConfig();
