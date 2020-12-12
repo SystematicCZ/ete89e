@@ -2,26 +2,31 @@
   <b-row>
     <b-col
       cols="12"
-      md="8"
+      md="4"
+      order-md="2"
     >
-      <div class="rounded p-3 bg-white">
+      <professor-card
+        :professor="course.professor"
+        class="mb-3"
+      />
+
+      <div class="rounded p-3 bg-white mb-3">
+        <course-events :events="course.events"/>
+      </div>
+    </b-col>
+    <b-col
+      cols="12"
+      md="8"
+      order-md="1"
+    >
+      <div class="rounded p-3 bg-white mb-3">
         <course-description
           :text="course.description"
           class="mb-3"
         />
       </div>
-      <div class="rounded p-3 bg-white mt-3">
+      <div class="rounded p-3 bg-white mb-3">
         <course-discussion/>
-      </div>
-    </b-col>
-    <b-col
-      cols="12"
-      md="4"
-    >
-      <professor-card :professor="course.professor"/>
-
-      <div class="rounded p-3 bg-white mt-3">
-        <course-events :events="course.events"/>
       </div>
     </b-col>
   </b-row>
