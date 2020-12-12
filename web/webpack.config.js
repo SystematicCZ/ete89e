@@ -1,5 +1,6 @@
-var Encore = require('@symfony/webpack-encore');
+const Encore = require('@symfony/webpack-encore');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -8,7 +9,7 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 }
 
 Encore
-  .setOutputPath('public/build/')
+  .setOutputPath('ild/')
   .setPublicPath('/build')
   .cleanupOutputBeforeBuild()
 
@@ -25,6 +26,18 @@ Encore
     ],
   }))
   .enableSassLoader()
-  .enableVueLoader();
+  .enableVueLoader()
+  .configureLoaderRule('scss', (loaderRule) => {
+    loaderRule.oneOf.forEach((rule) => {
+      rule.use.push({
+        loader: 'sass-resources-loader',
+        options: {
+          resources: [
+            path.resolve(__dirname, './assets/scss/_variables.scss'),
+          ],
+        },
+      });
+    });
+  });
 
 module.exports = Encore.getWebpackConfig();

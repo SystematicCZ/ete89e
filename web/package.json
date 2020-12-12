@@ -21,6 +21,7 @@
     "flat": "^5.0.2",
     "lodash": "^4.17.20",
     "prepend-http": "^3.0.1",
+    "sass-resources-loader": "^2.1.1",
     "vue": "^2.6.12",
     "vue-multiselect": "^2.1.6",
     "vue-router": "^3.4.9",
