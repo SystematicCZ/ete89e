@@ -6,71 +6,76 @@
     >
       <template v-slot:controls>
         <search-bar
+          v-model="term"
           button="Hledat"
-          @search="search"
         />
       </template>
     </page-header>
     <b-container class="rounded bg-white py-5 mt--3">
       <b-container class="inner-container">
-        <h2 class="mb-5">Uživatelé <span v-if="searchString.length"> - {{ searchString }}</span></h2>
-        <list-skeleton
+        <h2 class="mb-5">Uživatelé <span v-if="term.length"> - {{ term }}</span></h2>
+        <skeleton-list
           v-if="loading"
         />
-        <profile-list
-          v-else
-          :users="users"
-        />
         <div
-          class="mt-3"
+          v-else
         >
-          <b-pagination
-            v-model="currentPage"
-            total-rows="20"
-            per-page="5"
-            align="center"
-          ></b-pagination>
+          <profile-list
+            :users="users"
+          />
+          <div
+            class="mt-3"
+          >
+            <b-pagination
+              v-model="currentPage"
+              total-rows="20"
+              per-page="5"
+              align="center"
+            ></b-pagination>
+          </div>
         </div>
       </b-container>
     </b-container>
   </div>
 </template>
 <script>
+import searchableMixin from '../components/searchableMixin';
 import users from '../_data/users.json';
 import ProfileList from '../components/profile/ProfileList.vue';
 import PageHeader from '../components/PageHeader.vue';
 import SearchBar from '../components/SearchBar.vue';
-import ListSkeleton from '../components/ListSkeleton.vue';
-
-const sleep = ms => new Promise(res => setTimeout(res, ms, ms));
+import SkeletonList from '../components/skeleton/SkeletonList.vue';
 
 export default {
-  components: { ListSkeleton, SearchBar, PageHeader, ProfileList },
+  components: { SkeletonList, SearchBar, PageHeader, ProfileList },
+  mixins: [searchableMixin],
   data() {
     return {
       users: [],
-      searchString: '',
       loading: true,
       currentPage: 1,
     };
   },
   created() {
-    this.load();
+    if (this.term.length) {
+      this.search(this.term);
+    } else {
+      this.load();
+    }
   },
   methods: {
     load() {
       // fake
       this.users = users;
-      sleep(400).then(() => {
+      this.$sleep(400).then(() => {
         this.loading = false;
       });
     },
-    search(term) {
+    search(query) {
       // fake
       this.loading = true;
-      this.searchString = term;
-      this.users = users.filter(item => item.fullName.toLowerCase().includes(term.toLowerCase()));
-      sleep(400).then(() => {
+      this.users = users.filter(item => item.fullName.toLowerCase().includes(query.toLowerCase()));
+      this.$sleep(400).then(() => {
         this.loading = false;
       });
     },

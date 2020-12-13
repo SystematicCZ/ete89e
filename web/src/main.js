@@ -6,6 +6,8 @@ import router from './router';
 import { upperFirst } from 'lodash';
 import VueCompositionAPI from '@vue/composition-api'
 
+Object.defineProperty(Vue.prototype, '$sleep', { value: (ms => new Promise(res => setTimeout(res, ms, ms))) });
+
 Vue.use(VueCompositionAPI)
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);

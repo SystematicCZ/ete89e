@@ -2,7 +2,7 @@
   <div
   >
     <input-text
-      v-model="searchString"
+      v-model="term"
       :placeholder="placeholder"
       class="w-75"
       @keydown.enter="emitSearch"
@@ -23,13 +23,18 @@ import InputText from './forms/InputText.vue';
 
 export default {
   components: { InputText },
+  model: {
+    prop: 'query',
+    event: 'search',
+  },
   props: {
     button: { type: String, default: null },
     placeholder: { type: String, default: '' },
+    query: { type: String, default: '' },
   },
   data() {
     return {
-      searchString: '',
+      term: this.query,
     };
   },
   created() {
@@ -40,7 +45,7 @@ export default {
   },
   methods: {
     emitSearch() {
-      this.$emit('search', this.searchString);
+      this.$emit('search', this.term);
     },
     onKeyPush(event) {
       if (event.code === 'Enter') {

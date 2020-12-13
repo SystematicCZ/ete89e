@@ -43,7 +43,7 @@
         <b-col
           cols="12"
           md="5"
-          class="pt-5 px-0 align-self-end"
+          class="pt-5 px-0 align-self-end text-right"
         >
           <slot name="controls"/>
         </b-col>

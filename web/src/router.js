@@ -35,11 +35,13 @@ export default new Router({
       path: '/users',
       name: 'users',
       component: UserList,
+      props: route => ({ query: route.query.query }),
     },
     {
       path: '/professors',
       name: 'professors',
       component: ProfessorList,
+      props: route => ({ query: route.query.query }),
     },
   ],
 });
