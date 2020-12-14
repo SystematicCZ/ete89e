@@ -50,8 +50,17 @@
         @new-message="replies.push($event); replyFormVisible = false;"
       >
         <template v-slot:reply>
-          <div class="text-center">
-            <h5>Odpovědět uživateli {{ entry.user.fullName }}</h5>
+          <div class="position-relative">
+            <h5 class="text-center">
+              Odpovědět uživateli {{ entry.user.fullName }}
+              <b-button
+                variant="link"
+                class="cancel-button"
+                @click="replyFormVisible = false"
+              >
+                <b-icon icon="x" />
+              </b-button>
+            </h5>
           </div>
         </template>
       </discussion-form>
@@ -103,10 +112,15 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 .profile-image {
   min-width: 3rem;
   width: 3rem;
+}
+
+.cancel-button {
+  position: absolute;
+  right: 0;
 }
 
 </style>

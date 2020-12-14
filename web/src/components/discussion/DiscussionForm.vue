@@ -1,11 +1,13 @@
 <template>
   <div>
-    <slot name="reply" />
+    <slot name="reply"/>
     <input-wrapper
-      label="Zapojit se do diskuze"
+      :validations="validations.text"
+      label="Text zprávy"
     >
       <input-textarea
         v-model="payload.text"
+        :validations="validations.text"
       />
     </input-wrapper>
     <b-button
@@ -42,7 +44,9 @@ export default {
         text: this.payload.text,
         user: this.$store.state.user,
       };
+      this.$toasted.success('Příspěvek přidán');
       this.$emit('new-message', message);
+      this.payload.text = '';
     },
   },
   validations: {

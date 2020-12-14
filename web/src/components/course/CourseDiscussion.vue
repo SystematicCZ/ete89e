@@ -12,6 +12,7 @@
     />
     <discussion-form
       class="my-4"
+      @new-message="entries.push($event)"
     />
   </div>
 </template>
