@@ -32,6 +32,7 @@ Vue.filter('capitalize', value => upperFirst(value));
 window.validationErrorTranslations = {
   email: 'Toto není e-mail',
   required: 'Toto pole je povinné',
+  sameAs: 'Pole nejsou stejná',
 };
 
 const store = new Vuex.Store({

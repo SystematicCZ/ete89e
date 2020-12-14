@@ -76,6 +76,10 @@
                 v-model="payload.password"
               />
             </input-wrapper>
+            <password
+              v-model="payload.password"
+              strength-meter-only
+            />
           </b-col>
           <b-col
             cols="6"
@@ -131,6 +135,7 @@
 <script>
 import { email, required, requiredIf, sameAs } from 'vuelidate/lib/validators';
 import { cloneDeep } from 'lodash';
+import Password from 'vue-password-strength-meter';
 import formMixin from '../forms/formMixin';
 import InputWrapper from '../forms/InputWrapper.vue';
 import InputText from '../forms/InputText.vue';
@@ -145,6 +150,7 @@ export default {
     InputText,
     InputWrapper,
     InputTextarea,
+    Password,
   },
   mixins: [formMixin],
   model: {
