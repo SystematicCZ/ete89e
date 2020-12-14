@@ -6,13 +6,105 @@
     "description": "Unyle t\u011b popis moc ta ah od v\u011bt u\u017e ohn\u011bm humus morastem rubnerov\u00e1. \u010cin j\u00e9 ze lze mezek chodili n\u011b omyl o\u010d litery nejapn\u00fd vst\u00e1t ti b\u00e1t hon p\u0159estupek zarostl\u00fd \u017ee doktor samou lov dareb\u00e1ci l\u017ee\u0161 vy ono my dudenka. Otu bych \u0161\u00edp sv\u011bt\u011b, \u0161eredn\u00fd noc trnka za\u0159izoval, co sena tato my hampl d\u0159e oddan\u011b: krav\u00e1l za vem v\u00e1\u017eek a ji m\u011bs\u00edcem, \u0159v\u00e1t c\u00edn, m\u011b arm\u00e9nie nemoce ah obo\u010d\u00ed. D\u00e1 ke jist, nezn\u00e1m\u00fd k o\u010d novou pohled t\u0159ech \u010dekali pustil zahradn\u00ed.",
     "events": [
       {
-        "name": "Project",
-        "date": "2021-03-23 10:00:40",
+        "id": "5fd793f5d96be5.50923897",
+        "name": "Test",
+        "date": {
+          "date": "2021-03-07",
+          "time": "05:56"
+        },
+        "subscription": null
+      }
+    ],
+    "professor": {
+      "id": 3,
+      "name": "Franz Barracuda",
+      "title": "RNDr."
+    }
+  },
+  {
+    "id": 2,
+    "slug": "ete89e-internetove-technologie-client-side",
+    "name": "ETE89E\tInternetov\u00e9 technologie - client side",
+    "description": "Unyle t\u011b popis moc ta ah od v\u011bt u\u017e ohn\u011bm humus morastem rubnerov\u00e1. \u010cin j\u00e9 ze lze mezek chodili n\u011b omyl o\u010d litery nejapn\u00fd vst\u00e1t ti b\u00e1t hon p\u0159estupek zarostl\u00fd \u017ee doktor samou lov dareb\u00e1ci l\u017ee\u0161 vy ono my dudenka. Otu bych \u0161\u00edp sv\u011bt\u011b, \u0161eredn\u00fd noc trnka za\u0159izoval, co sena tato my hampl d\u0159e oddan\u011b: krav\u00e1l za vem v\u00e1\u017eek a ji m\u011bs\u00edcem, \u0159v\u00e1t c\u00edn, m\u011b arm\u00e9nie nemoce ah obo\u010d\u00ed. D\u00e1 ke jist, nezn\u00e1m\u00fd k o\u010d novou pohled t\u0159ech \u010dekali pustil zahradn\u00ed.",
+    "events": [
+      {
+        "id": "5fd793f5d982c1.68714578",
+        "name": "Exam",
+        "date": {
+          "date": "2021-03-04",
+          "time": "10:39"
+        },
         "subscription": null
       },
       {
+        "id": "5fd793f5d98388.64615955",
+        "name": "Test",
+        "date": {
+          "date": "2021-02-19",
+          "time": "21:43"
+        },
+        "subscription": null
+      }
+    ],
+    "professor": {
+      "id": 3,
+      "name": "Franz Barracuda",
+      "title": "RNDr."
+    }
+  },
+  {
+    "id": 3,
+    "slug": "eaeb2e-logisticke-systemy",
+    "name": "EAEB2E\tLogistick\u00e9 syst\u00e9my",
+    "description": "Unyle t\u011b popis moc ta ah od v\u011bt u\u017e ohn\u011bm humus morastem rubnerov\u00e1. \u010cin j\u00e9 ze lze mezek chodili n\u011b omyl o\u010d litery nejapn\u00fd vst\u00e1t ti b\u00e1t hon p\u0159estupek zarostl\u00fd \u017ee doktor samou lov dareb\u00e1ci l\u017ee\u0161 vy ono my dudenka. Otu bych \u0161\u00edp sv\u011bt\u011b, \u0161eredn\u00fd noc trnka za\u0159izoval, co sena tato my hampl d\u0159e oddan\u011b: krav\u00e1l za vem v\u00e1\u017eek a ji m\u011bs\u00edcem, \u0159v\u00e1t c\u00edn, m\u011b arm\u00e9nie nemoce ah obo\u010d\u00ed. D\u00e1 ke jist, nezn\u00e1m\u00fd k o\u010d novou pohled t\u0159ech \u010dekali pustil zahradn\u00ed.",
+    "events": [
+      {
+        "id": "5fd793f5d98486.09584397",
+        "name": "Project",
+        "date": {
+          "date": "2021-05-17",
+          "time": "06:29"
+        },
+        "subscription": null
+      },
+      {
+        "id": "5fd793f5d98506.09404034",
+        "name": "Test",
+        "date": {
+          "date": "2021-03-03",
+          "time": "14:05"
+        },
+        "subscription": null
+      },
+      {
+        "id": "5fd793f5d98555.87699834",
         "name": "Homework",
-        "date": "2021-05-28 07:51:43",
+        "date": {
+          "date": "2021-04-09",
+          "time": "22:08"
+        },
+        "subscription": null
+      }
+    ],
+    "professor": {
+      "id": 2,
+      "name": "Veronica Croaker",
+      "title": "Ing."
+    }
+  },
+  {
+    "id": 4,
+    "slug": "eret9e-management",
+    "name": "ERET9E\tManagement",
+    "description": "Unyle t\u011b popis moc ta ah od v\u011bt u\u017e ohn\u011bm humus morastem rubnerov\u00e1. \u010cin j\u00e9 ze lze mezek chodili n\u011b omyl o\u010d litery nejapn\u00fd vst\u00e1t ti b\u00e1t hon p\u0159estupek zarostl\u00fd \u017ee doktor samou lov dareb\u00e1ci l\u017ee\u0161 vy ono my dudenka. Otu bych \u0161\u00edp sv\u011bt\u011b, \u0161eredn\u00fd noc trnka za\u0159izoval, co sena tato my hampl d\u0159e oddan\u011b: krav\u00e1l za vem v\u00e1\u017eek a ji m\u011bs\u00edcem, \u0159v\u00e1t c\u00edn, m\u011b arm\u00e9nie nemoce ah obo\u010d\u00ed. D\u00e1 ke jist, nezn\u00e1m\u00fd k o\u010d novou pohled t\u0159ech \u010dekali pustil zahradn\u00ed.",
+    "events": [
+      {
+        "id": "5fd793f5d98641.47620394",
+        "name": "Project",
+        "date": {
+          "date": "2021-05-11",
+          "time": "23:28"
+        },
         "subscription": null
       }
     ],
@@ -23,42 +115,45 @@
     }
   },
   {
-    "id": 2,
-    "slug": "ete89e-internetove-technologie-client-side",
-    "name": "ETE89E\tInternetov\u00e9 technologie - client side",
+    "id": 5,
+    "slug": "eaee3e-rizeni-it-projektu",
+    "name": "EAEE3E\t\u0158\u00edzen\u00ed IT projekt\u016f",
     "description": "Unyle t\u011b popis moc ta ah od v\u011bt u\u017e ohn\u011bm humus morastem rubnerov\u00e1. \u010cin j\u00e9 ze lze mezek chodili n\u011b omyl o\u010d litery nejapn\u00fd vst\u00e1t ti b\u00e1t hon p\u0159estupek zarostl\u00fd \u017ee doktor samou lov dareb\u00e1ci l\u017ee\u0161 vy ono my dudenka. Otu bych \u0161\u00edp sv\u011bt\u011b, \u0161eredn\u00fd noc trnka za\u0159izoval, co sena tato my hampl d\u0159e oddan\u011b: krav\u00e1l za vem v\u00e1\u017eek a ji m\u011bs\u00edcem, \u0159v\u00e1t c\u00edn, m\u011b arm\u00e9nie nemoce ah obo\u010d\u00ed. D\u00e1 ke jist, nezn\u00e1m\u00fd k o\u010d novou pohled t\u0159ech \u010dekali pustil zahradn\u00ed.",
     "events": [
       {
+        "id": "5fd793f5d98713.10341398",
+        "name": "Project",
+        "date": {
+          "date": "2021-05-08",
+          "time": "04:57"
+        },
+        "subscription": null
+      },
+      {
+        "id": "5fd793f5d98771.81096148",
         "name": "Exam",
-        "date": "2021-05-31 05:57:17",
+        "date": {
+          "date": "2021-06-23",
+          "time": "16:34"
+        },
         "subscription": null
       },
       {
-        "name": "Homework",
-        "date": "2021-05-19 04:41:32",
-        "subscription": null
-      }
-    ],
-    "professor": {
-      "id": 2,
-      "name": "Veronica Croaker",
-      "title": "Ing."
-    }
-  },
-  {
-    "id": 3,
-    "slug": "eaeb2e-logisticke-systemy",
-    "name": "EAEB2E\tLogistick\u00e9 syst\u00e9my",
-    "description": "Unyle t\u011b popis moc ta ah od v\u011bt u\u017e ohn\u011bm humus morastem rubnerov\u00e1. \u010cin j\u00e9 ze lze mezek chodili n\u011b omyl o\u010d litery nejapn\u00fd vst\u00e1t ti b\u00e1t hon p\u0159estupek zarostl\u00fd \u017ee doktor samou lov dareb\u00e1ci l\u017ee\u0161 vy ono my dudenka. Otu bych \u0161\u00edp sv\u011bt\u011b, \u0161eredn\u00fd noc trnka za\u0159izoval, co sena tato my hampl d\u0159e oddan\u011b: krav\u00e1l za vem v\u00e1\u017eek a ji m\u011bs\u00edcem, \u0159v\u00e1t c\u00edn, m\u011b arm\u00e9nie nemoce ah obo\u010d\u00ed. D\u00e1 ke jist, nezn\u00e1m\u00fd k o\u010d novou pohled t\u0159ech \u010dekali pustil zahradn\u00ed.",
-    "events": [
-      {
+        "id": "5fd793f5d987d3.92172720",
         "name": "Test",
-        "date": "2021-06-06 03:30:05",
+        "date": {
+          "date": "2021-03-27",
+          "time": "16:02"
+        },
         "subscription": null
       },
       {
+        "id": "5fd793f5d98833.24182291",
         "name": "Homework",
-        "date": "2021-02-25 19:33:25",
+        "date": {
+          "date": "2021-03-03",
+          "time": "13:57"
+        },
         "subscription": null
       }
     ],
@@ -69,72 +164,34 @@
     }
   },
   {
-    "id": 4,
-    "slug": "eret9e-management",
-    "name": "ERET9E\tManagement",
-    "description": "Unyle t\u011b popis moc ta ah od v\u011bt u\u017e ohn\u011bm humus morastem rubnerov\u00e1. \u010cin j\u00e9 ze lze mezek chodili n\u011b omyl o\u010d litery nejapn\u00fd vst\u00e1t ti b\u00e1t hon p\u0159estupek zarostl\u00fd \u017ee doktor samou lov dareb\u00e1ci l\u017ee\u0161 vy ono my dudenka. Otu bych \u0161\u00edp sv\u011bt\u011b, \u0161eredn\u00fd noc trnka za\u0159izoval, co sena tato my hampl d\u0159e oddan\u011b: krav\u00e1l za vem v\u00e1\u017eek a ji m\u011bs\u00edcem, \u0159v\u00e1t c\u00edn, m\u011b arm\u00e9nie nemoce ah obo\u010d\u00ed. D\u00e1 ke jist, nezn\u00e1m\u00fd k o\u010d novou pohled t\u0159ech \u010dekali pustil zahradn\u00ed.",
-    "events": [
-      {
-        "name": "Project",
-        "date": "2021-02-25 07:30:52",
-        "subscription": null
-      },
-      {
-        "name": "Exam",
-        "date": "2021-02-01 08:20:30",
-        "subscription": null
-      },
-      {
-        "name": "Test",
-        "date": "2021-03-15 07:10:08",
-        "subscription": null
-      },
-      {
-        "name": "Homework",
-        "date": "2021-02-16 07:14:04",
-        "subscription": null
-      }
-    ],
-    "professor": {
-      "id": 4,
-      "name": "Philip Marlin",
-      "title": "Bc."
-    }
-  },
-  {
-    "id": 5,
-    "slug": "eaee3e-rizeni-it-projektu",
-    "name": "EAEE3E\t\u0158\u00edzen\u00ed IT projekt\u016f",
-    "description": "Unyle t\u011b popis moc ta ah od v\u011bt u\u017e ohn\u011bm humus morastem rubnerov\u00e1. \u010cin j\u00e9 ze lze mezek chodili n\u011b omyl o\u010d litery nejapn\u00fd vst\u00e1t ti b\u00e1t hon p\u0159estupek zarostl\u00fd \u017ee doktor samou lov dareb\u00e1ci l\u017ee\u0161 vy ono my dudenka. Otu bych \u0161\u00edp sv\u011bt\u011b, \u0161eredn\u00fd noc trnka za\u0159izoval, co sena tato my hampl d\u0159e oddan\u011b: krav\u00e1l za vem v\u00e1\u017eek a ji m\u011bs\u00edcem, \u0159v\u00e1t c\u00edn, m\u011b arm\u00e9nie nemoce ah obo\u010d\u00ed. D\u00e1 ke jist, nezn\u00e1m\u00fd k o\u010d novou pohled t\u0159ech \u010dekali pustil zahradn\u00ed.",
-    "events": [
-      {
-        "name": "Project",
-        "date": "2021-04-16 17:11:05",
-        "subscription": null
-      }
-    ],
-    "professor": {
-      "id": 4,
-      "name": "Philip Marlin",
-      "title": "Bc."
-    }
-  },
-  {
     "id": 6,
     "slug": "eie87e-systemova-integrace",
     "name": "EIE87E\tSyst\u00e9mov\u00e1 integrace",
     "description": "Unyle t\u011b popis moc ta ah od v\u011bt u\u017e ohn\u011bm humus morastem rubnerov\u00e1. \u010cin j\u00e9 ze lze mezek chodili n\u011b omyl o\u010d litery nejapn\u00fd vst\u00e1t ti b\u00e1t hon p\u0159estupek zarostl\u00fd \u017ee doktor samou lov dareb\u00e1ci l\u017ee\u0161 vy ono my dudenka. Otu bych \u0161\u00edp sv\u011bt\u011b, \u0161eredn\u00fd noc trnka za\u0159izoval, co sena tato my hampl d\u0159e oddan\u011b: krav\u00e1l za vem v\u00e1\u017eek a ji m\u011bs\u00edcem, \u0159v\u00e1t c\u00edn, m\u011b arm\u00e9nie nemoce ah obo\u010d\u00ed. D\u00e1 ke jist, nezn\u00e1m\u00fd k o\u010d novou pohled t\u0159ech \u010dekali pustil zahradn\u00ed.",
     "events": [
       {
+        "id": "5fd793f5d98905.82162842",
         "name": "Project",
-        "date": "2021-06-24 22:58:32",
+        "date": {
+          "date": "2021-05-21",
+          "time": "21:48"
+        },
+        "subscription": null
+      },
+      {
+        "id": "5fd793f5d98982.86856243",
+        "name": "Homework",
+        "date": {
+          "date": "2021-03-27",
+          "time": "09:07"
+        },
         "subscription": null
       }
     ],
     "professor": {
-      "id": 2,
-      "name": "Veronica Croaker",
-      "title": "Ing."
+      "id": 4,
+      "name": "Philip Marlin",
+      "title": "Bc."
     }
   }
 ]

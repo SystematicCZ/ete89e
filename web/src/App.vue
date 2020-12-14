@@ -50,7 +50,7 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
+<style lang="scss">
 .sidebar-wrapper {
   min-width: 15rem;
   display: none;

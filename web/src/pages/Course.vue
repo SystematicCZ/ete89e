@@ -20,6 +20,7 @@
     >
       <course-summary
         :course="course"
+        @course-changed="course = $event"
       />
     </b-container>
   </div>

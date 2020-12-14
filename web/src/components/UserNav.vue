@@ -4,7 +4,7 @@
       right
     >
       <b-nav-item-dropdown
-        id="user-dropdown"
+        class="user-navbar"
         text="Charlie Shark"
         toggle-class="nav-link-custom"
         no-caret
@@ -41,3 +41,14 @@
 <script>
 export default {};
 </script>
+<style scoped lang="scss">
+  .user-navbar {
+    span {
+      color: $color-text-inverted;
+
+      &:hover {
+        color: $color-shades-dark;
+      }
+    }
+  }
+</style>

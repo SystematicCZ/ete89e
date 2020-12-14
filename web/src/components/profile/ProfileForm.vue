@@ -69,21 +69,10 @@
       <b-col
         cols="12"
       >
-        <b-button
-          variant="primary"
-          type="submit"
-          @click="update"
-        >
-          <b-icon icon="check"/>
-          Uložit
-        </b-button>
-        <b-button
-          variant="warning"
-          @click="cancel"
-        >
-          <b-icon icon="x"/>
-          Zrušit
-        </b-button>
+        <form-buttons
+          @save="update"
+          @cancel="cancel"
+        />
       </b-col>
     </b-row>
   </div>
@@ -96,9 +85,11 @@ import InputWrapper from '../forms/InputWrapper.vue';
 import InputText from '../forms/InputText.vue';
 import InputTextarea from '../forms/InputTextarea.vue';
 import user from '../../_data/charlie.json';
+import FormButtons from '../forms/FormButtons.vue';
 
 export default {
   components: {
+    FormButtons,
     InputText,
     InputWrapper,
     InputTextarea,

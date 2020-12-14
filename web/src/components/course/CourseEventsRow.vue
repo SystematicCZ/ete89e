@@ -15,7 +15,7 @@
         />
       </span>
       <br>
-      <span class="text-secondary"> {{ parseDate(event.date) }} </span>
+      <span class="text-secondary"> {{ parseDate(event.date.date) }} {{ event.date.time }}</span>
     </span>
     <span
       class="col-4 text-center mb-3"
@@ -85,7 +85,7 @@ export default {
   },
   methods: {
     parseDate(date) {
-      return (new Date(date)).toLocaleString('cs-CZ');
+      return (new Date(date)).toLocaleDateString('cs-CZ');
     },
     subscribeEvent() {
       // fake
