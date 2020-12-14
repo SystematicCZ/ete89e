@@ -3,17 +3,22 @@
     <b-container
       fluid
     >
-      <user-bar/>
+      <div class="d-flex flex-row justify-content-between border-bottom">
+        <slot name="menu-toggle" />
+        <user-nav
+          class="ml-auto"
+        />
+      </div>
     </b-container>
   </header>
 </template>
 
 <script>
-import UserBar from './UserBar.vue';
+import UserNav from './UserNav.vue';
 
 export default {
   components: {
-    UserBar,
+    UserNav,
   },
 };
 </script>

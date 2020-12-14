@@ -1,75 +1,110 @@
 <template>
-  <div class="d-flex flex-column align-items-end">
+  <div
+    :style="{'width': width}"
+    class="d-flex flex-column align-items-end"
+  >
     <div
-      :style="{'width': width}"
       :class="{'border-left': level > 0}"
-      class="p-3 d-flex flex-row"
+      class="p-3 d-flex flex-row w-100"
     >
       <div
       >
         <img
-          src="http://placekitten.com/70"
+          :src="entry.user.profilePicture"
           class="rounded-circle profile-image mr-2"
         >
       </div>
-      <div>
+      <div class="flex-grow-1">
         <header
           class="d-flex flex-row justify-content-between mb-2 bg-transparent"
         >
           <h6
             class="d-inline-block my-auto "
           >
-            Name Namevi4
+            {{ entry.user.fullName }}
           </h6>
           <b-button
+            v-b-toggle="`${_uid}_reply_form`"
             variant="outline-primary"
+            @click="replyFormVisible = !replyFormVisible"
           >
             Odpovědět
           </b-button>
         </header>
         <section>
           <p>
-            Divadlo, velkopanskou slouží a jenže. Třas pohodlná vousy má zahraničních až nedopustil
-            porota těm mísí. Noci to být sahal sedmičku o muselo
-            fuk vidíš přestalo brzdu skok ó zafrkl he drážďanským prince.
-            Nejvzácnější, se střední z podrbáním, boj úmysl o nemocí.
+            {{ entry.text }}
           </p>
           <div class="pt-1">
-            <p>23. 12. 2020 22:11</p>
+            <span class="text-secondary">{{ parseDate(entry.date) }}</span>
           </div>
         </section>
       </div>
     </div>
+    <b-collapse
+      v-model="replyFormVisible"
+      class="w-100 my-3"
+    >
+      <discussion-form
+        class="border-bottom border-top p-3"
+        @new-message="replies.push($event); replyFormVisible = false;"
+      >
+        <template v-slot:reply>
+          <div class="text-center">
+            <h5>Odpovědět uživateli {{ entry.user.fullName }}</h5>
+          </div>
+        </template>
+      </discussion-form>
+    </b-collapse>
     <discussion-entry
-      v-if="replies"
+      v-for="(entry, index) in replies"
+      :key="`${_uid}_entry_reply_${index}`"
       :level="level + 1"
+      :entry="entry"
+      class="flex-grow-1"
     />
   </div>
 </template>
 <script>
+import entries from '../../_data/discussion.json';
 import ProfilePicture from '../profile/ProfilePicture.vue';
+import DiscussionForm from './DiscussionForm.vue';
 
 export default {
   name: 'DiscussionEntry',
-  components: { ProfilePicture },
+  components: { DiscussionForm, ProfilePicture },
   props: {
     level: { type: Number, default: 0 },
+    entry: { type: Object, required: true },
   },
   data() {
     return {
-      // fake
-      replies: Math.random() < 0.5,
+      replies: [],
+      replyFormVisible: false,
     };
   },
   computed: {
     width() {
-      return `${Math.max(60, 100 - (10 * this.level))}%`;
+      return this.level === 0 ? '100%' : '90%';
+      //return `${Math.max(60, 100 - (10 * this.level))}%`;
+    },
+  },
+  created() {
+    this.load();
+  },
+  methods: {
+    load() {
+      // fake
+      this.replies = entries.splice(0, Math.floor(Math.random() * (entries.length + 1)));
+    },
+    parseDate(date) {
+      return (new Date(date)).toLocaleString('cs-CZ');
     },
   },
 };
 </script>
 <style scoped>
-.chat-entry .profile-image {
+.profile-image {
   min-width: 3rem;
   width: 3rem;
 }

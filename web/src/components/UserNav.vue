@@ -1,9 +1,6 @@
 <template>
-  <b-navbar
-    class="border-bottom"
-  >
+  <b-navbar>
     <b-navbar-nav
-      class="ml-auto"
       right
     >
       <b-nav-item-dropdown
@@ -14,7 +11,10 @@
         right
       >
         <template v-slot:button-content>
-          <img class="rounded-circle mr-1" src="http://placekitten.com/170" width="38"/>
+          <img
+            :src="$store.state.user.profilePicture"
+            class="rounded-circle mr-1"
+            width="38">
           <span>Charlie Shark</span>
         </template>
         <b-dropdown-item
@@ -24,7 +24,7 @@
             icon="person-fill"
             aria-hidden="true"
           />
-          Profil
+          {{ $store.state.user.fullName }}
         </b-dropdown-item>
         <b-dropdown-divider/>
         <b-dropdown-item>

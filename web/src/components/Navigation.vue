@@ -1,5 +1,5 @@
 <template>
-  <div class="d-none d-md-block bg-white sticky-top vh-100 px-3">
+  <div>
     <b-navbar
       variant="faded"
       type="dark"
