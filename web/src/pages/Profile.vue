@@ -2,7 +2,7 @@
   <div>
     <page-header
       :heading="$store.state.user.fullName"
-      lead="Tady si můžeš upravit svůj profil"
+      lead="Tady můžeš upravit informace o tvé maličkosti"
     />
 
     <b-container class="mt--3 px-0">
@@ -38,6 +38,7 @@
           class="mb-2"
         >
           <div class="rounded p-3 bg-white">
+            <h2 class="mb-5">Upravit profil</h2>
             <profile-form
               v-model="user"
             />
@@ -80,7 +81,6 @@
 </template>
 
 <script>
-import user from '../_data/charlie.json';
 import PageHeader from '../components/PageHeader.vue';
 import ProfileForm from '../components/profile/ProfileForm.vue';
 import ProfileCard from '../components/profile/ProfileCard.vue';
@@ -93,7 +93,7 @@ export default {
   },
   data() {
     return {
-      user,
+      user: this.$store.state.user,
     };
   },
   methods: {},

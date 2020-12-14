@@ -6,6 +6,7 @@ import Profile from './pages/Profile.vue';
 import Course from './pages/Course.vue';
 import UserList from './pages/UserList.vue';
 import ProfessorList from './pages/ProfessorList.vue';
+import Registration from './pages/Registration.vue';
 
 Vue.use(Router);
 
@@ -20,6 +21,11 @@ export default new Router({
       path: '/about',
       name: 'about',
       component: About,
+    },
+    {
+      path: '/registration',
+      name: 'registration',
+      component: Registration,
     },
     {
       path: '/',

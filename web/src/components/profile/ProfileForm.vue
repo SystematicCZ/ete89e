@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h3>Upravit profil</h3>
     <b-row>
       <b-col
         cols="12"
@@ -70,7 +69,8 @@
         cols="12"
       >
         <form-buttons
-          @save="update"
+          cancel-button
+          @save="submit"
           @cancel="cancel"
         />
       </b-col>
@@ -84,7 +84,6 @@ import formMixin from '../forms/formMixin';
 import InputWrapper from '../forms/InputWrapper.vue';
 import InputText from '../forms/InputText.vue';
 import InputTextarea from '../forms/InputTextarea.vue';
-import user from '../../_data/charlie.json';
 import FormButtons from '../forms/FormButtons.vue';
 
 export default {
@@ -99,6 +98,9 @@ export default {
     prop: 'user',
     event: 'synchronize',
   },
+  props: {
+    user: { type: Object, default: null },
+  },
   data() {
     return {
       payload: this.getPayload(),
@@ -110,21 +112,27 @@ export default {
       this.payload = cloneDeep(this.originalPayload);
     },
     getPayload() {
-      return {
-        email: user.email,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        university: user.university,
-        aboutMe: user.aboutMe,
+      const payload = {
+        email: '',
+        firstName: '',
+        lastName: '',
+        university: '',
+        aboutMe: '',
       };
+      if (this.user) {
+        payload.email = this.user.email;
+        payload.firstName = this.user.firstName;
+        payload.lastName = this.user.lastName;
+        payload.university = this.user.university;
+        payload.aboutMe = this.user.aboutMe;
+        payload.profilePicture = this.user.profilePicture;
+      }
+
+      return payload;
     },
-    update() {
+    submit() {
       // fake
-      const updated = cloneDeep(user);
-      updated.email = this.payload.email;
-      updated.firstName = this.payload.firstName;
-      updated.lastName = this.payload.lastName;
-      updated.university = this.payload.university;
+      const updated = cloneDeep(this.payload);
       updated.fullName = `${this.payload.firstName} ${this.payload.lastName}`;
 
       this.originalPayload = cloneDeep(this.payload);
