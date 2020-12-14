@@ -7,7 +7,7 @@
       @click="$emit('save')"
     >
       <b-icon icon="check"/>
-      Uložit
+      {{ submitText }}
     </b-button>
     <b-button
       v-if="cancelButton"
@@ -24,6 +24,7 @@ export default {
   props: {
     cancelButton: { type: Boolean, default: false },
     submitDisabled: { type: Boolean, default: false },
+    submitText: { type: String, default: 'Uložit' },
   },
 };
 </script>

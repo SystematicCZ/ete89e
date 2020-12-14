@@ -3,6 +3,23 @@
     <b-row>
       <b-col
         cols="12"
+        class="text-center mb-3"
+      >
+        <input-wrapper
+          :validations="validations.profilePicture"
+          label="Ksicht"
+          class="position-relative d-inline-block"
+        >
+          <input-image
+            v-model="payload.profilePicture"
+            :image="payload.profilePicture"
+            circle
+            @file-size-exceeded="$toasted.error('Soubor je příliš velký')"
+          />
+        </input-wrapper>
+      </b-col>
+      <b-col
+        cols="12"
         md="6"
       >
         <input-wrapper
@@ -43,6 +60,40 @@
       </b-col>
 
       <b-col
+        v-if="registration"
+        cols="12"
+      >
+        <b-row>
+          <b-col
+            cols="6"
+          >
+            <input-wrapper
+              :validations="validations.password"
+              label="Heslo"
+            >
+              <input-text
+                :validations="validations.password"
+                v-model="payload.password"
+              />
+            </input-wrapper>
+          </b-col>
+          <b-col
+            cols="6"
+          >
+            <input-wrapper
+              :validations="validations.passwordControl"
+              label="Heslo znovu"
+            >
+              <input-text
+                :validations="validations.passwordControl"
+                v-model="payload.passwordControl"
+              />
+            </input-wrapper>
+          </b-col>
+        </b-row>
+      </b-col>
+
+      <b-col
         cols="12"
       >
         <input-wrapper
@@ -78,16 +129,18 @@
   </div>
 </template>
 <script>
-import { email, required } from 'vuelidate/lib/validators';
+import { email, required, requiredIf, sameAs } from 'vuelidate/lib/validators';
 import { cloneDeep } from 'lodash';
 import formMixin from '../forms/formMixin';
 import InputWrapper from '../forms/InputWrapper.vue';
 import InputText from '../forms/InputText.vue';
 import InputTextarea from '../forms/InputTextarea.vue';
 import FormButtons from '../forms/FormButtons.vue';
+import InputImage from '../forms/InputImage.vue';
 
 export default {
   components: {
+    InputImage,
     FormButtons,
     InputText,
     InputWrapper,
@@ -100,6 +153,7 @@ export default {
   },
   props: {
     user: { type: Object, default: null },
+    registration: { type: Boolean, default: false },
   },
   data() {
     return {
@@ -118,6 +172,9 @@ export default {
         lastName: '',
         university: '',
         aboutMe: '',
+        password: '',
+        passwordControl: '',
+        profilePicture: '',
       };
       if (this.user) {
         payload.email = this.user.email;
@@ -143,8 +200,16 @@ export default {
   },
   validations: {
     payload: {
+      profilePicture: { required },
       email: { required, email },
       firstName: { required },
+      password: {
+        required: requiredIf('registration'),
+      },
+      passwordControl: {
+        sameAs: sameAs('password'),
+        required: requiredIf('registration'),
+      },
     },
   },
 };

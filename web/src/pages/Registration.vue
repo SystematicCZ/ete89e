@@ -1,7 +1,7 @@
 <template>
   <div>
     <page-header
-      title="Pojď mezi nás"
+      heading="Pojď mezi nás"
       lead="Mohli bychom ti slibovat hory doly. Ale ty sem prostě chceš."
     />
     <b-container class="rounded py-5 rounded mt--3 bg-white">
@@ -9,6 +9,7 @@
         <h2 class="mb-5">Registrace</h2>
         <profile-form
           v-model="user"
+          registration
           @synchronize="modalVisible = true"
         />
         <b-modal
@@ -16,7 +17,7 @@
           title="Vyplněná data"
           centered
           hide-footer
-          @close="modalVisible = false"s
+          @close="modalVisible = false"
         >
           <p>{{ user }}</p>
         </b-modal>
