@@ -15,7 +15,7 @@
     <form-buttons
       :submit-disabled="!canSubmit"
       class="mt-3 text-center"
-      @save="$emit('synchronize', eventList)"
+      @save="submit"
     />
   </div>
 </template>
@@ -48,6 +48,10 @@ export default {
       const list = new Map();
       this.events.forEach(item => list.set(item.id, true));
       return list;
+    },
+    submit() {
+      this.$toasted.success('Termíny uloženy');
+      this.$emit('synchronize', this.eventList);
     },
     changeEventValidity(event, isValid) {
       this.eventValidityList.set(event.id, isValid);

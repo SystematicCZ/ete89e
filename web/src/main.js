@@ -14,6 +14,7 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import VueFroala from 'vue-froala-wysiwyg';
 import router from './router';
 import App from './App.vue';
+import charlie from './_data/charlie.json';
 
 Vue.use(VueFroala);
 Vue.config.productionTip = false;
@@ -33,13 +34,16 @@ window.validationErrorTranslations = {
   required: 'Toto pole je povinné',
 };
 
-import charlie from './_data/charlie.json';
 const store = new Vuex.Store({
   state: {
     user: charlie,
   },
   mutations: {
-    login() {},
+    login() {
+    },
+    updateLoggedInUser(user) {
+      store.state.user = user;
+    },
   },
 });
 
