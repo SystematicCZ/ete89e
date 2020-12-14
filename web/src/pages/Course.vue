@@ -16,7 +16,7 @@
       </template>
     </page-header>
     <b-container
-      class="mt--3"
+      class="mt--3 px-0"
     >
       <course-summary
         :course="course"

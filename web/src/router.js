@@ -25,6 +25,7 @@ export default new Router({
       path: '/',
       name: 'dashboard',
       component: Dashboard,
+      props: route => ({ query: route.query.query }),
     },
     {
       path: '/course/:id/:slug',

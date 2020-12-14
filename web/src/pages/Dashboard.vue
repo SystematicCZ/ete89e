@@ -1,37 +1,83 @@
 <template>
-  <b-container>
-    <b-row>
-      <b-col
-        v-for="(item, key) in courses"
-        :key="`course_${key}`"
-        cols="12"
-        md="4"
-        class="mb-3"
-      >
-        <course-card
-          :course="item"
+  <div>
+    <page-header
+      heading="Bojiště"
+      lead="Tady je vidět, kde všude se bojuje"
+    >
+      <template v-slot:controls>
+        <search-bar
+          v-model="term"
+          button="Hledat"
         />
-      </b-col>
-    </b-row>
-  </b-container>
+      </template>
+    </page-header>
+    <b-container class="mt--3 px-0">
+      <b-row v-if="!isLoading && courses.length">
+        <b-col
+          v-for="(item, key) in courses"
+          :key="`course_${key}`"
+          cols="12"
+          md="4"
+          class="mb-3"
+        >
+          <course-card
+            :course="item"
+          />
+        </b-col>
+      </b-row>
+      <b-container
+        v-else-if="!isLoading && courses.length === 0"
+        class="inner-container bg-white rounded p-3">
+        <h2>Dobojováno</h2>
+        <p>Nic tu není</p>
+      </b-container>
+      <skeleton-list-cards
+        v-else-if="isLoading"
+      />
+    </b-container>
+  </div>
 </template>
 
 <script>
 import courses from '../_data/courses.json';
+import searchableMixin from '../components/searchableMixin';
+import PageHeader from '../components/PageHeader.vue';
+import SearchBar from '../components/SearchBar.vue';
 import CourseCard from '../components/course/CourseCard.vue';
+import SkeletonListCards from '../components/skeleton/SkeletonListCards.vue';
 
 export default {
-  components: { CourseCard },
+  components: { SkeletonListCards, CourseCard, PageHeader, SearchBar },
+  mixins: [searchableMixin],
   data() {
     return {
       courses: null,
+      isLoading: true,
     };
   },
   created() {
-    this.courses = courses;
-    this.$route.meta.heading = 'Courses';
+    if (this.term.length) {
+      this.search(this.term);
+    } else {
+      this.load();
+    }
   },
   methods: {
+    search(query) {
+      // fake
+      this.isLoading = true;
+      this.courses = courses.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
+      this.$sleep(300).then(() => {
+        this.isLoading = false;
+      });
+    },
+    load() {
+      // fake
+      this.courses = courses;
+      this.$sleep(300).then(() => {
+        this.isLoading = false;
+      });
+    },
   },
 };
 </script>
