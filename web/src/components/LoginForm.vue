@@ -46,7 +46,9 @@ export default {
   },
   methods: {
     submit() {
-
+      this.$store.dispatch('login').then(() => {
+        this.$emit('logged-in');
+      });
     },
   },
   validations: {

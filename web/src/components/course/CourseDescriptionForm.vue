@@ -29,6 +29,7 @@
         wysiwyg
       />
     </input-wrapper>
+    <required-tip />
     <form-buttons
       @save="save"
     />
@@ -44,9 +45,10 @@ import InputText from '../forms/InputText.vue';
 import FormButtons from '../forms/FormButtons.vue';
 import InputTextarea from '../forms/InputTextarea.vue';
 import InputMultiselect from '../forms/InputMultiselect.vue';
+import RequiredTip from '../forms/RequiredTip.vue';
 
 export default {
-  components: { InputMultiselect, InputTextarea, FormButtons, InputText, InputWrapper },
+  components: { RequiredTip, InputMultiselect, InputTextarea, FormButtons, InputText, InputWrapper },
   mixins: [formMixin],
   model: {
     prop: 'course',

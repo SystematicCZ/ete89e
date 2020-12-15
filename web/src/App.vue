@@ -1,6 +1,7 @@
 <template>
   <div class="d-flex wrapper">
     <div
+      v-if="$store.getters.isLoggedIn"
       ref="sidebar"
       class="sidebar-wrapper vh-100 sticky-top bg-white d-md-block"
     >

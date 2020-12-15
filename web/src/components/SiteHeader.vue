@@ -6,6 +6,7 @@
       <div class="d-flex flex-row justify-content-between border-bottom">
         <slot name="menu-toggle" />
         <user-nav
+          v-if="$store.getters.isLoggedIn"
           class="ml-auto"
         />
       </div>

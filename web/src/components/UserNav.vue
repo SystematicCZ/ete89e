@@ -27,7 +27,9 @@
           {{ $store.state.user.fullName }}
         </b-dropdown-item>
         <b-dropdown-divider/>
-        <b-dropdown-item>
+        <b-dropdown-item
+          @click="logout"
+        >
           <b-icon
             icon="box-arrow-right"
             aria-hidden="true"
@@ -39,16 +41,25 @@
   </b-navbar>
 </template>
 <script>
-export default {};
+export default {
+  methods: {
+    logout() {
+      this.$store.dispatch('logout')
+        .then(() => {
+          this.$router.push('/login');
+        });
+    },
+  },
+};
 </script>
 <style scoped lang="scss">
-  .user-navbar {
-    span {
-      color: $color-text-inverted;
+.user-navbar {
+  span {
+    color: $color-text-inverted;
 
-      &:hover {
-        color: $color-shades-dark;
-      }
+    &:hover {
+      color: $color-shades-dark;
     }
   }
+}
 </style>

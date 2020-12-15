@@ -126,6 +126,7 @@
       <b-col
         cols="12"
       >
+        <required-tip/>
         <form-buttons
           cancel-button
           @save="submit"
@@ -146,9 +147,11 @@ import InputTextarea from '../forms/InputTextarea.vue';
 import FormButtons from '../forms/FormButtons.vue';
 import InputImage from '../forms/InputImage.vue';
 import InputMultiselect from '../forms/InputMultiselect.vue';
+import RequiredTip from '../forms/RequiredTip.vue';
 
 export default {
   components: {
+    RequiredTip,
     InputMultiselect,
     InputImage,
     FormButtons,

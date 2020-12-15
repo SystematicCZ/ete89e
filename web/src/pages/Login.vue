@@ -8,7 +8,9 @@
       <b-container class="inner-container">
         <h2 class="mb-5 text-center">Přihlášení</h2>
         <div class="w-50 mx-auto text-center">
-          <login-form/>
+          <login-form
+            @logged-in="$router.push('/')"
+          />
           <p class="mt-2">Neznáme se? Tak se <router-link to="/registration">představ.</router-link></p>
         </div>
       </b-container>

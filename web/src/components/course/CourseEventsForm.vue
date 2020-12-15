@@ -11,7 +11,7 @@
       add-new
       @new="eventList.push($event)"
     />
-
+    <required-tip />
     <form-buttons
       :submit-disabled="!canSubmit"
       class="mt-3 text-center"
@@ -22,9 +22,10 @@
 <script>
 import CourseEventsFormRow from './CourseEventsFormRow.vue';
 import FormButtons from '../forms/FormButtons.vue';
+import RequiredTip from '../forms/RequiredTip.vue';
 
 export default {
-  components: { FormButtons, CourseEventsFormRow },
+  components: { RequiredTip, FormButtons, CourseEventsFormRow },
   model: {
     prop: 'events',
     event: 'synchronize',
