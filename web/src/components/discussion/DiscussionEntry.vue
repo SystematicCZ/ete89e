@@ -32,9 +32,7 @@
           </b-button>
         </header>
         <section>
-          <p>
-            {{ entry.text }}
-          </p>
+          <p v-html="entry.text" />
           <div class="pt-1">
             <span class="text-secondary">{{ parseDate(entry.date) }}</span>
           </div>

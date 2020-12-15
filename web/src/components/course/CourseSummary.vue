@@ -23,6 +23,7 @@
         <course-description
           :course="course"
           class="mb-3"
+
           v-on="$listeners"
         />
       </div>

@@ -101,10 +101,13 @@
         cols="12"
       >
         <input-wrapper
-          label="Univerzita"
+          :validations="validations.faculty"
+          label="Fakulta"
         >
-          <input-text
-            v-model="payload.university"
+          <input-multiselect
+            v-model="payload.faculty"
+            :validations="validations.faculty"
+            :options="[{id: 0, name: 'Provozně ekonomická fakulta'}]"
           />
         </input-wrapper>
       </b-col>
@@ -142,9 +145,11 @@ import InputText from '../forms/InputText.vue';
 import InputTextarea from '../forms/InputTextarea.vue';
 import FormButtons from '../forms/FormButtons.vue';
 import InputImage from '../forms/InputImage.vue';
+import InputMultiselect from '../forms/InputMultiselect.vue';
 
 export default {
   components: {
+    InputMultiselect,
     InputImage,
     FormButtons,
     InputText,
@@ -176,7 +181,7 @@ export default {
         email: '',
         firstName: '',
         lastName: '',
-        university: '',
+        faculty: '',
         aboutMe: '',
         password: '',
         passwordControl: '',
@@ -186,7 +191,7 @@ export default {
         payload.email = this.user.email;
         payload.firstName = this.user.firstName;
         payload.lastName = this.user.lastName;
-        payload.university = this.user.university;
+        payload.faculty = this.user.faculty;
         payload.aboutMe = this.user.aboutMe;
         payload.profilePicture = this.user.profilePicture;
       }
@@ -209,6 +214,7 @@ export default {
       profilePicture: { required },
       email: { required, email },
       firstName: { required },
+      faculty: { required },
       password: {
         required: requiredIf('registration'),
       },

@@ -13,7 +13,7 @@
     >
       <h5>{{ user.fullName }}</h5>
       <p class="text-secondary mb-3">
-        {{ user.university }}
+        {{ user.faculty.name }}
         <br>
         <b-icon
           icon="envelope"

@@ -3,7 +3,10 @@
   "lastName": "Shark",
   "fullName": "Charlie Shark",
   "profilePicture": "https://startupjobs.cz/build/images/shark_placeholder_8.svg",
-  "university": "Česká zemědělská univerzita v Praze",
+  "faculty": {
+    "id": 0,
+    "name": "Provozně ekonomická fakulta"
+  },
   "email": "charlie@ocean.com",
   "aboutMe": "Ty až říkal že ty ve pan pošleš. Sta jí nevinně myšlenka začátkem ó bytě. Jí lid šeky zválenou těžký klamu."
 }

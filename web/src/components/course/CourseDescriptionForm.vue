@@ -11,6 +11,17 @@
     </input-wrapper>
 
     <input-wrapper
+      :validations="validations.professor"
+      label="Vyučující"
+    >
+      <input-multiselect
+        v-model="payload.professor"
+        :options="professors"
+        :validations="validations.professor"
+      />
+    </input-wrapper>
+
+    <input-wrapper
       label="Popis"
     >
       <input-textarea
@@ -26,14 +37,16 @@
 <script>
 import { cloneDeep } from 'lodash';
 import { required } from 'vuelidate/lib/validators';
+import professors from '../../_data/teachers.json';
 import formMixin from '../forms/formMixin';
 import InputWrapper from '../forms/InputWrapper.vue';
 import InputText from '../forms/InputText.vue';
 import FormButtons from '../forms/FormButtons.vue';
 import InputTextarea from '../forms/InputTextarea.vue';
+import InputMultiselect from '../forms/InputMultiselect.vue';
 
 export default {
-  components: { InputTextarea, FormButtons, InputText, InputWrapper },
+  components: { InputMultiselect, InputTextarea, FormButtons, InputText, InputWrapper },
   mixins: [formMixin],
   model: {
     prop: 'course',
@@ -45,6 +58,7 @@ export default {
   data() {
     return {
       payload: this.getPayload(),
+      professors,
     };
   },
   methods: {
@@ -52,11 +66,13 @@ export default {
       const payload = {
         name: '',
         description: '',
+        professor: {},
       };
 
       if (this.course) {
         payload.name = this.course.name;
         payload.description = this.course.description;
+        payload.professor = this.course.professor;
       }
 
       return payload;
@@ -66,6 +82,7 @@ export default {
       const course = cloneDeep(this.course);
       course.name = this.payload.name;
       course.description = this.payload.description;
+      course.professor = this.payload.professor;
 
       this.$toasted.success('Změny uloženy');
       this.$emit('synchronize', course);
@@ -74,6 +91,7 @@ export default {
   validations: {
     payload: {
       name: { required },
+      professor: { required },
     },
   },
 };

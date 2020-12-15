@@ -1,20 +1,23 @@
-import 'froala-editor/js/plugins.pkgd.min.js';
-import 'froala-editor/js/third_party/embedly.min';
-import 'froala-editor/js/third_party/font_awesome.min';
-import 'froala-editor/js/third_party/spell_checker.min';
-import 'froala-editor/js/third_party/image_tui.min';
-import 'froala-editor/css/froala_editor.pkgd.min.css';
-
 import { upperFirst } from 'lodash';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import Vuelidate from 'vuelidate';
 import Toasted from 'vue-toasted';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
-import VueFroala from 'vue-froala-wysiwyg';
 import router from './router';
 import App from './App.vue';
 import charlie from './_data/charlie.json';
+
+require('froala-editor/js/froala_editor.pkgd.min.js');
+require('froala-editor/js/plugins/image.min.js');
+require('froala-editor/js/plugins/video.min.js');
+require('froala-editor/js/plugins/link.min.js');
+require('froala-editor/js/plugins/lists.min.js');
+require('froala-editor/js/plugins/emoticons.min.js');
+require('froala-editor/js/languages/cs.js');
+
+import 'froala-editor/css/froala_editor.pkgd.min.css';
+import VueFroala from 'vue-froala-wysiwyg';
 
 Vue.use(VueFroala);
 Vue.config.productionTip = false;

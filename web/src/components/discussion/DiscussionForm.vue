@@ -8,6 +8,7 @@
       <input-textarea
         v-model="payload.text"
         :validations="validations.text"
+        wysiwyg
       />
     </input-wrapper>
     <b-button

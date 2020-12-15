@@ -56,18 +56,13 @@ export default {
     froalaConfiguration() {
       return {
         attribution: false,
-        key: window.froalaLicenceKey,
+        key: 'none',
         pastePlain: true,
         toolbarStickyOffset: 64,
-        language: window.locale,
-        imageUploadURL: this.imageUploadApiEndpoint,
+        language: 'cs',
+        imageUploadURL: '',
         placeholderText: this.placeholder,
         events: {
-          'image.removed': (image) => {
-            axios.post(this.imageDeleteApiEndpoint, { link: image[0].src }, { headers: {
-              'content-type': 'application/json',
-            } });
-          },
           'image.uploaded': (response) => {
             this.$emit('image-uploaded', JSON.parse(response).filename);
           },

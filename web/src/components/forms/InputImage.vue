@@ -207,6 +207,5 @@ export default {
 .add-profile-picture {
   position: absolute;
   right: 0;
-  top: 0;
 }
 </style>
