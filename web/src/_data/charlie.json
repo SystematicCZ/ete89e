@@ -8,5 +8,87 @@
     "name": "Provozně ekonomická fakulta"
   },
   "email": "charlie@ocean.com",
-  "aboutMe": "Ty až říkal že ty ve pan pošleš. Sta jí nevinně myšlenka začátkem ó bytě. Jí lid šeky zválenou těžký klamu."
+  "aboutMe": "Ty až říkal že ty ve pan pošleš. Sta jí nevinně myšlenka začátkem ó bytě. Jí lid šeky zválenou těžký klamu.",
+  "courses": [
+    {
+      "id": 5,
+      "slug": "eaee3e-rizeni-it-projektu",
+      "name": "EAEE3E\t\u0158\u00edzen\u00ed IT projekt\u016f",
+      "description": "Unyle t\u011b popis moc ta ah od v\u011bt u\u017e ohn\u011bm humus morastem rubnerov\u00e1. \u010cin j\u00e9 ze lze mezek chodili n\u011b omyl o\u010d litery nejapn\u00fd vst\u00e1t ti b\u00e1t hon p\u0159estupek zarostl\u00fd \u017ee doktor samou lov dareb\u00e1ci l\u017ee\u0161 vy ono my dudenka. Otu bych \u0161\u00edp sv\u011bt\u011b, \u0161eredn\u00fd noc trnka za\u0159izoval, co sena tato my hampl d\u0159e oddan\u011b: krav\u00e1l za vem v\u00e1\u017eek a ji m\u011bs\u00edcem, \u0159v\u00e1t c\u00edn, m\u011b arm\u00e9nie nemoce ah obo\u010d\u00ed. D\u00e1 ke jist, nezn\u00e1m\u00fd k o\u010d novou pohled t\u0159ech \u010dekali pustil zahradn\u00ed.",
+      "events": [
+        {
+          "id": "5fd793f5d98713.10341398",
+          "name": "Project",
+          "date": {
+            "date": "2021-05-08",
+            "time": "04:57"
+          },
+          "subscription": null
+        },
+        {
+          "id": "5fd793f5d98771.81096148",
+          "name": "Exam",
+          "date": {
+            "date": "2021-06-23",
+            "time": "16:34"
+          },
+          "subscription": null
+        },
+        {
+          "id": "5fd793f5d987d3.92172720",
+          "name": "Test",
+          "date": {
+            "date": "2021-03-27",
+            "time": "16:02"
+          },
+          "subscription": null
+        },
+        {
+          "id": "5fd793f5d98833.24182291",
+          "name": "Homework",
+          "date": {
+            "date": "2021-03-03",
+            "time": "13:57"
+          },
+          "subscription": null
+        }
+      ],
+      "professor": {
+        "id": 1,
+        "name": "Tom Tuna",
+        "title": "Prof."
+      }
+    },
+    {
+      "id": 6,
+      "slug": "eie87e-systemova-integrace",
+      "name": "EIE87E\tSyst\u00e9mov\u00e1 integrace",
+      "description": "Unyle t\u011b popis moc ta ah od v\u011bt u\u017e ohn\u011bm humus morastem rubnerov\u00e1. \u010cin j\u00e9 ze lze mezek chodili n\u011b omyl o\u010d litery nejapn\u00fd vst\u00e1t ti b\u00e1t hon p\u0159estupek zarostl\u00fd \u017ee doktor samou lov dareb\u00e1ci l\u017ee\u0161 vy ono my dudenka. Otu bych \u0161\u00edp sv\u011bt\u011b, \u0161eredn\u00fd noc trnka za\u0159izoval, co sena tato my hampl d\u0159e oddan\u011b: krav\u00e1l za vem v\u00e1\u017eek a ji m\u011bs\u00edcem, \u0159v\u00e1t c\u00edn, m\u011b arm\u00e9nie nemoce ah obo\u010d\u00ed. D\u00e1 ke jist, nezn\u00e1m\u00fd k o\u010d novou pohled t\u0159ech \u010dekali pustil zahradn\u00ed.",
+      "events": [
+        {
+          "id": "5fd793f5d98905.82162842",
+          "name": "Project",
+          "date": {
+            "date": "2021-05-21",
+            "time": "21:48"
+          },
+          "subscription": null
+        },
+        {
+          "id": "5fd793f5d98982.86856243",
+          "name": "Homework",
+          "date": {
+            "date": "2021-03-27",
+            "time": "09:07"
+          },
+          "subscription": null
+        }
+      ],
+      "professor": {
+        "id": 4,
+        "name": "Philip Marlin",
+        "title": "Bc."
+      }
+    }
+  ]
 }

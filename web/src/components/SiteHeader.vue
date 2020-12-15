@@ -9,6 +9,9 @@
           v-if="$store.getters.isLoggedIn"
           class="ml-auto"
         />
+        <default-nav
+          v-else
+        />
       </div>
     </b-container>
   </header>
@@ -16,9 +19,11 @@
 
 <script>
 import UserNav from './UserNav.vue';
+import DefaultNav from './DefaultNav.vue';
 
 export default {
   components: {
+    DefaultNav,
     UserNav,
   },
 };
