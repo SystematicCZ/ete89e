@@ -25,11 +25,10 @@ export default {
   props: {
     professor: { type: Object, required: true },
   },
-
-  data() {
-    return {
-      courses: courses.filter(item => item.professor.id === this.professor.id),
-    };
+  computed: {
+    courses() {
+      return courses.filter(item => item.professor.id === this.professor.id);
+    },
   },
 };
 </script>

@@ -11,7 +11,10 @@
       />
 
       <div class="rounded p-3 bg-white mb-3">
-        <course-events :events="course.events"/>
+        <course-events
+          :events="course.events"
+          v-on="$listeners"
+        />
       </div>
     </b-col>
     <b-col
@@ -23,7 +26,6 @@
         <course-description
           :course="course"
           class="mb-3"
-
           v-on="$listeners"
         />
       </div>

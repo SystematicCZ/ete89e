@@ -25,7 +25,7 @@
     >
       <course-events-form
         v-model="eventList"
-        @synchronize="isEditing = false"
+        @synchronize="isEditing = false;$emit('events-changed', eventList);"
       />
     </div>
   </div>
@@ -46,6 +46,11 @@ export default {
       subscribed: [],
       eventList: this.events,
     };
+  },
+  watch: {
+    events(newValue) {
+      this.eventList = newValue;
+    },
   },
 };
 </script>

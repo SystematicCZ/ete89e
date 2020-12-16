@@ -21,6 +21,7 @@
       <course-summary
         :course="course"
         @course-changed="course = $event"
+        @events-changed="course.events = $event"
       />
     </b-container>
   </div>

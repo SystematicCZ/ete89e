@@ -26,7 +26,7 @@
       <b-nav-item
         v-for="(course) in $store.state.user.courses"
         :key="`${course.id}_user_course_link`"
-        :to="{ name: course, params:{id: course.id, slug: course.slug }}"
+        :to="{ name: 'course', params:{id: course.id, slug: course.slug }}"
       >
         {{ course.name }}
       </b-nav-item>
