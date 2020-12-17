@@ -129,6 +129,11 @@ export default {
       this.world.plane = this.$refs.world.getContext('2d');
       this.snake.x = Math.floor(gameWidth / 2);
       this.snake.y = Math.floor(gameHeight / 2);
+      this.snake.body.push({ x: this.snake.x - 1, y: this.snake.y });
+      this.snake.body.push({ x: this.snake.x, y: this.snake.y });
+
+      this.move.x = 1;
+      this.move.last = 'ArrowRight';
 
       this.placeFood();
     },

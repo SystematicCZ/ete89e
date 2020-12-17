@@ -45,11 +45,14 @@
   </div>
 </template>
 <script>
-export default {
-};
+export default {};
 </script>
 <style scoped lang="scss">
 .nav {
+  .subscribed-courses {
+    background-color: darken($color-shades-dark, 2%);
+  }
+
   li {
     padding: .4rem 0;
 
@@ -61,8 +64,12 @@ export default {
       }
     }
 
-    &:hover > a:not(.router-link-exact-active) {
-      color: $color-text-inverted;
+    &:hover {
+      background-color: darken($color-shades-dark, 2%);
+
+      & > a:not(.router-link-exact-active) {
+        color: $color-text-inverted;
+      }
     }
   }
 }
