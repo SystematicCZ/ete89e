@@ -2,7 +2,7 @@
   <b-link :to="{name: 'course', params: {id: course.id, slug: course.slug}}">
     <b-card
       :title="course.name"
-      class="h-100"
+      class="h-100 border-0 shadow"
     >
       <b-card-text>
         <p class="text-secondary">{{ course.professor.title }} {{ course.professor.name }}</p>

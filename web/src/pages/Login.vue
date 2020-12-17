@@ -4,7 +4,7 @@
       heading="Tohle není holubník"
       lead="Dřív než tě pustíme do hlavního stanu, musíme se zeptat na pár věcí"
     />
-    <b-container class="py-5 mt--3 rounded bg-white">
+    <b-container class="py-5 mt--3 rounded shadow bg-white">
       <b-container class="inner-container">
         <h2 class="mb-5 text-center">Přihlášení</h2>
         <div class="w-50 mx-auto text-center">

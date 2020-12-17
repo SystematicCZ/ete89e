@@ -37,7 +37,7 @@
           md="8"
           class="mb-2"
         >
-          <div class="rounded p-3 bg-white">
+          <div class="rounded shadow p-3 bg-white">
             <h2 class="mb-5">Upravit profil</h2>
             <profile-form
               v-model="user"

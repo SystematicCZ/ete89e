@@ -2,7 +2,7 @@
   <div>
     <b-button
       v-if="!isEditing"
-      variant="outline-warning"
+      variant="outline-secondary"
       class="edit-button"
       @click="$emit('edit')"
     >
@@ -14,7 +14,7 @@
     </b-button>
     <b-button
       v-else
-      variant="outline-warning"
+      variant="outline-secondary"
       class="edit-button"
       @click="$emit('cancel')"
     >

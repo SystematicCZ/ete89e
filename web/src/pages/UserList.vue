@@ -11,7 +11,7 @@
         />
       </template>
     </page-header>
-    <b-container class="rounded bg-white py-5 mt--3">
+    <b-container class="rounded shadow bg-white py-5 mt--3">
       <b-container class="inner-container">
         <h2 class="mb-5">Uživatelé <span v-if="term.length"> - {{ term }}</span></h2>
         <skeleton-list

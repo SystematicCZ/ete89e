@@ -1,5 +1,6 @@
 <template>
   <b-card
+    class="border-0 shadow"
   >
     <b-card-text
       class="text-center"

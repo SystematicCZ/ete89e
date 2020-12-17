@@ -5,6 +5,7 @@
     >
       <template v-slot:controls>
         <b-button
+          v-if="!subscribed"
           variant="warning"
         >
           <b-icon
@@ -12,6 +13,16 @@
             class="mr-1"
           />
           Přidat k mým
+        </b-button>
+        <b-button
+          v-else
+          variant="danger"
+        >
+          <b-icon
+            icon="x"
+            class="mr-1"
+          />
+          Odebrat z mých
         </b-button>
       </template>
     </page-header>
@@ -37,6 +48,7 @@ export default {
   data() {
     return {
       course: null,
+      subscribed: false,
     };
   },
   watch: {
@@ -48,6 +60,7 @@ export default {
   methods: {
     load() {
       [this.course] = courses.filter(item => item.id == this.$route.params.id);
+      this.subscribed = this.$store.state.user.courses.filter(item => item.id == this.$route.params.id).length > 0;
     },
   },
 };

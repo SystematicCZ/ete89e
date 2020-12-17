@@ -4,16 +4,19 @@
       left
     >
       <b-nav-item
+        class="mr-2 bg-accent-light"
         to="/login"
       >
         Login
       </b-nav-item>
       <b-nav-item
+        class="mr-2 bg-accent-light"
         to="/registration"
       >
         Registrace
       </b-nav-item>
       <b-nav-item
+        class="mr-2 bg-accent-light"
         to="/about"
       >
         O projektu

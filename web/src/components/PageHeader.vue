@@ -1,7 +1,7 @@
 <template>
   <b-container
     fluid
-    class="bg-primary pb-5"
+    class="pb-5 background-triangles"
   >
     <b-container
       class="mb-5"
@@ -23,21 +23,27 @@
           md="7"
         >
           <div
-            class="py-3 text-inverted"
+            class="py-3"
           >
-            <slot name="heading">
-              <h1
-                v-if="heading"
-                v-text="heading"
-              />
-            </slot>
-            <slot name="lead">
-              <p
-                v-if="lead"
-                class="pt-4"
-                v-text="lead"
-              />
-            </slot>
+            <div class="d-inline-block bg-accent-light">
+              <slot name="heading">
+                <h1
+                  v-if="heading"
+                  class="m-2"
+                  v-text="heading"
+                />
+              </slot>
+            </div>
+            <br>
+            <div class="mt-4 bg-accent-light d-inline-block">
+              <slot name="lead">
+                <p
+                  v-if="lead"
+                  class="m-2 mb-0"
+                  v-text="lead"
+                />
+              </slot>
+            </div>
           </div>
         </b-col>
         <b-col

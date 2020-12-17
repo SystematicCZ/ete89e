@@ -1,5 +1,6 @@
 <template>
   <b-card
+    class="border-0 shadow"
   >
     <div class="card-profile-img text-center">
       <img
@@ -32,3 +33,15 @@ export default {
   },
 };
 </script>
+<style scoped lang="scss">
+.card-profile-img {
+  margin-bottom: -40px;
+
+  img {
+    border: 5px solid #ffffff;
+    width: 170px;
+    transform: translate(0, -40%);
+    border-radius: .375rem;
+  }
+}
+</style>

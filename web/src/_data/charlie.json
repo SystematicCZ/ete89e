@@ -90,5 +90,17 @@
         "title": "Bc."
       }
     }
+  ],
+  "notifications": [
+    {
+      "id": 0,
+      "text": "Termín \"Test\" z \"předmět \"se blíží"
+    },{
+      "id": 1,
+      "text": "Termín \"Test\" z \"předmět \"se blíží"
+    },{
+      "id": 2,
+      "text": "Termín \"Test\" z \"předmět \"se blíží"
+    }
   ]
 }

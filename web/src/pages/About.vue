@@ -4,7 +4,7 @@
       heading="O projektu"
       lead="Ujišťuje o romanticky dnes slov neon tvrdě nevrátil ve škola neopakovatelnou firmou nalezeno k rezigoval ledu tom v pod, ze zajímá završuje odešli nemohou za vědu, vám ve všechny následkem zásadní mého."
     />
-    <b-container class="rounded bg-white py-5 mt--3">
+    <b-container class="rounded shadow bg-white py-5 mt--3">
       <b-container class="inner-container">
         <h2 class="mb-5">O projektu</h2>
         <p>

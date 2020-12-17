@@ -1,8 +1,37 @@
 <template>
   <b-navbar>
     <b-navbar-nav
+      class="align-items-center"
       right
     >
+      <b-nav-item-dropdown
+        no-caret
+        right
+      >
+        <template
+          v-slot:button-content
+        >
+          <div
+            class="bg-accent-light d-inline-block p-2"
+          >
+            <img src="" width="1" height="38">
+            <b-icon icon="bell-fill"/>
+            <b-badge
+              variant="danger"
+              pill
+            > {{ $store.state.user.notifications.length }}
+            </b-badge>
+          </div>
+        </template>
+        <b-dropdown-text
+          v-for="(notification, index) in $store.state.user.notifications"
+          :key="`${index}_notification`"
+          class="border-bottom"
+          style="min-width: 240px"
+        >
+          {{ notification.text }}
+        </b-dropdown-text>
+      </b-nav-item-dropdown>
       <b-nav-item-dropdown
         class="user-navbar"
         text="Charlie Shark"
@@ -11,11 +40,13 @@
         right
       >
         <template v-slot:button-content>
-          <img
-            :src="$store.state.user.profilePicture"
-            class="rounded-circle mr-1"
-            width="38">
-          <span>Charlie Shark</span>
+          <div class="d-inline-block p-2 bg-accent-light">
+            <img
+              :src="$store.state.user.profilePicture"
+              class="rounded-circle mr-1"
+              width="38">
+            <span> {{ $store.state.user.fullName }}</span>
+          </div>
         </template>
         <b-dropdown-item
           to="/profile"
@@ -24,7 +55,7 @@
             icon="person-fill"
             aria-hidden="true"
           />
-          {{ $store.state.user.fullName }}
+          Upravit profil
         </b-dropdown-item>
         <b-dropdown-divider/>
         <b-dropdown-item
@@ -53,13 +84,5 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.user-navbar {
-  span {
-    color: $color-text-inverted;
 
-    &:hover {
-      color: $color-shades-dark;
-    }
-  }
-}
 </style>

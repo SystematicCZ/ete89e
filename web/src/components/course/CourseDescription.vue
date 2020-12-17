@@ -11,9 +11,9 @@
       />
     </div>
     <div
-      v-if="!isEditing">
-      <p v-html=" course.description" />
-    </div>
+      v-if="!isEditing"
+      v-html="course.description"
+    />
     <div
       v-else
     >

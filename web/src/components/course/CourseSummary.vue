@@ -10,7 +10,7 @@
         class="mb-3"
       />
 
-      <div class="rounded p-3 bg-white mb-3">
+      <div class="rounded shadow p-3 bg-white mb-3">
         <course-events
           :events="course.events"
           v-on="$listeners"
@@ -22,14 +22,14 @@
       md="8"
       order-md="1"
     >
-      <div class="rounded p-3 bg-white mb-3">
+      <div class="rounded shadow p-3 bg-white mb-3">
         <course-description
           :course="course"
           class="mb-3"
           v-on="$listeners"
         />
       </div>
-      <div class="rounded p-3 bg-white mb-3">
+      <div class="rounded shadow p-3 bg-white mb-3">
         <course-discussion/>
       </div>
     </b-col>

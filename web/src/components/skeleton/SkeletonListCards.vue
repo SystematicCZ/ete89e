@@ -2,37 +2,39 @@
   <div>
     <b-row>
       <b-col cols="4">
-        <b-card>
+        <b-card
+          class="border-0 shadow"
+        >
           <b-skeleton-img/>
         </b-card>
       </b-col>
       <b-col cols="4">
-        <b-card>
+        <b-card class="border-0 shadow">
           <b-skeleton-img/>
         </b-card>
       </b-col>
       <b-col cols="4">
-        <b-card>
+        <b-card class="border-0 shadow">
           <b-skeleton-img/>
         </b-card>
       </b-col>
       <b-col cols="4">
-        <b-card>
+        <b-card class="border-0 shadow">
           <b-skeleton-img/>
         </b-card>
       </b-col>
       <b-col cols="4">
-        <b-card>
+        <b-card class="border-0 shadow">
           <b-skeleton-img/>
         </b-card>
       </b-col>
       <b-col cols="4">
-        <b-card>
+        <b-card class="border-0 shadow">
           <b-skeleton-img/>
         </b-card>
       </b-col>
       <b-col cols="4">
-        <b-card>
+        <b-card class="border-0 shadow">
           <b-skeleton-img/>
         </b-card>
       </b-col>

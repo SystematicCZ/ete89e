@@ -9,7 +9,7 @@
     />
     <b-button
       v-if="button"
-      variant="warning"
+      variant="primary"
       class="ml-2"
       @click="emitSearch"
     >

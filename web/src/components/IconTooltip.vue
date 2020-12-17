@@ -19,3 +19,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.icon-tooltip {
+  cursor: pointer;
+}
+</style>

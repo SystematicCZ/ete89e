@@ -3,7 +3,7 @@
     <div
       v-if="$store.getters.isLoggedIn"
       ref="sidebar"
-      class="sidebar-wrapper vh-100 sticky-top bg-white d-md-block"
+      class="sidebar-wrapper vh-100 sticky-top bg-shades-dark d-md-block shadow"
     >
       <navigation/>
     </div>
@@ -12,7 +12,7 @@
         <template v-slot:menu-toggle>
           <b-button
             variant="link"
-            class="navbar-toggler d-inline-block d-md-none"
+            class="navbar-toggler d-inline-block border bg-white d-md-none"
             @click="toggleSideBar"
           >
             <span class="navbar-toggler-icon"/>
@@ -22,7 +22,7 @@
       <main
         role="main"
       >
-        <router-view/>
+        <router-view />
       </main>
       <site-footer/>
     </div>
@@ -55,7 +55,7 @@ export default {
 .sidebar-wrapper {
   min-width: 15rem;
   display: none;
-  transition: all 0.35s ease;
+  transition: all 0.2s ease;
 
   &.shown {
     display: block !important;
@@ -67,6 +67,6 @@ export default {
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath stroke='rgba(50, 50, 50, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 </style>
