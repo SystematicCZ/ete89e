@@ -1,5 +1,5 @@
 <template>
-  <b-navbar>
+  <b-navbar class="container px-0">
     <b-navbar-nav
       class="p-0 align-items-center"
       left
