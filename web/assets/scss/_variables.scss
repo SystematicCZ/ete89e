@@ -1,7 +1,7 @@
 // Colors
 $color-primary: #3a84a9;
-$color-primary-dark: #2A5259;
-$color-primary-highlight: #5D928C;
+$color-primary-dark: darken(#3a84a9, 10%);
+$color-primary-highlight: lighten(#3a84a9, 10%);
 $primary: $color-primary; // používá BT
 
 $color-success: #47a26b;

@@ -1,7 +1,7 @@
 <template>
   <b-container
     fluid
-    class="pb-5 background-triangles"
+    class="pb-5 background-paper"
   >
     <b-container
       class="mb-5"
@@ -35,7 +35,7 @@
               </slot>
             </div>
             <br>
-            <div class="mt-4 bg-accent-light d-inline-block">
+            <div class="mt-4 bg-accent-light d-inline-block h6">
               <slot name="lead">
                 <p
                   v-if="lead"

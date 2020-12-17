@@ -1,9 +1,9 @@
 <template>
-  <header class="bg-shades-light background-triangles">
+  <header class="bg-shades-light background-paper">
     <b-container
       fluid
     >
-      <div class="d-flex flex-row justify-content-between align-items-center border-dark border-bottom">
+      <div class="d-flex flex-row justify-content-between align-items-center">
         <slot name="menu-toggle"/>
         <user-nav
           v-if="$store.getters.isLoggedIn"

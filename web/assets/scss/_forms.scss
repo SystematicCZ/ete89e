@@ -166,26 +166,6 @@
 	}
 }
 
-// Buy credits form
-
-.credits-form {
-
-	&--row {
-		border-bottom: $base-border;
-
-		&:first-child  {
-			border-top: $base-border;
-		}
-
-		label {
-			display: block;
-			padding: 16px 8px;
-			margin-bottom:0;
-
-		}
-	}
-}
-
 .form-group-file {
 	position: relative;
 }
@@ -212,96 +192,6 @@
 
 .invalid-feedback {
 	display: block;
-}
-
-.ql-editor {
-	height: 230px;
-}
-
-.multiselect__tags {
-	display: block;
-	width: 100%;
-	padding: $input-padding-y $input-padding-x 0;
-	font-size: $font-size-base;
-	line-height: $input-line-height;
-	color: $input-color;
-	background-color: $input-bg;
-	background-clip: padding-box;
-	border: $input-border-width solid $input-border-color;
-	border-radius: 0;
-	min-height: 50px;
-}
-
-.multiselect__tag {
-	background: #eaf3ff;
-	color: $color-text;
-	border-radius: 0;
-	margin-bottom: 6px;
-}
-
-.multiselect__tag-icon:hover {
-	background: #d7e8f2;
-	color: $color-text;
-}
-
-.multiselect .is-valid {
-	border: $input-border-width solid $form-feedback-valid-color;
-}
-
-.multiselect .is-invalid {
-	border: $input-border-width solid $form-feedback-invalid-color;
-}
-
-.multiselect__single, .multiselect__input {
-	margin: 0;
-	padding: 0;
-}
-
-.multiselect__option--highlight {
-	background: #edf5fc;
-	color: #5cb2fe;
-	outline: none;
-}
-
-.multiselect__option--highlight:after {
-	content: attr(data-select);
-	background: #edf5fc;
-	color: #5cb2fe;
-}
-
-.multiselect__option--selected {
-	background: #ffffff;
-	color: #5cb2fe;
-	font-weight: bold;
-}
-
-.multiselect__option--selected:after {
-	content: attr(data-selected);
-	color: silver;
-}
-
-.multiselect__spinner {
-	z-index: 100;
-}
-
-.multiselect__option--selected.multiselect__option--highlight {
-	background: #ffffff;
-	color: #5cb2fe;
-}
-
-.multiselect__option--selected.multiselect__option--highlight:after {
-	background: #ffffff;
-	content: attr(data-deselect);
-	color: #5cb2fe;
-}
-
-.multiselect__placeholder {
-	margin-bottom: 14px;
-	padding-top: 0;
-}
-
-.multiselect__input {
-	margin-bottom: 14px;
 }
 
 .form-control-image {

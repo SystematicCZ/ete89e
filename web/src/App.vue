@@ -3,7 +3,7 @@
     <div
       v-if="$store.getters.isLoggedIn"
       ref="sidebar"
-      class="sidebar-wrapper vh-100 sticky-top bg-shades-dark d-md-block shadow"
+      class="sidebar-wrapper vh-100 sticky-top background-rhombus d-md-block shadow"
     >
       <navigation/>
     </div>

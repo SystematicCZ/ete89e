@@ -57,7 +57,7 @@
       <div class="text-center">
         <b-button
           variant="primary"
-          @click="$bvModal.hide(`contact_modal_${user.id}`)"
+          @click="$bvModal.hide(`contact_modal_${user.id}`); $toasted.success('Zpráva odeslána')"
         >
           Odeslat
         </b-button>
