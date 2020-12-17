@@ -5,6 +5,8 @@
       right
     >
       <b-nav-item-dropdown
+        class="mr-2 p-0"
+        toggle-class="nav-link-custom p-0"
         no-caret
         right
       >
@@ -33,9 +35,8 @@
         </b-dropdown-text>
       </b-nav-item-dropdown>
       <b-nav-item-dropdown
-        class="user-navbar"
         text="Charlie Shark"
-        toggle-class="nav-link-custom"
+        toggle-class="nav-link-custom p-0"
         no-caret
         right
       >
@@ -84,5 +85,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-
+.nav-link-custom {
+  padding: 0 !important;
+}
 </style>

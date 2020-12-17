@@ -19,6 +19,7 @@
           </div>
         </b-col>
         <b-col
+          class="px-0"
           cols="12"
           md="7"
         >
@@ -29,7 +30,7 @@
               <slot name="heading">
                 <h1
                   v-if="heading"
-                  class="m-2"
+                  class="m-3"
                   v-text="heading"
                 />
               </slot>
@@ -39,7 +40,7 @@
               <slot name="lead">
                 <p
                   v-if="lead"
-                  class="m-2 mb-0"
+                  class="m-3 mb-0"
                   v-text="lead"
                 />
               </slot>

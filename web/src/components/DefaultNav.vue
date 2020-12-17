@@ -1,6 +1,7 @@
 <template>
   <b-navbar>
     <b-navbar-nav
+      class="p-0 align-items-center"
       left
     >
       <b-nav-item
