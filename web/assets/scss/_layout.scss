@@ -16,7 +16,7 @@ body{
 }
 
 .background-paper {
-  background-image:  linear-gradient($color-text-secondary 1.2000000000000001px, transparent 1.0000000000000001px), linear-gradient(90deg, $color-text-secondary 1.0000000000000001px, transparent 1.0000000000000001px), linear-gradient($color-text-secondary 0.7000000000000001px, transparent 0.7000000000000001px), linear-gradient(90deg, $color-text-secondary 0.7000000000000001px, $color-shades-light 0.7000000000000001px);
+  background-image:  linear-gradient($color-text-secondary 1.0000000000000001px, transparent 1.0000000000000001px), linear-gradient(90deg, $color-text-secondary 1.0000000000000001px, transparent 1.0000000000000001px), linear-gradient($color-text-secondary 0.7000000000000001px, transparent 0.7000000000000001px), linear-gradient(90deg, $color-text-secondary 0.7000000000000001px, $color-shades-light 0.7000000000000001px);
   background-size: 35px 35px, 35px 35px, 7px 7px, 7px 7px;
   background-position: -1.0000000000000001px -1.0000000000000001px, -1.0000000000000001px -1.0000000000000001px, -0.7000000000000001px -0.7000000000000001px, -0.7000000000000001px -0.7000000000000001px;
 }
