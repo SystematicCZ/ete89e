@@ -3,7 +3,7 @@
     <div
       v-if="$store.getters.isLoggedIn"
       ref="sidebar"
-      class="sidebar-wrapper vh-100 sticky-top background-rhombus d-md-block shadow"
+      class="sidebar-wrapper vh-100 overflow-auto sticky-top background-rhombus d-md-block shadow"
     >
       <navigation/>
     </div>
@@ -55,7 +55,6 @@ export default {
 .sidebar-wrapper {
   min-width: 15rem;
   display: none;
-  transition: all 0.2s ease;
 
   &.shown {
     display: block !important;
