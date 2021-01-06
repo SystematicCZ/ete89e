@@ -32,7 +32,7 @@
                   v-if="heading"
                   class="m-3"
                   v-text="heading"
-                />
+                >Team 7 app</h1>
               </slot>
             </div>
             <br>

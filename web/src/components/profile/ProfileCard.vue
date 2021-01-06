@@ -5,6 +5,7 @@
     <div class="card-profile-img text-center">
       <img
         :src="user.profilePicture"
+        :alt="`${user.fullName} profile picture`"
         width="170"
         class="rounded-circle"
       >

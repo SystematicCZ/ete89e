@@ -11,6 +11,7 @@
       >
         <img
           :src="entry.user.profilePicture"
+          :alt="`${entry.user.fullName} profile picture`"
           class="rounded-circle profile-image mr-2"
         >
       </div>

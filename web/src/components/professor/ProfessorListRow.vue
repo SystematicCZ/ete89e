@@ -4,6 +4,7 @@
     >
       <img
         src="/build/images/svg/icons/professor.svg"
+        alt="Professor profile picture"
         class="rounded-circle profile-image mr-4"
         width="50"
       >

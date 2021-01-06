@@ -48,8 +48,10 @@
           <div class="d-inline-block p-2 bg-accent-light">
             <img
               :src="$store.state.user.profilePicture"
+              :alt="`${$store.state.user.fullName} profile picture`"
               class="rounded-circle mr-1"
-              width="38">
+              width="38"
+            >
             <span> {{ $store.state.user.fullName }}</span>
           </div>
         </template>

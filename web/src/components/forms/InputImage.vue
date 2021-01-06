@@ -14,14 +14,19 @@
       <div
         class="form-control-image mb-0 color--primary"
       >
-        <img :src="preview" :width="width" :height="height">
+        <img
+          :src="preview"
+          :width="width"
+          :height="height"
+          alt="Profile picture preview"
+        >
       </div>
       <b-button
         variant="link"
         class="add-profile-picture btn-light btn"
         @click="choose"
       >
-        <b-icon icon="pencil" />
+        <b-icon icon="pencil"/>
       </b-button>
       <b-button
         v-if="image && backendDelete"
@@ -56,7 +61,7 @@
           class="btn btn-light"
           @click="zoomOut"
         >
-          <b-icon icon="zoom-out" />
+          <b-icon icon="zoom-out"/>
         </b-button>
 
         <b-button
@@ -64,14 +69,14 @@
           class="btn btn-light"
           @click="zoomIn"
         >
-          <b-icon icon="zoom-in" />
+          <b-icon icon="zoom-in"/>
         </b-button>
         <b-button
           variant="link"
           class="text-secondary btn ml-auto border-0 h-auto position-static bg-white"
           @click="cancel"
         >
-        <b-icon icon="x" />
+          <b-icon icon="x"/>
         </b-button>
       </div>
     </div>
@@ -204,6 +209,7 @@ export default {
 .cr-slider-wrap {
   display: none;
 }
+
 .add-profile-picture {
   position: absolute;
   right: 0;

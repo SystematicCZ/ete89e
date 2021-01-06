@@ -4,6 +4,7 @@
     >
       <img
         :src="user.profilePicture"
+        :alt="`${user.fullName} profile picture`"
         class="rounded-circle profile-image mr-4"
         width="70"
       >
