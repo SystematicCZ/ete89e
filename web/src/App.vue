@@ -42,7 +42,6 @@ export default {
     title: 'Informace o studiu',
     titleTemplate: '%s | Team 7 app',
     meta: [
-      { charSet: 'utf-8' },
       { viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
       {
         vmid: 'description',
@@ -63,9 +62,6 @@ export default {
 
       this.$refs.sidebar.classList.add('shown');
     },
-    replaceStringWildCard(template, content = '', wildCard = '%s') {
-      return template.replace(wildCard, content);
-    }
   },
 };
 </script>
