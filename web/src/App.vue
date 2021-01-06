@@ -5,7 +5,7 @@
       ref="sidebar"
       class="sidebar-wrapper vh-100 overflow-auto sticky-top background-rhombus d-md-block shadow"
     >
-      <navigation/>
+      <site-navigation />
     </div>
     <div class="content-wrapper vw-100">
       <site-header>
@@ -28,19 +28,16 @@
   </div>
 </template>
 <script>
-import Navigation from './components/Navigation.vue';
 import SiteHeader from './components/SiteHeader.vue';
 import SiteFooter from './components/SiteFooter.vue';
+import SiteNavigation from './components/SiteNavigation.vue';
 
 export default {
   components: {
+    SiteNavigation,
     Navigation,
     SiteHeader,
     SiteFooter,
-  },
-  mounted() {
-    console.log('lolf');
-    console.log(document.querySelector('html').innerHTML);
   },
   methods: {
     toggleSideBar() {

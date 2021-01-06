@@ -1,0 +1,33 @@
+{
+  "plugins": [
+    "html-validate-vue"
+  ],
+  "extends": [
+    "html-validate:recommended",
+    "html-validate-vue:recommended"
+  ],
+  "elements": [
+    "html5"
+  ],
+  "transform": {
+    "^.*\\.vue$": "html-validate-vue"
+  },
+  "rules": {
+    "void-style": [
+      "error",
+      {
+        "style": "omit"
+      }
+    ],
+    "element-name": [
+      "error",
+      {
+        "whitelist": [
+          "froala",
+          "password",
+          "multiselect"
+        ]
+      }
+    ]
+  }
+}

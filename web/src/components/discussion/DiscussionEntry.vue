@@ -93,7 +93,6 @@ export default {
   computed: {
     width() {
       return this.level === 0 ? '100%' : '90%';
-      //return `${Math.max(60, 100 - (10 * this.level))}%`;
     },
   },
   created() {

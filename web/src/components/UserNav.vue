@@ -16,7 +16,12 @@
           <div
             class="bg-accent-light d-inline-block p-2"
           >
-            <img src="" width="1" height="38">
+            <img
+              src="/build/images/logo.png"
+              width="1"
+              height="38"
+              alt="helper"
+            >
             <b-icon icon="bell-fill"/>
             <b-badge
               variant="danger"
@@ -28,8 +33,7 @@
         <b-dropdown-text
           v-for="(notification, index) in $store.state.user.notifications"
           :key="`${index}_notification`"
-          class="border-bottom"
-          style="min-width: 240px"
+          class="border-bottom notifications"
         >
           {{ notification.text }}
         </b-dropdown-text>
@@ -87,5 +91,8 @@ export default {
 <style scoped lang="scss">
 .nav-link-custom {
   padding: 0 !important;
+}
+.notifications {
+  min-width: 240px;
 }
 </style>

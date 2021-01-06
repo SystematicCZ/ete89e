@@ -4,7 +4,7 @@
       heading="Pojď mezi nás"
       lead="Mohli bychom ti slibovat hory doly. Ale ty sem prostě chceš."
     />
-    <b-container class="rounded shadow py-5 rounded mt--3 bg-white">
+    <b-container class="shadow py-5 rounded mt--3 bg-white">
       <b-container class="inner-container">
         <h2 class="mb-5">Registrace</h2>
         <profile-form

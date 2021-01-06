@@ -20,13 +20,13 @@
         centered
         hide-footer
       >
-        <snake/>
+        <tm7-snake/>
       </b-modal>
     </footer>
   </b-container>
 </template>
 <script>
-import Snake from './Snake.vue';
+import Snake from './Tm7Snake.vue';
 
 export default {
   components: { Snake },
