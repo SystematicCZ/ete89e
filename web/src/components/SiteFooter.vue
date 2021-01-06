@@ -26,9 +26,9 @@
   </b-container>
 </template>
 <script>
-import Snake from './Tm7Snake.vue';
+import Tm7Snake from './Tm7Snake.vue';
 
 export default {
-  components: { Snake },
+  components: { Tm7Snake },
 };
 </script>
