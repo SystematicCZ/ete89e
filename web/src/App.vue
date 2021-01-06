@@ -20,7 +20,6 @@
         </template>
       </site-header>
       <main
-        role="main"
       >
         <router-view />
       </main>
@@ -38,6 +37,10 @@ export default {
     Navigation,
     SiteHeader,
     SiteFooter,
+  },
+  mounted() {
+    console.log('lolf');
+    console.log(document.querySelector('html').innerHTML);
   },
   methods: {
     toggleSideBar() {
