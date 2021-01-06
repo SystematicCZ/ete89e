@@ -31,6 +31,16 @@ import ProfileForm from '../components/profile/ProfileForm.vue';
 
 export default {
   components: { ProfileForm, PageHeader },
+  metaInfo: {
+    title: 'Zaregistruj se',
+    meta: [
+      {
+        vmid: 'description',
+        name: 'description',
+        content: 'Už je to jenom krůček do zěmě vědění.',
+      },
+    ],
+  },
   data() {
     return {
       user: null,

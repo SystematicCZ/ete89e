@@ -45,6 +45,19 @@ import PageHeader from '../components/PageHeader.vue';
 
 export default {
   components: { PageHeader, CourseDiscussion, CourseSummary },
+  metaInfo() {
+    const title = (this.course) ? this.course.name : 'O kurzu';
+    return {
+      title,
+      meta: [
+        {
+          vmid: 'description',
+          name: 'description',
+          content: 'Už jsi zase zapomněl, že máš odevzdat semestrálku? Nevíš co tě čeká na zkoušce?',
+        },
+      ],
+    };
+  },
   data() {
     return {
       course: null,

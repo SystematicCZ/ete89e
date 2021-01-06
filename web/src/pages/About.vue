@@ -43,5 +43,15 @@ import PageHeader from '../components/PageHeader.vue';
 
 export default {
   components: { PageHeader },
+  metaInfo: {
+    title: 'O projektu',
+    meta: [
+      {
+        vmid: 'description',
+        name: 'description',
+        content: 'Tak na co čekáš? Mrkni na náš projekt…',
+      },
+    ],
+  },
 };
 </script>

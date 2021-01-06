@@ -23,5 +23,16 @@ import LoginForm from '../components/LoginForm.vue';
 
 export default {
   components: { LoginForm, PageHeader },
+  metaInfo: {
+    title: 'Přihlaš se',
+    meta: [
+      {
+        vmid: 'description',
+        name: 'description',
+        content: 'Vítej zpátky u nás. A kdo že jsi? Neznáme se? Omrkni to a už ti nikdy neuteče žádný info o studiu.',
+        template: '%s',
+      },
+    ],
+  },
 };
 </script>

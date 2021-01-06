@@ -91,6 +91,20 @@ export default {
     ProfileForm,
     PageHeader,
   },
+  metaInfo() {
+    const title = this.user ? this.user.fullName : 'Úprava profilu';
+    return {
+      title,
+      meta: [
+        {
+          vmid: 'description',
+          name: 'description',
+          content: 'Pořádně si to zkontroluj. Žádný anonymi tady nechceme, ale zase nemusíme vědet všechno.',
+          template: '%s',
+        },
+      ],
+    };
+  },
   data() {
     return {
       user: this.$store.state.user,

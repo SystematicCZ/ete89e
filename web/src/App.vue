@@ -5,7 +5,7 @@
       ref="sidebar"
       class="sidebar-wrapper vh-100 overflow-auto sticky-top background-rhombus d-md-block shadow"
     >
-      <site-navigation />
+      <site-navigation/>
     </div>
     <div class="content-wrapper vw-100">
       <site-header>
@@ -21,7 +21,7 @@
       </site-header>
       <main
       >
-        <router-view />
+        <router-view/>
       </main>
       <site-footer/>
     </div>
@@ -35,9 +35,24 @@ import SiteNavigation from './components/SiteNavigation.vue';
 export default {
   components: {
     SiteNavigation,
-    Navigation,
     SiteHeader,
     SiteFooter,
+  },
+  metaInfo: {
+    title: 'Informace o studiu',
+    titleTemplate: '%s | Team 7 app',
+    meta: [
+      { charSet: 'utf-8' },
+      { viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
+      {
+        vmid: 'description',
+        name: 'description',
+        template: 'Unavuje tě neustále hledat informace o studiu? %s Pojď mezi nás, s námi ti žádné info neuteče!',
+        content: '',
+      },
+      { keywords: 'Termín odevzdání, projekt, požadavky na zápočet, zkouška, zápočet, semestrální práce' },
+      { author: 'author' },
+    ],
   },
   methods: {
     toggleSideBar() {
@@ -48,6 +63,9 @@ export default {
 
       this.$refs.sidebar.classList.add('shown');
     },
+    replaceStringWildCard(template, content = '', wildCard = '%s') {
+      return template.replace(wildCard, content);
+    }
   },
 };
 </script>

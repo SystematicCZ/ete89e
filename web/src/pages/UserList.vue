@@ -49,6 +49,16 @@ import SkeletonList from '../components/skeleton/SkeletonList.vue';
 export default {
   components: { SkeletonList, SearchBar, PageHeader, ProfileList },
   mixins: [searchableMixin],
+  metaInfo: {
+    title: 'Studenti',
+    meta: [
+      {
+        vmid: 'description',
+        name: 'description',
+        content: 'My víme kdo s tebou studuje.',
+      },
+    ],
+  },
   data() {
     return {
       users: [],

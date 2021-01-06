@@ -1,5 +1,6 @@
 import { upperFirst } from 'lodash';
 import Vue from 'vue';
+import VueMeta from 'vue-meta';
 import Vuelidate from 'vuelidate';
 import Toasted from 'vue-toasted';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
@@ -17,6 +18,7 @@ require('froala-editor/js/plugins/lists.min.js');
 require('froala-editor/js/plugins/emoticons.min.js');
 require('froala-editor/js/languages/cs.js');
 
+Vue.use(VueMeta);
 Vue.use(VueFroala);
 Vue.config.productionTip = false;
 

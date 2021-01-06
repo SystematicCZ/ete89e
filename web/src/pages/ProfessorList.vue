@@ -49,6 +49,16 @@ import ProfessorList from '../components/professor/ProfessorList.vue';
 export default {
   components: { ProfessorList, PageHeader, SearchBar, SkeletonList },
   mixins: [searchableMixin],
+  metaInfo: {
+    title: 'Vyučující',
+    meta: [
+      {
+        vmid: 'description',
+        name: 'description',
+        content: 'My víme kdo tě bude trápit.',
+      },
+    ],
+  },
   data() {
     return {
       professors: null,

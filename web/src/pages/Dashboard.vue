@@ -49,6 +49,16 @@ import SkeletonListCards from '../components/skeleton/SkeletonListCards.vue';
 export default {
   components: { SkeletonListCards, CourseCard, PageHeader, SearchBar },
   mixins: [searchableMixin],
+  metaInfo: {
+    title: 'Kurzy',
+    meta: [
+      {
+        vmid: 'description',
+        name: 'description',
+        content: 'My víme všechno o každým předmětu, se ktrým bojuješ.',
+      },
+    ],
+  },
   data() {
     return {
       courses: null,
