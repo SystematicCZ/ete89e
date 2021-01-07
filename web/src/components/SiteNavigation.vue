@@ -4,8 +4,8 @@
       variant="faded"
       type="dark"
     >
-      <b-navbar-brand href="/" class="pb-3 mb-3 border-bottom">
-        <img src="/build/images/logo.png" width="200" alt="Team 7 logo">
+      <b-navbar-brand to="/" class="pb-3 mb-3 border-bottom">
+        <img src="build/images/logo.png" width="200" alt="Team 7 logo">
       </b-navbar-brand>
     </b-navbar>
     <b-nav

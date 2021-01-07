@@ -8,9 +8,12 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
   Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
 }
 
+const prefix = process.env.NODE_ENV === 'dev' ? '' : '/2021zs/ete89e/07';
+
 Encore
   .setOutputPath('public/build/')
-  .setPublicPath('/build')
+  .setPublicPath(`${prefix}/build`)
+  .setManifestKeyPrefix('build')
   .cleanupOutputBeforeBuild()
   .enableSourceMaps(!Encore.isProduction())
   .addEntry('js/main', './src/main.js')

@@ -17,7 +17,7 @@
             class="bg-accent-light d-inline-block p-2"
           >
             <img
-              src="/build/images/logo.png"
+              src="build/images/logo.png"
               width="1"
               height="38"
               alt="helper"

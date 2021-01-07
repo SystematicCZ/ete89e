@@ -14,6 +14,7 @@ Vue.use(Router);
 
 const router = new Router({
   //mode: 'history',
+  //base: '/2021zs/ete89e/07/',
   routes: [
     {
       path: '/profile',

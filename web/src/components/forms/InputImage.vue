@@ -90,7 +90,7 @@ export default {
   props: {
     zoomStep: { type: Number, default: 0.03 },
     image: { type: String, default: null },
-    placeholder: { type: String, default: '/build/images/svg/add_picture_placeholder.svg' },
+    placeholder: { type: String, default: 'build/images/svg/add_picture_placeholder.svg' },
     circle: { type: Boolean, default: false },
     backendDelete: { type: Boolean, default: false },
     maxFileSize: { type: Number, default: 10000000 },
