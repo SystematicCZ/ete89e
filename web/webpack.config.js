@@ -12,10 +12,7 @@ Encore
   .setOutputPath('public/build/')
   .setPublicPath('/build')
   .cleanupOutputBeforeBuild()
-
   .enableSourceMaps(!Encore.isProduction())
-  .enableVersioning(Encore.isProduction())
-
   .addEntry('js/main', './src/main.js')
   .addStyleEntry('style', './assets/scss/style.scss')
   .disableSingleRuntimeChunk()
@@ -26,7 +23,7 @@ Encore
     ],
   }))
   .enableSassLoader((options) => {
-    options.additionalData = `@import "variables";`;
+    options.additionalData = '@import "variables";';
     options.sassOptions.includePaths = [path.resolve(__dirname, './assets/scss/')];
   })
   .enableVueLoader();
