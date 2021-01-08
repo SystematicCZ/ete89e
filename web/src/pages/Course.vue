@@ -1,0 +1,80 @@
+<template>
+  <div>
+    <page-header
+      :heading="course.name"
+    >
+      <template v-slot:controls>
+        <b-button
+          v-if="!subscribed"
+          variant="warning"
+        >
+          <b-icon
+            icon="check"
+            class="mr-1"
+          />
+          Přidat k mým
+        </b-button>
+        <b-button
+          v-else
+          variant="danger"
+        >
+          <b-icon
+            icon="x"
+            class="mr-1"
+          />
+          Odebrat z mých
+        </b-button>
+      </template>
+    </page-header>
+    <b-container
+      class="mt--3 px-0"
+    >
+      <course-summary
+        :course="course"
+        @course-changed="course = $event"
+        @events-changed="course.events = $event"
+      />
+    </b-container>
+  </div>
+</template>
+<script>
+import courses from '../_data/courses.json';
+import CourseSummary from '../components/course/CourseSummary.vue';
+import CourseDiscussion from '../components/course/CourseDiscussion.vue';
+import PageHeader from '../components/PageHeader.vue';
+
+export default {
+  components: { PageHeader, CourseDiscussion, CourseSummary },
+  metaInfo() {
+    const title = (this.course) ? this.course.name : 'O kurzu';
+    return {
+      title,
+      meta: [
+        {
+          vmid: 'description',
+          name: 'description',
+          content: 'Už jsi zase zapomněl, že máš odevzdat semestrálku? Nevíš co tě čeká na zkoušce?',
+        },
+      ],
+    };
+  },
+  data() {
+    return {
+      course: null,
+      subscribed: false,
+    };
+  },
+  watch: {
+    $route: 'load',
+  },
+  created() {
+    this.load();
+  },
+  methods: {
+    load() {
+      [this.course] = courses.filter(item => item.id == this.$route.params.id);
+      this.subscribed = this.$store.state.user.courses.filter(item => item.id == this.$route.params.id).length > 0;
+    },
+  },
+};
+</script>

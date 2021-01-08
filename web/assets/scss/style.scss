@@ -1,3 +1,11 @@
 @charset "UTF-8";
 
-@import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+@import 'variables';
+
+@import '~bootstrap';
+@import '~bootstrap-vue';
+
+@import 'misc';
+@import 'layout';
+@import 'forms';
+
