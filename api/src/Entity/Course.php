@@ -2,7 +2,12 @@
 
 namespace App\Entity;
 
+use App\DataObject\CourseData;
+use App\DataObject\EventsData;
 use App\Repository\CourseRepository;
+use App\Service\SlugifyService;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -32,17 +37,33 @@ class Course
      */
     private ?string $description;
 
-    private function __construct(string $slug, string $name, ?string $description)
+    /**
+     * @ORM\OneToMany(targetEntity="Event", mappedBy="course", cascade="all")
+     */
+    private Collection $events;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Professor", inversedBy="courses")
+     * @ORM\JoinColumn(name="professor_id", referencedColumnName="id")
+     */
+    private Professor $professor;
+
+    private function __construct(string $slug, string $name, Professor $professor, ?string $description)
     {
         $this->id = null;
         $this->slug = $slug;
         $this->name = $name;
         $this->description = $description;
+        $this->events = new ArrayCollection();
+        $this->professor = $professor;
     }
 
-    public static function create(): void
+    public static function create(CourseData $data, SlugifyService $slugifyService, CourseRepository $repository): self
     {
-        // TODO generate slug
+        $instance = new self($slugifyService->slugify($data->getName(), $repository), $data->getName(), $data->getProfessor(), $data->getDescription());
+        $data->getProfessor()->addCourse($instance);
+
+        return $instance;
     }
 
     public function getId(): ?int
@@ -63,5 +84,25 @@ class Course
     public function getDescription(): ?string
     {
         return $this->description;
+    }
+
+    public function getEvents(): array
+    {
+        return $this->events->getValues();
+    }
+
+    public function getProfessor(): Professor
+    {
+        return $this->professor;
+    }
+
+    public function updateEvents(EventsData $data): self
+    {
+        $this->events->clear();
+        foreach ($data->getEvents() as $event) {
+            $this->events->add(Event::create($event, $this));
+        }
+
+        return $this;
     }
 }

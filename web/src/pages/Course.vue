@@ -1,7 +1,7 @@
 <template>
   <div>
     <page-header
-      :heading="course.name"
+      :heading="course ? course.name : ''"
     >
       <template v-slot:controls>
         <b-button
@@ -30,6 +30,7 @@
       class="mt--3 px-0"
     >
       <course-summary
+        v-if="course"
         :course="course"
         @course-changed="course = $event"
         @events-changed="course.events = $event"
@@ -38,7 +39,7 @@
   </div>
 </template>
 <script>
-import courses from '../_data/courses.json';
+import axios from 'axios';
 import CourseSummary from '../components/course/CourseSummary.vue';
 import CourseDiscussion from '../components/course/CourseDiscussion.vue';
 import PageHeader from '../components/PageHeader.vue';
@@ -72,8 +73,12 @@ export default {
   },
   methods: {
     load() {
-      [this.course] = courses.filter(item => item.id == this.$route.params.id);
-      this.subscribed = this.$store.state.user.courses.filter(item => item.id == this.$route.params.id).length > 0;
+      axios.get(`${this.$root.$options.vars.API_URL}courses/${this.$route.params.id}`).then((response) => {
+        this.course = response.data;
+      }).catch((error) => {
+        console.log(error);
+      });
+      //this.subscribed = this.$store.state.user.courses.filter(item => item.id == this.$route.params.id).length > 0;
     },
   },
 };

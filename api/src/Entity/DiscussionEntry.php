@@ -35,7 +35,7 @@ class DiscussionEntry
     private Collection $answers;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="answers")
+     * @ORM\ManyToOne(targetEntity="DiscussionEntry", inversedBy="answers")
      * @ORM\JoinColumn(name="entry_id", referencedColumnName="id", nullable=true)
      */
     private ?DiscussionEntry $answerTo;
