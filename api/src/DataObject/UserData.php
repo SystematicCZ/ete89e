@@ -8,8 +8,10 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * @method string getFirstName()
  * @method string|null getLastName()
- * @method string|null getEmail()
+ * @method string getEmail()
  * @method string|null getAboutMe()
+ * @method string|null getImage()
+ * @method string getFaculty()
  */
 class UserData extends DataObject
 {
@@ -17,6 +19,8 @@ class UserData extends DataObject
     protected ?string $lastName;
     protected string $email;
     protected ?string $aboutMe;
+    protected ?string $image;
+    protected string $faculty;
 
     public static function fromRequest(Request $request): self
     {

@@ -41,22 +41,34 @@ class User implements UserInterface
     private ?string $password;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private ?string $image;
+
+    /**
      * @ORM\Column(type="text", nullable=true)
      */
     private ?string $aboutMe;
 
-    private function __construct(string $firstName, ?string $lastName, string $email, ?string $aboutMe)
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private string $faculty;
+
+    private function __construct(string $firstName, ?string $lastName, string $email, string $faculty, ?string $aboutMe, ?string $image)
     {
         $this->id = null;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;
         $this->aboutMe = $aboutMe;
+        $this->image = $image;
+        $this->faculty = $faculty;
     }
 
     public static function create(UserData $data): self
     {
-        $instance = new self($data->getFirstName(), $data->getLastName(), $data->getEmail(), $data->getAboutMe());
+        $instance = new self($data->getFirstName(), $data->getLastName(), $data->getEmail(), $data->getFaculty(), $data->getAboutMe(), $data->getImage());
         return $instance;
     }
 
