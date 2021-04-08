@@ -37,8 +37,13 @@ window.validationErrorTranslations = {
   sameAs: 'Pole nejsou stejná',
 };
 
+window.vars = {
+  API_URL: 'https://127.0.0.1:8001/',
+};
+
 const app = new Vue({
   el: '#app',
+  vars,
   router,
   store,
   render: h => h(App),

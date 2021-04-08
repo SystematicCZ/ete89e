@@ -39,6 +39,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import courses from '../_data/courses.json';
 import searchableMixin from '../components/searchableMixin';
 import PageHeader from '../components/PageHeader.vue';
@@ -82,10 +83,11 @@ export default {
       });
     },
     load() {
-      // fake
-      this.courses = courses;
-      this.$sleep(300).then(() => {
+      axios.get(`${this.$root.$options.vars.API_URL}courses`).then((response) => {
+        this.courses = response.data;
         this.isLoading = false;
+      }).catch((error) => {
+        console.log(error);
       });
     },
   },

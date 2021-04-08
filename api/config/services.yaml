@@ -27,5 +27,19 @@ services:
         resource: '../src/Controller/'
         tags: ['controller.service_arguments']
 
+    StartupJobsCom\Shared\DataObject\Normalizer\DataObjectNormalizer:
+        tags:
+            - { name: 'serializer.normalizer', priority: 1 }
+
+    StartupJobsCom\Shared\DataObject\Normalizer\PayloadEntityNormalizer:
+        tags: [ 'serializer.normalizer' ]
+
+    StartupJobsCom\Shared\DataObject\Normalizer\PayloadDateTimeNormalizer:
+        tags: [ 'serializer.normalizer' ]
+
+    StartupJobsCom\Shared\DataObject\DataObjectResolver:
+        tags: [ 'controller.argument_value_resolver' ]
+
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

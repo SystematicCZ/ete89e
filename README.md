@@ -5,7 +5,21 @@
 ## Struktura
 
 ### Api
-Obsahuje Symfony appku, která bude sloužit jako API. Zatím se tím nezabýváme.
+Obsahuje Symfony appku, která bude sloužit jako API.
+
+####Nutne
+PHP 7.4 nebo PHP 8
+composer
+
+```bash
+$ cd api
+$ composer install
+$ bin/console doc:database:create
+$ bin/console doc:schema:create
+$ bin/console doc:fixtures:load
+$ symfony server:start -d
+```
+V konzoli je videt adresa aplikace po provedení posledního příkazu.
 
 ### Web
 Obsahuje klienta. Tohle je úkolem zimního semestru.
