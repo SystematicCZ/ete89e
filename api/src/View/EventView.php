@@ -3,6 +3,7 @@
 namespace App\View;
 
 use App\Entity\Event;
+use JetBrains\PhpStorm\ArrayShape;
 
 class EventView
 {

@@ -4,6 +4,7 @@ namespace App\View;
 
 use App\Entity\Course;
 use App\Entity\Event;
+use JetBrains\PhpStorm\ArrayShape;
 
 class CoursesView
 {
@@ -16,6 +17,12 @@ class CoursesView
         $this->eventView = $eventView;
     }
 
+    /**
+     * Creates list view for given courses
+     *
+     * @param array $courses
+     * @return array
+     */
     public function createList(array $courses): array
     {
         return array_map(
@@ -24,7 +31,20 @@ class CoursesView
         );
     }
 
-    public function create(Course $course): array
+    /**
+     * Transforms one course
+     *
+     * @param Course $course
+     * @return array
+     */
+    #[ArrayShape([
+        'id' => "int|null",
+        'slug' => "string",
+        'name' => "string",
+        'description' => "null|string",
+        'professor' => "array",
+        'events' => "array|array[]"
+    ])] public function create(Course $course): array
     {
         return [
             'id' => $course->getId(),

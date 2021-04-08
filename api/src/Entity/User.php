@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\DataObject\UserData;
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -55,6 +57,12 @@ class User implements UserInterface
      */
     private string $faculty;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Course", inversedBy="users")
+     * @ORM\JoinTable(name="users_to_courses")
+     */
+    private Collection $courses;
+
     private function __construct(string $firstName, ?string $lastName, string $email, string $faculty, ?string $aboutMe, ?string $image)
     {
         $this->id = null;
@@ -64,11 +72,19 @@ class User implements UserInterface
         $this->aboutMe = $aboutMe;
         $this->image = $image;
         $this->faculty = $faculty;
+        $this->courses = new ArrayCollection();
     }
 
     public static function create(UserData $data): self
     {
-        $instance = new self($data->getFirstName(), $data->getLastName(), $data->getEmail(), $data->getFaculty(), $data->getAboutMe(), $data->getImage());
+        $instance = new self(
+            $data->getFirstName(),
+            $data->getLastName(),
+            $data->getEmail(),
+            $data->getFaculty(),
+            $data->getAboutMe(),
+            $data->getImage()
+        );
         return $instance;
     }
 

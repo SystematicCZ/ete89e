@@ -43,10 +43,20 @@ class Course
     private Collection $events;
 
     /**
+     * @ORM\OneToMany(targetEntity="DiscussionEntry", mappedBy="course")
+     */
+    private Collection $discussionEntries;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Professor", inversedBy="courses")
      * @ORM\JoinColumn(name="professor_id", referencedColumnName="id")
      */
     private Professor $professor;
+
+    /**
+     * ORM\ManyToMany(targetEntity="User", mappedBy="courses")
+     */
+    private $users;
 
     private function __construct(string $slug, string $name, Professor $professor, ?string $description)
     {
@@ -55,6 +65,8 @@ class Course
         $this->name = $name;
         $this->description = $description;
         $this->events = new ArrayCollection();
+        $this->discussionEntries = new ArrayCollection();
+        $this->users = new ArrayCollection();
         $this->professor = $professor;
     }
 

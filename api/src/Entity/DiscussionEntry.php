@@ -29,6 +29,13 @@ class DiscussionEntry
      */
     private \DateTimeInterface $date;
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Course", inversedBy="discussionEntries")
+     * @ORM\JoinColumn(name="course_id", referencedColumnName="id", nullable=true)
+     */
+    private ?Course $course;
+
     /**
      * @ORM\OneToMany(targetEntity="DiscussionEntry", mappedBy="answersTo")
      */
@@ -40,11 +47,14 @@ class DiscussionEntry
      */
     private ?DiscussionEntry $answerTo;
 
-    public function __construct(string $text, \DateTimeInterface $date)
+    public function __construct(string $text, \DateTimeInterface $date, Course $course, ?DiscussionEntry $parent = null)
     {
         $this->id = null;
         $this->text = $text;
         $this->answers = new ArrayCollection();
+        $this->date = $date;
+        $this->answerTo = $parent;
+        $this->course = $parent ? null:  $course;
     }
 
     public function getId(): ?int
