@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Repository\ProfessorRepository;
+use App\View\ProfessorView;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -9,13 +11,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProfessorController extends AbstractController
 {
     /**
-     * @Route("/professor", name="professor")
+     * @Route("/professors", name="professors", methods={"GET"})
+     *
+     * @param ProfessorRepository $repository
+     * @return Response
      */
-    public function index(): Response
+    public function professors(ProfessorRepository $repository, ProfessorView $view): Response
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/ProfessorController.php',
-        ]);
+        $professors = $repository->findAll();
+
+        return $this->json($view->createList($professors));
     }
 }
