@@ -7,6 +7,10 @@
 ### Api
 Obsahuje Symfony appku, která bude sloužit jako API.
 
+####Nutne
+PHP 7.4 nebo PHP 8
+composer
+
 ```bash
 $ cd api
 $ composer install
