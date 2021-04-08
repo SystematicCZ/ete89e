@@ -19,8 +19,5 @@ class EventData extends DataObject
      */
     protected string $name;
 
-    /**
-     * @Assert\InFuture()
-     */
     protected \DateTimeInterface $date;
 }
