@@ -75,7 +75,6 @@ export default {
   },
   methods: {
     load() {
-      // fake
       this.professors = professors;
       this.$sleep(400).then(() => {
         this.loading = false;
