@@ -22,4 +22,14 @@ class ProfessorController extends AbstractController
 
         return $this->json($view->createList($professors));
     }
+
+    /**
+     * @Route("/professors/find/{search}", name="test", methods={"GET"})
+     *
+     * @return Response
+     */
+    public function findByName(ProfessorRepository $repository, string $search, ProfessorView $view): Response
+    {
+        return $this->json($view->createList($repository->findByName($search)));
+    }
 }

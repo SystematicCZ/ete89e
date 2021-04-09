@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Repository\UserRepository;
+use App\View\UserView;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -9,13 +11,16 @@ use Symfony\Component\Routing\Annotation\Route;
 class UserController extends AbstractController
 {
     /**
-     * @Route("/user", name="user")
+     * @Route("/users", name="users", methods={"GET"})
+     *
+     * @param UserRepository $repository
+     * @param UserView $view
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    public function index(): Response
-    {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/UserController.php',
-        ]);
-    }
+   public function users(UserRepository $repository, UserView $view): Response
+   {
+        $users = $repository->findAll();
+
+        return $this->json($view->createList($users));
+   }
 }
