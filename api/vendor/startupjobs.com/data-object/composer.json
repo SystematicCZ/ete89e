@@ -1,0 +1,34 @@
+{
+    "name": "startupjobs.com/data-object",
+    "description": "Package for creating selfvalidating value objects",
+    "type": "library",
+    "require": {
+        "php": ">=7.4",
+        "ezyang/htmlpurifier": "^4.13",
+        "symfony/validator": "^5.1",
+        "symfony/serializer": "^5.1",
+        "doctrine/orm": "^2.7",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "StartupJobsCom\\Shared\\DataObject\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "StartupJobsCom\\Shared\\DataObject\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Marek Pritasil",
+            "email": "mpritasil@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
+    "version": "1.0.8"
+}
