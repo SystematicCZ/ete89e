@@ -26,6 +26,9 @@ class ProfessorController extends AbstractController
     /**
      * @Route("/professors/find/{search}", name="test", methods={"GET"})
      *
+     * @param ProfessorRepository $repository
+     * @param string $search
+     * @param ProfessorView $view
      * @return Response
      */
     public function findByName(ProfessorRepository $repository, string $search, ProfessorView $view): Response
