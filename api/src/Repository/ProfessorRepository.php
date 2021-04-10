@@ -23,9 +23,9 @@ class ProfessorRepository extends ServiceEntityRepository
     {
         // SELECT • FROM professor AS p
         // WHERE p.name LIKE '%marek%
-        // ORDER BY p.id ASC
+        // ORDER BY p.id AS˚C
         // LIMIT 10
-        $query = $this->createQueryBuilder('p')
+        return $this->createQueryBuilder('p')
             ->andWhere('p.name LIKE :val')
             ->setParameter('val', '%' . $value . '%')
             ->orderBy('p.id', 'ASC')
