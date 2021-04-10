@@ -4,7 +4,6 @@ namespace App\Repository;
 
 use App\Entity\Professor;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Collections\Criteria;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -26,12 +25,13 @@ class ProfessorRepository extends ServiceEntityRepository
         // WHERE p.name LIKE '%marek%
         // ORDER BY p.id ASC
         // LIMIT 10
-       $query =  $this->createQueryBuilder('p')
+        $query = $this->createQueryBuilder('p')
             ->andWhere('p.name LIKE :val')
-            ->setParameter('val', '%'.$value.'%')
+            ->setParameter('val', '%' . $value . '%')
             ->orderBy('p.id', 'ASC')
             ->setMaxResults(10)
-            ->getQuery() ->getSQL();
+            ->getQuery()
+            ->getResult();
     }
 
     /*
