@@ -16,9 +16,4 @@ class CourseData extends DataObject
     protected string $name;
     protected ?string $description;
     protected Professor $professor;
-
-    public static function fromRequest(Request $request): self
-    {
-
-    }
 }

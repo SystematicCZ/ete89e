@@ -29,14 +29,13 @@
         wysiwyg
       />
     </input-wrapper>
-    <required-tip />
+    <required-tip/>
     <form-buttons
       @save="save"
     />
   </div>
 </template>
 <script>
-import { cloneDeep } from 'lodash';
 import { required } from 'vuelidate/lib/validators';
 import professors from '../../_data/teachers.json';
 import formMixin from '../forms/formMixin';
@@ -46,6 +45,7 @@ import FormButtons from '../forms/FormButtons.vue';
 import InputTextarea from '../forms/InputTextarea.vue';
 import InputMultiselect from '../forms/InputMultiselect.vue';
 import RequiredTip from '../forms/RequiredTip.vue';
+import axios from 'axios';
 
 export default {
   components: { RequiredTip, InputMultiselect, InputTextarea, FormButtons, InputText, InputWrapper },
@@ -74,20 +74,21 @@ export default {
       if (this.course) {
         payload.name = this.course.name;
         payload.description = this.course.description;
-        payload.professor = this.course.professor;
+        payload.professor = this.course.professor.name;
       }
 
       return payload;
     },
     save() {
-      // fake
-      const course = cloneDeep(this.course);
-      course.name = this.payload.name;
-      course.description = this.payload.description;
-      course.professor = this.payload.professor;
+      const params = new URLSearchParams();
+      params.append('payload', JSON.stringify(this.payload));
 
-      this.$toasted.success('Změny uloženy');
-      this.$emit('synchronize', course);
+      axios.post(`${this.$root.$options.vars.API_URL}courses/${this.course.id}`, params).then((response) => {
+        this.$toasted.success('Změny uloženy');
+        this.$emit('synchronize', response.data);
+      }).catch((error) => {
+        console.log(error);
+      });
     },
   },
   validations: {
