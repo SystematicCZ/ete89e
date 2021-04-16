@@ -31,12 +31,6 @@ class CoursesView
         );
     }
 
-    /**
-     * Transforms one course
-     *
-     * @param Course $course
-     * @return array
-     */
     #[ArrayShape([
         'id' => "int|null",
         'slug' => "string",

@@ -43,8 +43,8 @@ import searchableMixin from '../components/searchableMixin';
 import PageHeader from '../components/PageHeader.vue';
 import SearchBar from '../components/SearchBar.vue';
 import SkeletonList from '../components/skeleton/SkeletonList.vue';
-import professors from '../_data/teachers.json';
 import ProfessorList from '../components/professor/ProfessorList.vue';
+import axios from 'axios';
 
 export default {
   components: { ProfessorList, PageHeader, SearchBar, SkeletonList },
@@ -75,18 +75,21 @@ export default {
   },
   methods: {
     load() {
-      // fake
-      this.professors = professors;
-      this.$sleep(400).then(() => {
+      axios.get(`${this.$root.$options.vars.API_URL}professors`).then((response) => {
+        this.professors = response.data;
         this.loading = false;
+      }).catch((error) => {
+        console.log(error);
       });
     },
     search(term) {
-      // fake
       this.loading = true;
-      this.professors = professors.filter(item => item.name.toLowerCase().includes(term.toLowerCase()));
-      this.$sleep(400).then(() => {
+
+      axios.post(`${this.$root.$options.vars.API_URL}professors/search`, { search: term }).then((response) => {
+        this.professors = response.data;
         this.loading = false;
+      }).catch((error) => {
+        console.log(error);
       });
     },
   },

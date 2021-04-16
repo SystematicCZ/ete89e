@@ -30,7 +30,7 @@ return array(
     'App\\Repository\\ProfessorRepository' => $baseDir . '/src/Repository/ProfessorRepository.php',
     'App\\Repository\\UserRepository' => $baseDir . '/src/Repository/UserRepository.php',
     'App\\Service\\SlugifyService' => $baseDir . '/src/Service/SlugifyService.php',
-    'App\\View\\CoursesView' => $baseDir . '/src/View/CoursesView.php',
+    'App\\View\\CoursesView' => $baseDir . '/src/View/CourseView.php',
     'App\\View\\EventView' => $baseDir . '/src/View/EventView.php',
     'App\\View\\ProfessorView' => $baseDir . '/src/View/ProfessorView.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

@@ -16,6 +16,7 @@ class EventView
                 'date' => $event->getDate()->format('Y-m-d'),
                 'time' => $event->getDate()->format('H:i'),
             ],
+            'subscription' => null,
         ];
     }
 }
