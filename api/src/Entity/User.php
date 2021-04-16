@@ -61,7 +61,7 @@ class User implements UserInterface
      * @ORM\ManyToMany(targetEntity="Course", inversedBy="users")
      * @ORM\JoinTable(name="users_to_courses")
      */
-    private Collection $courses; //fancy array
+    private Collection $courses;
 
     private function __construct(string $firstName, ?string $lastName, string $email, string $faculty, ?string $aboutMe, ?string $image)
     {
@@ -164,5 +164,16 @@ class User implements UserInterface
     public function getProfilePicture(): ?string
     {
         return $this->image;
+    }
+
+    public function toggleCourse(Course $course): self
+    {
+        if ($this->courses->contains($course)) {
+            $this->courses->removeElement($course);
+        } else {
+            $this->courses->add($course);
+        }
+
+        return $this;
     }
 }

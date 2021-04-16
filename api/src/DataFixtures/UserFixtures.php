@@ -5,11 +5,12 @@ namespace App\DataFixtures;
 use App\DataObject\UserData;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-class UserFixtures extends Fixture
+class UserFixtures extends Fixture implements DependentFixtureInterface
 {
     const NAMES = ['Mark', 'John', 'George', 'Jacob', 'Samantha', 'Alice', 'Hannah', 'Julie', 'Natalie'];
     const SURNAMES = ['Catfish', 'Ray', 'Eel', 'Manta', 'Whale', 'Salmon', 'Arapaima', 'Dolphin', 'Shrimp'];
@@ -50,9 +51,30 @@ class UserFixtures extends Fixture
             $user = User::create($data);
             $user->updatePassword('heslo', $this->encoder);
 
+            $this->generateCourses($user);
+
             $this->addReference('user-' . $name, $user);
             $manager->persist($user);
             $manager->flush();
         }
+    }
+
+    private function generateCourses(User $user): void
+    {
+        $courses = CourseFixtures::NAMES;
+        shuffle($courses);
+        $courses = array_slice($courses, 0, random_int(1, count($courses) - 1));
+
+        foreach ($courses  as $course)
+        {
+            $user->toggleCourse($this->getReference('course-'.$course));
+        }
+    }
+
+    public function getDependencies()
+    {
+       return [
+           CourseFixtures::class,
+       ];
     }
 }
