@@ -9,6 +9,12 @@
           v-model="term"
           button="Hledat"
         />
+        <router-link
+          :to="{name: 'addCourse'}"
+          class="btn btn-outline-warning"
+        >
+          Přidat kurz
+        </router-link>
       </template>
     </page-header>
     <b-container class="mt--3 px-0">
