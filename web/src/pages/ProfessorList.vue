@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     load() {
-      axios.get(`${this.$root.$options.vars.API_URL}professors`).then((response) => {
+      axios.get(`${this.$root.$options.vars.API_URL}professors`, { withCredentials: true }).then((response) => {
         this.professors = response.data;
         this.loading = false;
       }).catch((error) => {
@@ -85,7 +85,10 @@ export default {
     search(term) {
       this.loading = true;
 
-      axios.post(`${this.$root.$options.vars.API_URL}professors/search`, { search: term }).then((response) => {
+      axios.get(
+        `${this.$root.$options.vars.API_URL}professors`,
+        { withCredentials: true, params: { search: term } },
+      ).then((response) => {
         this.professors = response.data;
         this.loading = false;
       }).catch((error) => {

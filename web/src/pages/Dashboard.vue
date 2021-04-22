@@ -73,9 +73,12 @@ export default {
     }
   },
   methods: {
-    search(query) {
+    search(term) {
       this.isLoading = true;
-      axios.post(`${this.$root.$options.vars.API_URL}courses/search`, { search: query }, { withCredentials: true }).then((response) => {
+      axios.get(
+        `${this.$root.$options.vars.API_URL}courses`,
+        { withCredentials: true, params: { search: term } },
+      ).then((response) => {
         this.courses = response.data;
         this.isLoading = false;
       }).catch((error) => {

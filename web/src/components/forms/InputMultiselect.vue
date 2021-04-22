@@ -19,7 +19,7 @@ require('vue-multiselect/dist/vue-multiselect.min.css');
 export default {
   components: { Multiselect },
   props: {
-    value: { type: [Object, String], default: null },
+    value: { type: Number, default: null },
     validations: { type: Object, default: null },
     options: { type: Array, required: true },
     trackBy: { type: String, default: 'id' },
@@ -27,12 +27,15 @@ export default {
   },
   data() {
     return {
-      data: this.value,
+      data: null,
     };
   },
   watch: {
     data(newValue) {
-      this.$emit('input', newValue);
+      this.$emit('input', newValue[this.trackBy]);
+    },
+    options(newValue) {
+      this.data = newValue.find(element => element[this.trackBy] === this.value) || null;
     },
   },
 };

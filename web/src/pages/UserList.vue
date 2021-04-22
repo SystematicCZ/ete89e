@@ -82,9 +82,12 @@ export default {
         console.log(error);
       });
     },
-    search(query) {
+    search(term) {
       this.loading = true;
-      axios.post(`${this.$root.$options.vars.API_URL}users/search`, { search: query }, { withCredentials: true }).then((response) => {
+      axios.get(
+        `${this.$root.$options.vars.API_URL}users`,
+        { withCredentials: true, params: { search: term } },
+      ).then((response) => {
         this.users = response.data;
         this.loading = false;
       }).catch((error) => {

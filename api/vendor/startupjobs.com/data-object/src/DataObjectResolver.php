@@ -60,7 +60,7 @@ class DataObjectResolver implements ArgumentValueResolverInterface
     {
         // creating new instance of DataObject
         $class = $argument->getType();
-        $payload = $request->get('payload', null);
+        $payload = $request->getContent();
 
         if (!$payload) {
             throw new BadRequestHttpException();

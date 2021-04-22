@@ -3,7 +3,10 @@
     <page-header
       :heading="course ? course.name : ''"
     >
-      <template v-slot:controls>
+      <template
+        v-slot:controls
+        v-if="!loading"
+      >
         <b-button
           v-if="!subscribed"
           variant="warning"
@@ -32,11 +35,17 @@
       class="mt--3 px-0"
     >
       <course-summary
-        v-if="course"
+        v-if="course && !loading"
         :course="course"
         @course-changed="course = $event"
         @events-changed="course.events = $event"
       />
+      <div
+        v-else
+        class="rounded shadow p-3 bg-white mb-3"
+      >
+        <skeleton-list/>
+      </div>
     </b-container>
   </div>
 </template>
@@ -45,9 +54,10 @@ import axios from 'axios';
 import CourseSummary from '../components/course/CourseSummary.vue';
 import CourseDiscussion from '../components/course/CourseDiscussion.vue';
 import PageHeader from '../components/PageHeader.vue';
+import SkeletonList from '../components/skeleton/SkeletonList.vue';
 
 export default {
-  components: { PageHeader, CourseDiscussion, CourseSummary },
+  components: { SkeletonList, PageHeader, CourseDiscussion, CourseSummary },
   metaInfo() {
     const title = (this.course) ? this.course.name : 'O kurzu';
     return {
@@ -64,6 +74,7 @@ export default {
   data() {
     return {
       course: null,
+      loading: true,
     };
   },
   computed: {
@@ -79,8 +90,11 @@ export default {
   },
   methods: {
     load() {
+      this.loading = true;
+      this.course = null;
       axios.get(`${this.$root.$options.vars.API_URL}courses/${this.$route.params.id}`, { withCredentials: true }).then((response) => {
         this.course = response.data;
+        this.loading = false;
       }).catch((error) => {
         console.log(error);
       });

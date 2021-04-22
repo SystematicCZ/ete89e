@@ -6,7 +6,7 @@ use App\DataObject\CourseData;
 use App\Entity\Course;
 use App\Entity\User;
 use App\Repository\CourseRepository;
-use App\Service\RequestContentDecoder;
+use App\Service\SlugifyService;
 use App\View\CoursesView;
 use App\View\UserView;
 use Doctrine\ORM\EntityManagerInterface;
@@ -27,41 +27,30 @@ class CourseController extends AbstractController
     }
 
     /**
-     * @Route("/courses/search", name="course_search", methods={"POST"})
-     *
-     * @param Request $request
-     * @param RequestContentDecoder $contentDecoder
-     * @return Response
-     * @throws \Exception
-     */
-    public function findByName(Request $request, RequestContentDecoder $contentDecoder): Response
-    {
-        //$this->denyAccessUnlessGranted('ROLE_USER');
-
-        $search =  $contentDecoder->decodeIfJson($request)['search'];
-        return $this->json($this->coursesView->createList($this->repository->findByName($search)));
-    }
-
-    /**
      * @Route("/courses", name="courses", methods={"GET"})
+     * @param Request $request
      * @return Response
      */
-    public function index(): Response
+    public function list(Request $request): Response
     {
-        //$this->denyAccessUnlessGranted('ROLE_USER');
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
+        $search = $request->get('search', null);
+        $courses = $search ? $this->repository->findByName($search) : $this->repository->findAll();
 
         return $this->json(
-            $this->coursesView->createList($this->repository->findAll()),
+            $this->coursesView->createList($courses),
         );
     }
 
     /**
      * @Route("/courses/{id}", name="course", methods={"GET"}, requirements={"id"="\d+"})
+     * @param Course $course
      * @return Response
      */
     public function detail(Course $course): Response
     {
-        //$this->denyAccessUnlessGranted('ROLE_USER');
+        $this->denyAccessUnlessGranted('ROLE_USER');
 
         return $this->json(
             $this->coursesView->create($course),
@@ -69,16 +58,22 @@ class CourseController extends AbstractController
     }
 
     /**
-     * @Route("/courses/{id}", name="course_update", methods={"POST"}, requirements={"id"="\d+"})
+     * @Route("/courses/{id}", name="course_update", methods={"PUT"}, requirements={"id"="\d+"})
      *
+     * @param Request $request
      * @param Course $course
+     * @param CourseData $courseData
+     * @param EntityManagerInterface $manager
      * @return Response
      */
-    public function update(Request $request, Course $course, CourseData $courseData): Response
+    public function update(Request $request, Course $course, CourseData $courseData, EntityManagerInterface $manager): Response
     {
-        //$this->denyAccessUnlessGranted('ROLE_USER');
+        $this->denyAccessUnlessGranted('ROLE_USER');
 
-        dd($courseData);
+        $course->update($courseData);
+        $manager->flush();
+
+
         return $this->json($this->coursesView->create($course));
     }
 
@@ -87,6 +82,8 @@ class CourseController extends AbstractController
      *
      * @param Request $request
      * @param Course $course
+     * @param UserView $userView
+     * @param EntityManagerInterface $manager
      * @return Response
      */
     public function toggleSubscription(Request $request, Course $course, UserView $userView, EntityManagerInterface $manager): Response
@@ -104,4 +101,20 @@ class CourseController extends AbstractController
         return $this->json($userView->create($user));
     }
 
+    /**
+     * @Route("/courses", name="course_update", methods={"POST"})
+     *
+     * @param CourseData $data
+     * @param EntityManagerInterface $manager
+     * @param SlugifyService $slugifyService
+     * @return Response
+     */
+    public function add(CourseData $data, EntityManagerInterface $manager, SlugifyService $slugifyService): Response
+    {
+        $course = Course::create($data, $slugifyService, $this->repository);
+        $manager->persist($course);
+        $manager->flush();
+
+        return $this->json($this->coursesView->create($course));
+    }
 }

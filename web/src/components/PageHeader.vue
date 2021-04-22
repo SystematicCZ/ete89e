@@ -33,6 +33,11 @@
                   class="m-3"
                   v-text="heading"
                 >Team 7 app</h1>
+                <skeleton-paragraph
+                  v-else
+                  class="p-5"
+                  style="width: 30rem"
+                />
               </slot>
             </div>
             <br>
@@ -59,7 +64,9 @@
   </b-container>
 </template>
 <script>
+import SkeletonParagraph from './skeleton/SkeletonParagraph.vue';
 export default {
+  components: { SkeletonParagraph },
   props: {
     heading: { type: String, default: '' },
     lead: { type: String, default: '' },

@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class CourseData extends DataObject
 {
-    protected string $name;
+    protected ?string $name;
     protected ?string $description;
-    protected Professor $professor;
+    protected ?Professor $professor;
 }

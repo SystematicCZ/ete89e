@@ -18,15 +18,17 @@ class UserController extends AbstractController
     /**
      * @Route("/users", name="users", methods={"GET"})
      *
+     * @param Request $request
      * @param UserRepository $repository
      * @param UserView $view
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-   public function users(UserRepository $repository, UserView $view): Response
+   public function users(Request $request, UserRepository $repository, UserView $view): Response
    {
-       //$this->denyAccessUnlessGranted('ROLE_USER');
+       $this->denyAccessUnlessGranted('ROLE_USER');
 
-       $users = $repository->findAll();
+       $search = $request->get('search', null);
+       $users = $search ? $repository->findByName($search) : $repository->findAll();
 
         return $this->json($view->createList($users));
    }
@@ -41,26 +43,9 @@ class UserController extends AbstractController
      */
    public function detail(UserRepository $repository, UserView $view, int $id): Response
    {
-      // $this->denyAccessUnlessGranted('ROLE_USER');
+       $this->denyAccessUnlessGranted('ROLE_USER');
 
        return $this->json($view->create($repository->findOneBy(['id' => $id])));
    }
 
-    /**
-     * @Route("/users/search", name="user_search", methods={"POST"})
-     *
-     * @param Request $request
-     * @param UserRepository $repository
-     * @param UserView $view
-     * @param RequestContentDecoder $contentDecoder
-     * @return Response
-     * @throws \Exception
-     */
-    public function findByName(Request $request, UserRepository $repository, UserView $view, RequestContentDecoder $contentDecoder): Response
-    {
-        //$this->denyAccessUnlessGranted('ROLE_USER');
-
-        $search =  $contentDecoder->decodeIfJson($request)['search'];
-        return $this->json($view->createList($repository->findByName($search)));
-    }
 }

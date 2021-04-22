@@ -78,6 +78,15 @@ class Course
         return $instance;
     }
 
+    public function update(CourseData $courseData): self
+    {
+        $this->name = $courseData->getName();
+        $this->description = $courseData->getDescription();
+        $this->professor = $courseData->getProfessor();
+
+        return $this;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

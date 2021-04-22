@@ -8,6 +8,7 @@ import UserList from './pages/UserList.vue';
 import ProfessorList from './pages/ProfessorList.vue';
 import Registration from './pages/Registration.vue';
 import Login from './pages/Login.vue';
+import AddCourse from './pages/AddCourse.vue';
 import store from './store';
 
 Vue.use(Router);
@@ -38,6 +39,11 @@ const router = new Router({
       path: '/registration',
       name: 'registration',
       component: Registration,
+    },
+    {
+      path: '/course/add',
+      name: 'addCourse',
+      component: AddCourse,
     },
     {
       path: '/',

@@ -24,7 +24,7 @@ class SecurityController extends AbstractController
      */
     public function logout(): Response
     {
-        //$this->denyAccessUnlessGranted('ROLE_USER');
+        $this->denyAccessUnlessGranted('ROLE_USER');
 
         return $this->json('');
     }

@@ -29,7 +29,7 @@ services:
 
     StartupJobsCom\Shared\DataObject\Normalizer\DataObjectNormalizer:
         tags:
-            - { name: 'serializer.normalizer', priority: 1 }
+            - { name: 'serializer.normalizer', priority: 10 }
 
     StartupJobsCom\Shared\DataObject\Normalizer\PayloadEntityNormalizer:
         tags: [ 'serializer.normalizer' ]
