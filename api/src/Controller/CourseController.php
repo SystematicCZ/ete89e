@@ -44,6 +44,25 @@ class CourseController extends AbstractController
     }
 
     /**
+     * @Route("/courses/{id}", name="course_update", methods={"PUT"}, requirements={"id"="\d+"})
+     *
+     * @param Course $course
+     * @param CourseData $courseData
+     * @param EntityManagerInterface $manager
+     * @return Response
+     */
+    public function update(Course $course, CourseData $courseData, EntityManagerInterface $manager): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
+        $course->update($courseData);
+        $manager->flush();
+
+
+        return $this->json($this->coursesView->create($course));
+    }
+
+    /**
      * @Route("/courses/{id}", name="course", methods={"GET"}, requirements={"id"="\d+"})
      * @param Course $course
      * @return Response
@@ -57,25 +76,6 @@ class CourseController extends AbstractController
         );
     }
 
-    /**
-     * @Route("/courses/{id}", name="course_update", methods={"PUT"}, requirements={"id"="\d+"})
-     *
-     * @param Request $request
-     * @param Course $course
-     * @param CourseData $courseData
-     * @param EntityManagerInterface $manager
-     * @return Response
-     */
-    public function update(Request $request, Course $course, CourseData $courseData, EntityManagerInterface $manager): Response
-    {
-        $this->denyAccessUnlessGranted('ROLE_USER');
-
-        $course->update($courseData);
-        $manager->flush();
-
-
-        return $this->json($this->coursesView->create($course));
-    }
 
     /**
      * @Route("/courses/{id}/toggle_subscription", name="course_subscription", methods={"POST"}, requirements={"id"="\d+"})
@@ -102,7 +102,7 @@ class CourseController extends AbstractController
     }
 
     /**
-     * @Route("/courses", name="course_update", methods={"POST"})
+     * @Route("/courses", name="course_add", methods={"POST"})
      *
      * @param CourseData $data
      * @param EntityManagerInterface $manager

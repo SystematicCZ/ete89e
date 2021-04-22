@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '102a7f325c01c3f4323c12eaaeb1f6113973047e',
+    'reference' => '2e2731b420e05f2bb966c1f8823f35854adfac6b',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '102a7f325c01c3f4323c12eaaeb1f6113973047e',
+      'reference' => '2e2731b420e05f2bb966c1f8823f35854adfac6b',
     ),
     'cocur/slugify' => 
     array (
@@ -425,6 +425,15 @@
       ),
       'reference' => 'd9a267b621c5082e0a6c659d73633b6fd28a8a08',
     ),
+    'symfony/debug-bundle' => 
+    array (
+      'pretty_version' => 'v5.1.11',
+      'version' => '5.1.11.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'cc01b42c54ca5a3eed3e48f0c2327e1b3d46c16b',
+    ),
     'symfony/dependency-injection' => 
     array (
       'pretty_version' => 'v5.1.11',
@@ -787,6 +796,15 @@
       ),
       'reference' => 'e2eaa60b558f26a4b0354e1bbb25636efaaad105',
     ),
+    'symfony/twig-bridge' => 
+    array (
+      'pretty_version' => 'v5.1.11',
+      'version' => '5.1.11.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4421afc6e1a0ef5e7cd9b32359617b98069d1666',
+    ),
     'symfony/validator' => 
     array (
       'pretty_version' => 'v5.1.11',
@@ -822,6 +840,15 @@
       array (
       ),
       'reference' => '6bb8b36c6dea8100268512bf46e858c8eb5c545e',
+    ),
+    'twig/twig' => 
+    array (
+      'pretty_version' => 'v3.3.0',
+      'version' => '3.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1f3b7e2c06cc05d42936a8ad508ff1db7975cdc5',
     ),
     'zendframework/zend-code' => 
     array (
