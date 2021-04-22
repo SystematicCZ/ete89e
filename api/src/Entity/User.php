@@ -131,9 +131,16 @@ class User implements UserInterface
         return $this->aboutMe;
     }
 
+    public function getFaculty(): string
+    {
+        return $this->faculty;
+    }
+
     public function getRoles(): array
     {
-        return [];
+        return [
+            'ROLE_USER',
+        ];
     }
 
 

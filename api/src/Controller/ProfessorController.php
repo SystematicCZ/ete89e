@@ -20,6 +20,8 @@ class ProfessorController extends AbstractController
      */
     public function professors(ProfessorRepository $repository, ProfessorView $view): Response
     {
+        //$this->denyAccessUnlessGranted('ROLE_USER');
+
         $professors = $repository->findAll();
 
         return $this->json($view->createList($professors));
@@ -35,6 +37,8 @@ class ProfessorController extends AbstractController
      */
     public function findByName(Request $request, ProfessorRepository $repository, ProfessorView $view, RequestContentDecoder $contentDecoder): Response
     {
+        //$this->denyAccessUnlessGranted('ROLE_USER');
+
         $search =  $contentDecoder->decodeIfJson($request)['search'];
         return $this->json($view->createList($repository->findByName($search)));
     }

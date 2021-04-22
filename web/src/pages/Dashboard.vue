@@ -40,7 +40,6 @@
 
 <script>
 import axios from 'axios';
-import courses from '../_data/courses.json';
 import searchableMixin from '../components/searchableMixin';
 import PageHeader from '../components/PageHeader.vue';
 import SearchBar from '../components/SearchBar.vue';
@@ -75,15 +74,16 @@ export default {
   },
   methods: {
     search(query) {
-      // fake
       this.isLoading = true;
-      this.courses = courses.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
-      this.$sleep(300).then(() => {
+      axios.post(`${this.$root.$options.vars.API_URL}courses/search`, { search: query }, { withCredentials: true }).then((response) => {
+        this.courses = response.data;
         this.isLoading = false;
+      }).catch((error) => {
+        console.log(error);
       });
     },
     load() {
-      axios.get(`${this.$root.$options.vars.API_URL}courses`).then((response) => {
+      axios.get(`${this.$root.$options.vars.API_URL}courses`, { withCredentials: true }).then((response) => {
         this.courses = response.data;
         this.isLoading = false;
       }).catch((error) => {

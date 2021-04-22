@@ -36,14 +36,14 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
         shuffle($names);
         shuffle($surnames);
 
-        foreach ($names as $name) {
+        foreach ($names as $key => $name) {
             $data = new UserData(
                 [
                     'firstName' => $name,
                     'lastName' => array_pop($surnames),
                     'email' => strtolower($name) . '@ocean.com',
                     'aboutMe' => mb_convert_encoding(ucfirst(trim(substr(self::DESC, random_int(0, ($len - $limit) - 1), $limit))), 'utf-8', 'utf-8'),
-                    'image' => 'https://startupjobs.cz/build/images/shark_placeholder_' . random_int(0, 9) . '.svg',
+                    'image' => 'https://loremflickr.com/170/170/fish?'.$key,
                     'faculty' => 'Provozně ekonomická fakulta',
                     ]
             );

@@ -6,7 +6,7 @@
     >
       <input-text
         v-model="payload.email"
-        :validations="validations.password"
+        :validations="validations.email"
       />
     </input-wrapper>
 
@@ -17,6 +17,7 @@
       <input-text
         v-model="payload.password"
         :validations="validations.password"
+        type="password"
       />
     </input-wrapper>
 
@@ -27,6 +28,7 @@
   </div>
 </template>
 <script>
+import axios from 'axios';
 import { required } from 'vuelidate/lib/validators';
 import formMixin from './forms/formMixin';
 import InputWrapper from './forms/InputWrapper.vue';
@@ -46,9 +48,14 @@ export default {
   },
   methods: {
     submit() {
-      this.$store.dispatch('login').then(() => {
-        this.$emit('logged-in');
+      axios.post(`${this.$root.$options.vars.API_URL}login`, this.payload, { withCredentials: true }).then((response) => {
+        this.$store.dispatch('login', response.data).then(() => {
+          this.$emit('logged-in');
+        });
+      }).catch((error) => {
+        console.log(error);
       });
+
     },
   },
   validations: {

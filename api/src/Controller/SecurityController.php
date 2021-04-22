@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\View\UserView;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,12 +12,10 @@ class SecurityController extends AbstractController
     /**
      * @Route("/login", name="login", methods={"POST"})
      */
-    public function login(): Response
+    public function login(UserView $view): Response
     {
         $user = $this->getUser();
 
-        return $this->json([
-            'user' => $user->getFullName(),
-        ]);
+        return $this->json($view->create($user));
     }
 }

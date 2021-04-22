@@ -1,6 +1,5 @@
 import Vuex from 'vuex';
 import Vue from 'vue';
-import defaultUser from './_data/charlie.json';
 
 Vue.use(Vuex);
 
@@ -30,14 +29,16 @@ const store = new Vuex.Store({
       localStorage.removeItem('token');
       commit('logout');
     },
-    login({ commit }) {
+    login({ commit }, user) {
+      console.log(user);
       const now = new Date();
       const token = now.getTime();
       const expiryDate = new Date(now.getTime() + ((60 * 60 * 24) * 1000)).getTime();
       localStorage.setItem('token', token);
       localStorage.setItem('tokenExpiry', expiryDate);
-      localStorage.setItem('user', JSON.stringify(defaultUser));
-      commit('login', { user: defaultUser, token: { token, expiryDate} });
+      localStorage.setItem('user', JSON.stringify(user));
+
+      commit('login', { user, token: { token, expiryDate } });
     },
   },
 });

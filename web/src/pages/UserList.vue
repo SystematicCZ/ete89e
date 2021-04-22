@@ -39,8 +39,8 @@
   </div>
 </template>
 <script>
+import axios from 'axios';
 import searchableMixin from '../components/searchableMixin';
-import users from '../_data/users.json';
 import ProfileList from '../components/profile/ProfileList.vue';
 import PageHeader from '../components/PageHeader.vue';
 import SearchBar from '../components/SearchBar.vue';
@@ -75,18 +75,20 @@ export default {
   },
   methods: {
     load() {
-      // fake
-      this.users = users;
-      this.$sleep(400).then(() => {
+      axios.get(`${this.$root.$options.vars.API_URL}users`, { withCredentials: true }).then((response) => {
+        this.users = response.data;
         this.loading = false;
+      }).catch((error) => {
+        console.log(error);
       });
     },
     search(query) {
-      // fake
       this.loading = true;
-      this.users = users.filter(item => item.fullName.toLowerCase().includes(query.toLowerCase()));
-      this.$sleep(400).then(() => {
+      axios.post(`${this.$root.$options.vars.API_URL}users/search`, { search: query }, { withCredentials: true }).then((response) => {
+        this.users = response.data;
         this.loading = false;
+      }).catch((error) => {
+        console.log(error);
       });
     },
   },

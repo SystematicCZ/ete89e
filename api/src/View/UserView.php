@@ -24,6 +24,7 @@ class UserView
         'lastName' => "null|string",
         'fullName' => "string",
         'profilePicture' => "null|string",
+        'faculty' => "string",
         'aboutMe' => "null|string",
         'email' => "string"
     ])] public function create(User $user): array
@@ -34,6 +35,7 @@ class UserView
             'lastName' => $user->getLastName(),
             'fullName' => $user->getFullName(),
             'profilePicture' => $user->getProfilePicture(),
+            'faculty' => $user->getFaculty(),
             'aboutMe' => $user->getAboutMe(),
             'email' => $user->getEmail(),
         ];

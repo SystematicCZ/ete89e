@@ -19,6 +19,15 @@ class CourseRepository extends ServiceEntityRepository
         parent::__construct($registry, Course::class);
     }
 
+    public function findByName(string $search): array
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.name LIKE :search')
+            ->setParameter('search', '%'.$search.'%')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Course[] Returns an array of Course objects
     //  */

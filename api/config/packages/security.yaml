@@ -17,8 +17,8 @@ security:
             anonymous: true
             lazy: true
             provider: database
-#            remember_me:
-#                secret: '%kernel.secret%'
-#                always_remember_me: true
             json_login:
                 check_path: /login
+                username_path: email
+            logout:
+                path: /logout

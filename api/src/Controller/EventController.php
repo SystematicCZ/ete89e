@@ -13,6 +13,8 @@ class EventController extends AbstractController
      */
     public function index(): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
         return $this->json([
             'message' => 'Welcome to your new controller!',
             'path' => 'src/Controller/EventController.php',

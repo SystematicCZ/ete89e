@@ -18,7 +18,7 @@
           >
             <img
               src="build/images/logo.png"
-              width="1"
+              width="0.1"
               height="38"
               alt="helper"
             >
@@ -26,16 +26,16 @@
             <b-badge
               variant="danger"
               pill
-            > {{ $store.state.user.notifications.length }}
+            > {{ notifications.length }}
             </b-badge>
           </div>
         </template>
         <b-dropdown-text
-          v-for="(notification, index) in $store.state.user.notifications"
+          v-for="(notification, index) in notifications"
           :key="`${index}_notification`"
           class="border-bottom notifications"
         >
-          {{ notification.text }}
+          {{ notification }}
         </b-dropdown-text>
       </b-nav-item-dropdown>
       <b-nav-item-dropdown
@@ -79,13 +79,24 @@
   </b-navbar>
 </template>
 <script>
+import axios from 'axios';
+
 export default {
+  data() {
+    return {
+      notifications: ['Some notification 1', 'Some notification 2'],
+    };
+  },
   methods: {
     logout() {
-      this.$store.dispatch('logout')
-        .then(() => {
-          this.$router.push('/login');
-        });
+      axios.post(`${this.$root.$options.vars.API_URL}logout`).then((response) => {
+        this.$store.dispatch('logout')
+          .then(() => {
+            this.$router.push('/login');
+          });
+      }).catch((error) => {
+        console.log(error);
+      });
     },
   },
 };
@@ -94,6 +105,7 @@ export default {
 .nav-link-custom {
   padding: 0 !important;
 }
+
 .notifications {
   min-width: 240px;
 }
