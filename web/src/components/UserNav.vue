@@ -89,7 +89,7 @@ export default {
   },
   methods: {
     logout() {
-      axios.post(`${this.$root.$options.vars.API_URL}logout`, {}, { withCredentials: true }).then((response) => {
+      axios.post(`${this.$root.$options.vars.API_URL}logout`, null, { withCredentials: true }).then((response) => {
         this.$store.dispatch('logout')
           .then(() => {
             this.$router.push('/login');

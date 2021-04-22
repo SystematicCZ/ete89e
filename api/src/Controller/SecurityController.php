@@ -26,6 +26,6 @@ class SecurityController extends AbstractController
     {
         $this->denyAccessUnlessGranted('ROLE_USER');
 
-        return $this->json('');
+        return $this->json(null);
     }
 }

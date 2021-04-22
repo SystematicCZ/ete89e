@@ -37,7 +37,6 @@ class RequestResponseSubscriber implements EventSubscriberInterface
         dump(
             [
                 'method' => $event->getRequest()->getMethod(),
-                //'contentType' => $event->getRequest()->getContentType(),
                 'uri' => $event->getRequest()->getUri(),
                 'body' => json_encode(json_decode($event->getRequest()->getContent(), true), JSON_PRETTY_PRINT),
             ]
