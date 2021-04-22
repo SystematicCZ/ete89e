@@ -7,6 +7,7 @@
         <b-button
           v-if="!subscribed"
           variant="warning"
+          @click="toggleCourse"
         >
           <b-icon
             icon="check"
@@ -17,6 +18,7 @@
         <b-button
           v-else
           variant="danger"
+          @click="toggleCourse"
         >
           <b-icon
             icon="x"
@@ -62,8 +64,12 @@ export default {
   data() {
     return {
       course: null,
-      subscribed: false,
     };
+  },
+  computed: {
+    subscribed() {
+      return this.$store.state.user.courses.filter(item => item.id == this.$route.params.id).length > 0;
+    },
   },
   watch: {
     $route: 'load',
@@ -73,12 +79,18 @@ export default {
   },
   methods: {
     load() {
-      axios.get(`${this.$root.$options.vars.API_URL}courses/${this.$route.params.id}`).then((response) => {
+      axios.get(`${this.$root.$options.vars.API_URL}courses/${this.$route.params.id}`, { withCredentials: true }).then((response) => {
         this.course = response.data;
       }).catch((error) => {
         console.log(error);
       });
-      //this.subscribed = this.$store.state.user.courses.filter(item => item.id == this.$route.params.id).length > 0;
+    },
+    toggleCourse() {
+      axios.post(`${this.$root.$options.vars.API_URL}courses/${this.$route.params.id}/toggle_subscription`, {}, { withCredentials: true }).then((response) => {
+        this.$store.dispatch('updateUser', response.data);
+      }).catch((error) => {
+        console.log(error);
+      });
     },
   },
 };

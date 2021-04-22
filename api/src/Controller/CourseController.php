@@ -4,9 +4,12 @@ namespace App\Controller;
 
 use App\DataObject\CourseData;
 use App\Entity\Course;
+use App\Entity\User;
 use App\Repository\CourseRepository;
 use App\Service\RequestContentDecoder;
 use App\View\CoursesView;
+use App\View\UserView;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -77,6 +80,28 @@ class CourseController extends AbstractController
 
         dd($courseData);
         return $this->json($this->coursesView->create($course));
+    }
+
+    /**
+     * @Route("/courses/{id}/toggle_subscription", name="course_subscription", methods={"POST"}, requirements={"id"="\d+"})
+     *
+     * @param Request $request
+     * @param Course $course
+     * @return Response
+     */
+    public function toggleSubscription(Request $request, Course $course, UserView $userView, EntityManagerInterface $manager): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
+        /**
+         * @var $user User
+         */
+        $user = $this->getUser();
+        $user->toggleCourse($course);
+
+        $manager->flush();
+
+        return $this->json($userView->create($user));
     }
 
 }

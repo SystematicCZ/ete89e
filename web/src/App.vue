@@ -67,7 +67,7 @@ export default {
 </script>
 <style lang="scss">
 .sidebar-wrapper {
-  min-width: 15rem;
+  width: 18rem;
   display: none;
 
   &.shown {

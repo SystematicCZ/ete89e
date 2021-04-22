@@ -20,23 +20,28 @@ const store = new Vuex.Store({
       state.user = null;
       state.token = { token: null };
     },
+    updateUser(state, user) {
+      state.user = user;
+    },
   },
   getters: {
     isLoggedIn: state => state.token.token !== null && state.token.expiryDate > (new Date()).getTime(),
   },
   actions: {
+    updateUser({ commit }, user) {
+      localStorage.setItem('user', JSON.stringify(user));
+      commit('updateUser', user);
+    },
     logout({ commit }) {
       localStorage.removeItem('token');
       commit('logout');
     },
     login({ commit }, user) {
-      console.log(user);
       const now = new Date();
       const token = now.getTime();
       const expiryDate = new Date(now.getTime() + ((60 * 60 * 24) * 1000)).getTime();
       localStorage.setItem('token', token);
       localStorage.setItem('tokenExpiry', expiryDate);
-      localStorage.setItem('user', JSON.stringify(user));
 
       commit('login', { user, token: { token, expiryDate } });
     },

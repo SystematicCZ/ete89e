@@ -183,4 +183,9 @@ class User implements UserInterface
 
         return $this;
     }
+
+    public function getCourses(): array
+    {
+        return $this->courses->getValues();
+    }
 }

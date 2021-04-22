@@ -49,13 +49,13 @@ export default {
   methods: {
     submit() {
       axios.post(`${this.$root.$options.vars.API_URL}login`, this.payload, { withCredentials: true }).then((response) => {
+        console.log(response.headers);
         this.$store.dispatch('login', response.data).then(() => {
           this.$emit('logged-in');
         });
       }).catch((error) => {
         console.log(error);
       });
-
     },
   },
   validations: {

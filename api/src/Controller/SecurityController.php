@@ -18,4 +18,14 @@ class SecurityController extends AbstractController
 
         return $this->json($view->create($user));
     }
+
+    /**
+     * @Route("/logout", name="logout", methods={"POST"})
+     */
+    public function logout(): Response
+    {
+        //$this->denyAccessUnlessGranted('ROLE_USER');
+
+        return $this->json('');
+    }
 }
