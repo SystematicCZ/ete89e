@@ -62,4 +62,9 @@ class Event
     {
         return $this->date;
     }
+
+    public function getCourse(): Course
+    {
+        return $this->course;
+    }
 }

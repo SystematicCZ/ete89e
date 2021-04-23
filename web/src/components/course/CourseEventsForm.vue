@@ -11,7 +11,7 @@
       add-new
       @new="eventList.push($event)"
     />
-    <required-tip />
+    <required-tip/>
     <form-buttons
       :submit-disabled="!canSubmit"
       class="mt-3 text-center"
@@ -20,6 +20,7 @@
   </div>
 </template>
 <script>
+import axios from 'axios';
 import CourseEventsFormRow from './CourseEventsFormRow.vue';
 import FormButtons from '../forms/FormButtons.vue';
 import RequiredTip from '../forms/RequiredTip.vue';
@@ -42,8 +43,12 @@ export default {
   },
   methods: {
     deleteEvent(event) {
-      // fake
-      this.eventList = this.eventList.filter(item => item.id !== event.id);
+      axios.delete(`${this.$root.$options.vars.API_URL}events/${event.id}`, { withCredentials: true }).then((response) => {
+        this.eventList = this.eventList.filter(item => item.id !== event.id);
+        this.$emit('synchronize', this.eventList);
+      }).catch((error) => {
+        console.log(error);
+      });
     },
     getValidityList() {
       const list = new Map();

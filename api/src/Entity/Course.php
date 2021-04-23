@@ -38,7 +38,7 @@ class Course
     private ?string $description;
 
     /**
-     * @ORM\OneToMany(targetEntity="Event", mappedBy="course", cascade="all")
+     * @ORM\OneToMany(targetEntity="Event", mappedBy="course", cascade={"persist", "remove"}, orphanRemoval=true)
      */
     private Collection $events;
 
@@ -72,7 +72,9 @@ class Course
 
     public static function create(CourseData $data, SlugifyService $slugifyService, CourseRepository $repository): self
     {
-        $instance = new self($slugifyService->slugify($data->getName(), $repository), $data->getName(), $data->getProfessor(), $data->getDescription());
+        $instance = new self(
+            $slugifyService->slugify($data->getName(), $repository), $data->getName(), $data->getProfessor(), $data->getDescription()
+        );
         $data->getProfessor()->addCourse($instance);
 
         return $instance;
@@ -122,6 +124,15 @@ class Course
         $this->events->clear();
         foreach ($data->getEvents() as $event) {
             $this->events->add(Event::create($event, $this));
+        }
+
+        return $this;
+    }
+
+    public function removeEvent(Event $event): self
+    {
+        if ($this->events->contains($event)) {
+            $this->events->removeElement($event);
         }
 
         return $this;

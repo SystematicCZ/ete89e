@@ -4,7 +4,7 @@ namespace App\DataObject;
 
 use App\Entity\Professor;
 use StartupJobsCom\Shared\DataObject\DataObject;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @method string getName()
@@ -13,7 +13,20 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class CourseData extends DataObject
 {
+
+    /**
+     * @Assert\NotBlank
+     * @Assert\Length(max="50")
+     */
     protected ?string $name;
+
+    /**
+     * @Assert\NotBlank
+     */
     protected ?string $description;
+
+    /**
+     * @Assert\NotBlank
+     */
     protected ?Professor $professor;
 }
