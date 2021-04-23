@@ -11,7 +11,7 @@
         />
         <router-link
           :to="{name: 'addCourse'}"
-          class="btn btn-outline-warning"
+          class="btn btn-warning mt-2"
         >
           Přidat kurz
         </router-link>
